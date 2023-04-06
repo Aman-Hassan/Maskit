@@ -149,6 +149,15 @@ def show_community(community_name):
     return render_template("community.html", name = user[0][2], categories=categories,community = communtiy[0])
 
 
+@app.route("/settings")
+@login_required
+def Settings():
+    return render_template("setting.html")
+
+@app.route("/profile")
+@login_required
+def Profile():
+    return render_template("profile.html")
 # @app.route("/post")
 
 

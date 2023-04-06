@@ -24,21 +24,27 @@
       <img class="image-22-icon" alt="" src="{{ url_for('static', filename= 'image-22@2x.png') }}" />
       <div class="title-bar">
         <div class="logo">
-          <img class="vector-icon" alt="" src="{{ url_for('static', filename= 'vector@2x.png') }}" />
+          <a href = "/">
+            <img class="vector-icon" alt="" src="{{ url_for('static', filename= 'vector@2x.png') }}" />
+          </a>
         </div>
         <div class="search-bar">
           <img class="search-icon" alt="" src="{{ url_for('static', filename= 'search.svg') }}" />
         </div>
         <div class="options">
+          <a href = "/settings">
           <img
             class="image-28-icon"
             alt=""
             src="{{ url_for('static', filename= 'image-28@2x.png') }}"
-          /><img
-            class="image-27-icon"
-            alt=""
-            src="{{ url_for('static', filename= 'image-27@2x.png') }}"
-          /><img class="image-31-icon" alt="" src="{{ url_for('static', filename= 'image-31@2x.png') }}" />
+          />
+          </a>
+          <a href = "/profile">
+          <img class="image-27-icon" alt="" src="{{ url_for('static', filename= 'image-27@2x.png') }}"/>
+          </a>
+          <a href="/logout">
+          <img class="image-31-icon" alt="" src="{{ url_for('static', filename= 'image-31@2x.png') }}" />
+          </a>
         </div>
       </div>
       <div class="sidebar-parent">
@@ -107,7 +113,7 @@
             <div class="communtity-bar">
               <div class="community-about">
                 <div class="community-1">
-                  <a href = "/communnity/{{community[1]}}">{{community[1]}}</a>
+                  <a href = "/community/{{community[1]}}">{{community[1]}}</a>
                 </div>
                 <div class="about">{{community[2]}}</div>
               </div>

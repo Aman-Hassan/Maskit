@@ -7,10 +7,13 @@
 
     <form action="/register" method="post">
         <input autocomplete="off" autofocus name="name" placeholder="Name" type="text">
+        <br>
         <input autocomplete="off" name="password" placeholder="Password" type="password">
+        <br>
         <input autocomplete="off" name="confirmation" placeholder="Confirm Password" type="password">
+        <br>
         <button type="submit">Register</button>
     </form>
-
+    <a href={{ url_for('login') }}>Log IN</a>
 
 {% endblock %}
