@@ -1,0 +1,334 @@
+.image-22-icon,
+.vector-icon {
+  position: relative;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.image-22-icon {
+  width: 768px;
+  height: 514px;
+  display: none;
+}
+.vector-icon {
+  width: 199px;
+  height: 60px;
+}
+.logo {
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: center;
+}
+.search-icon {
+  position: relative;
+  width: 78.09px;
+  height: 15px;
+  flex-shrink: 0;
+}
+.search-bar {
+  flex: 1;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-gray-100);
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 37px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.image-27-icon,
+.image-28-icon,
+.image-31-icon {
+  position: relative;
+  width: 32px;
+  height: 26px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.image-27-icon,
+.image-31-icon {
+  width: 46px;
+  height: 32px;
+}
+.image-31-icon {
+  width: 44px;
+  height: 24px;
+}
+.options,
+.title-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2px;
+}
+.title-bar {
+  align-self: stretch;
+  background-color: var(--color-gray-200);
+  height: 73px;
+  flex-shrink: 0;
+  padding: 0 11px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  gap: 204px;
+}
+.pinned-posts,
+.top-board,
+.top-communitites,
+.top-karma {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  width: 132px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.pinned-posts,
+.top-communitites,
+.top-karma {
+  width: 120px;
+  height: 21px;
+}
+.top-communitites,
+.top-karma {
+  width: 138px;
+}
+.top-communitites {
+  width: 167px;
+  height: 22px;
+}
+.top-section {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-200);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 226px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-mini);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.career-services,
+.clubs,
+.research {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  width: 119px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.career-services,
+.research {
+  width: 176px;
+}
+.career-services {
+  width: 139px;
+}
+.health-and-wellness {
+  margin: 0;
+  padding-left: var(--padding-xl);
+}
+.health-and-wellness-container {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  width: 183px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.brca-activities,
+.entrepreneurship,
+.general-championship,
+.history-and-traditions-container,
+.student-government {
+  position: relative;
+  font-weight: 500;
+  display: inline-block;
+  width: 182px;
+  height: 21px;
+  flex-shrink: 0;
+}
+.brca-activities,
+.entrepreneurship,
+.general-championship,
+.student-government {
+  height: 22px;
+}
+.brca-activities,
+.entrepreneurship,
+.general-championship {
+  width: 155px;
+}
+.brca-activities,
+.general-championship {
+  width: 196px;
+}
+.brca-activities {
+  width: 162px;
+  height: 21px;
+}
+.catergory-section,
+.heading,
+.sidebar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.catergory-section {
+  border-radius: var(--br-xl);
+  background-color: var(--color-gray-200);
+  border: 1px solid var(--color-black);
+  flex-direction: column;
+  padding: var(--padding-mini);
+  gap: var(--gap-xs);
+}
+.heading,
+.sidebar {
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.sidebar {
+  width: 233px;
+  flex-direction: column;
+  padding: 9px 0 0 7px;
+  gap: 31px;
+}
+.heading {
+  height: 73px;
+  flex-direction: row;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0;
+}
+.top-community {
+  text-decoration: underline;
+}
+.create-a-new,
+.top-community-container {
+  position: relative;
+}
+.create-a-new {
+  text-decoration: underline;
+  display: inline-block;
+  width: 238px;
+  height: 21px;
+  flex-shrink: 0;
+}
+.option-line {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: var(--font-size-lg);
+  color: var(--color-darkorchid);
+  font-family: var(--font-merriweather-sans);
+}
+.about,
+.community-1 {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.community-1 {
+  text-decoration: underline;
+  font-weight: 600;
+  width: 202px;
+  height: 32px;
+}
+.about {
+  font-size: var(--font-size-base);
+  width: 69px;
+  height: 24px;
+}
+.community-about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-9xs);
+}
+.follow-button1 {
+  border-radius: var(--br-11xl);
+  background-color: var(--color-midnightblue);
+  width: 97px;
+  height: 29px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.follow-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+}
+.community-list,
+.communtity-bar {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+}
+.communtity-bar {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-black);
+  flex-direction: row;
+  padding: var(--padding-lgi) var(--padding-12xl) var(--padding-lgi)
+    var(--padding-95xl);
+  justify-content: space-between;
+}
+.community-list {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 13px;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+}
+.academic-communities {
+  flex: 1;
+  flex-direction: column;
+  padding: 0 65px 0 0;
+  gap: 20px;
+  font-size: 55px;
+  color: var(--color-lightsteelblue-200);
+  font-family: var(--font-arial);
+}
+.academic-communities,
+.basic-page,
+.sidebar-parent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebar-parent {
+  align-self: stretch;
+  height: 1145px;
+  flex-shrink: 0;
+  flex-direction: row;
+  gap: 27px;
+}
+.basic-page {
+  position: relative;
+  background-color: var(--color-black);
+  width: 100%;
+  height: 1230px;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 11px;
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-lightsteelblue-100);
+  font-family: var(--font-inherit);
+}

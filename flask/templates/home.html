@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HomePage
+{% endblock %}
+{% block content %}
+
+    <h1>You are loginned as {{name}}</h1>
+    <a href = {{ url_for('logout') }}>Log Out</a>
+
+{% endblock %}
