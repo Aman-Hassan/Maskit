@@ -37,18 +37,18 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
       data-tag="font"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
     <div>
-      <link href="./index.css" rel="stylesheet" />
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'index.css') }}" />
 
       <div class="index-container">
         <div class="index-index">
           <div class="index-title-bar">
             <a href="index.html" class="index-navlink">
               <img
-                src="public/playground_assets/logoi546-gi92.svg"
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
                 alt="LogoI546"
                 class="index-logo"
               />
@@ -60,23 +60,23 @@
             />
             <div class="index-options">
               <img
-                src="public/playground_assets/image39i546-ye1e-200w.png"
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
                 alt="image39I546"
                 class="index-image39"
               />
               <img
-                src="public/playground_assets/image28i546-f40b-200h.png"
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
                 alt="image28I546"
                 class="index-image28"
               />
               <img
-                src="public/playground_assets/image27i546-6ewj-200w.png"
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
                 alt="image27I546"
                 class="index-image27"
               />
               <a href="login.html" class="index-navlink1">
                 <img
-                  src="public/playground_assets/image31i546-953f-200h.png"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
                   alt="image31I546"
                   class="index-image31"
                 />
@@ -93,24 +93,20 @@
                 <span class="index-text08"><span>Top Communitites</span></span>
               </div>
               <div class="index-catergory-section">
-                <span class="index-text10"><span>Academics</span></span>
-                <span class="index-text12"><span>Campus Life</span></span>
-                <span class="index-text14"><span>Events</span></span>
-                <span class="index-text16"><span>Sports</span></span>
-                <span class="index-text18"><span>Clubs</span></span>
-                <span class="index-text20"><span>Research</span></span>
-                <span class="index-text22"><span>Career Services</span></span>
-                <span class="index-text24"><span>IITD News</span></span>
-                <span class="index-text26"><span>Technology</span></span>
-                <span class="index-text28"><span>Alumni Relations</span></span>
-                <span class="index-text30">
-                  <span>Student Government</span>
-                </span>
-                <span class="index-text32"><span>Entrepreneurship</span></span>
-                <span class="index-text34">
-                  <span>General Championship</span>
-                </span>
-                <span class="index-text36"><span>College Festivals</span></span>
+                <a href="/category/Academics" class="index-text10"><span>Academics</span></a>
+                <a href="/category/Campus Life" class="index-text12"><span>Campus Life</span></a>
+                <a href="/category/Events" class="index-text14"><span>Events</span></a>
+                <a href="/category/Sports" class="index-text16"><span>Sports</span></a>
+                <a href="/category/Clubs" class="index-text18"><span>Clubs</span></a>
+                <a href="/category/Research" class="index-text20"><span>Research</span></a>
+                <a href="/category/Carrer Services" class="index-text22"><span>Career Services</span></a>
+                <a href="/category/IITD News" class="index-text24"><span>IITD News</span></a>
+                <a href="/category/Technology" class="index-text26"><span>Technology</span></a>
+                <a href="/category/Alumni Relations" class="index-text28"><span>Alumni Relations</span></a>
+                <a href="/category/Student Government" class="index-text30"><span>Student Government</span></a>
+                <a href="/category/Entrepreneurship" class="index-text32"><span>Entrepreneurship</span></a>
+                <a href="/category/General Championship" class="index-text34"><span>General Championship</span></a>
+                <a href="/category/College Festivals" class="index-text36"><span>College Festivals</span></a>
               </div>
             </div>
             <div class="index-frame38">
@@ -130,7 +126,7 @@
               <div class="index-frame39">
                 <span class="index-text44">
                   <span>
-                    Maskit is a university level site where you can post, share
+                    Maskit is an anonymous message broadcasting site. It is specially designed for IITD community where people can post, share
                     and comment on various topics happening within and outside
                     the campus anonymously. Obey the user guidelines and have
                     fun!

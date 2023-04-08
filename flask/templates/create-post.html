@@ -42,11 +42,11 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
       data-tag="font"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
     <div>
-      <link href="./create-post.css" rel="stylesheet" />
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'create-post.css') }}" />
 
       <div class="create-post-container">
         <div class="create-post-create-post">

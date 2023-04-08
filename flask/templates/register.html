@@ -37,64 +37,64 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
       data-tag="font"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
     <div>
-      <link href="./register.css" rel="stylesheet" />
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'register.css') }}" />
 
       <div class="register-container">
         <div class="register-register">
-          <div class="register-frame18">
+          <form action="/register" method="post" class="register-frame18">
             <div class="register-credential-frame">
               <img
-                src="public/playground_assets/vector2628-6ay.svg"
+                src="{{ url_for('static', filename= 'public/playground_assets/vector2628-6ay.svg') }}"
                 alt="Vector2628"
                 class="register-vector"
               />
               <div class="register-frame15">
                 <div class="register-username-frame">
                   <img
-                    src="public/playground_assets/image142628-o7s-200w.png"
+                    src="{{ url_for('static', filename= 'public/playground_assets/image142628-o7s-200w.png') }}"
                     alt="image142628"
                     class="register-image14"
                   />
                   <div class="register-username-field">
-                    <span class = "textarea" role = "textbox" contenteditable ></span>
+                    <input class = "textarea" name="name" role = "textbox" contenteditable >
                   </div>
                 </div>
                 <div class="register-password-frame">
                   <img
-                    src="public/playground_assets/image132629-ecos-200w.png"
+                    src="{{ url_for('static', filename= 'public/playground_assets/image132629-ecos-200w.png') }}"
                     alt="image132629"
                     class="register-image13"
                   />
                   <div class="register-password-field">
-                    <span class = "textarea" role = "textbox" contenteditable ></span>
+                    <input class = "textarea" name="password" role = "textbox" contenteditable >
                   </div>
                 </div>
                 <div class="register-password-frame1">
                   <img
-                    src="public/playground_assets/image132629-rgyp-200w.png"
+                    src="{{ url_for('static', filename= 'public/playground_assets/image132629-rgyp-200w.png') }}"
                     alt="image132629"
                     class="register-image131"
                   />
                   <div class="register-password-field1">
                     <span class="register-text4">
-                      <span class = "textarea" role = "textbox" contenteditable ></span>
+                      <input class = "textarea" name="confirmation" role = "textbox" contenteditable >
                     </span>
-                    <a href="login.html" class="register-navlink">
+                    <button type="submit">
                       <img
-                        src="public/playground_assets/image162630-xzdb-200w.png"
+                        src="{{ url_for('static', filename= 'public/playground_assets/image162630-xzdb-200w.png') }}"
                         alt="image162630"
                         class="register-image16"
                       />
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

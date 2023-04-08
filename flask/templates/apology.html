@@ -1,10 +1,25 @@
-{% extends "layout.html" %}
-
-{% block title %}
-    Apology
-{% endblock %}
-
-{% block content %}
-    <!-- https://memegen.link/ -->
-    <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://i.imgur.com/CsCgN7Ll.png&width=400" title="{{ top }}">
-{% endblock %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'global.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'index.css') }}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Arial:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather Sans:wght@400&display=swap"
+    />
+    <title>ERROR</title>
+  </head>
+  <body>
+    <img alt="{{ top }}" class="border img-fluid" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?alt=https://cdn.wallpapersafari.com/86/70/KYW1Sx.jpg&height=fill&width=fill" title="{{ top }}">
+  </body>
+</html> 

@@ -45,8 +45,10 @@ def login():
 @app.route("/login", methods = ["POST"])
 def login_post():
     session.clear()
+    print("hello")
     name = request.form.get("name")
     password = request.form.get("password")
+    print(name,password)
     if not name:
         return apology("must provide username", 400)
     elif not password:
@@ -58,7 +60,7 @@ def login_post():
         return apology("invalid username and/or password", 403)
     session["user_id"] = rows[0][0]
     cur.close()
-    return redirect("/")
+    return render_template("index.html")
 
 
 
