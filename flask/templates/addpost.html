@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Page
+{% endblock %}
+{% block content %}
+
+    <form action="/add_post" method="post">
+      <label for="add_post_title">Title:</label>
+      <input type="text" id="add_post_title" placeholder="Title" name="add_post_title"><br>
+
+      <label for="add_post_body">Body:</label>
+      <textarea id="add_post_body" name="add_post_body" placeholder="Body" rows="4" cols="50"></textarea><br>
+
+      <label for="Category">Category:</label>
+      <input type="text" id="Category" placeholder="Category" name="Category"><br>
+
+      <label for="Community">Community:</label>
+      <input type="text" id="Community" placeholder="Community" name="Community"><br>
+
+      <button type="submit">Submit</button>
+    </form>
+    
+    
+
+{% endblock %}
+
+

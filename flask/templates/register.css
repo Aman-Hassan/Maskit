@@ -1,0 +1,206 @@
+.register-container {
+  min-height: 100vh;
+}
+.register-register {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding: 318px 395px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 1);
+}
+.register-frame18 {
+  display: flex;
+  padding: 0 133px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-credential-frame {
+  height: 254px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-vector {
+  width: 247px;
+  height: 75px;
+  position: relative;
+  margin-bottom: 12px;
+}
+.register-frame15 {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: transparent;
+  flex-direction: column;
+}
+.register-username-frame {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-bottom: 16px;
+}
+.register-image14 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 9px;
+}
+.register-username-field {
+  display: flex;
+  padding: 10px 10px 10px 23px;
+  position: relative;
+  flex-grow: 1;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.textarea {
+  color: gray;
+  border: 0px;
+  display: block;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  /* resize: both; */
+  min-height: 20px;
+  line-height: 20px;
+  padding: 1px 6px;
+  max-width: 400px;
+}
+
+/* .textarea[contenteditable]:empty::before {
+  content: "Enter Body";
+  color:rgba(217, 217, 217, 1);
+} */
+
+.register-text {
+  color: rgba(217, 217, 217, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Light;
+  text-align: center;
+  font-family: Inter;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-password-frame {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-bottom: 16px;
+}
+.register-image13 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 9px;
+}
+.register-password-field {
+  height: 40px;
+  display: flex;
+  padding: 0 0 0 23px;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.register-text2 {
+  color: rgba(217, 217, 217, 1);
+  width: 92px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Light;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+.register-password-frame1 {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+}
+.register-image131 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 9px;
+}
+.register-password-field1 {
+  display: flex;
+  padding: 0 0 0 23px;
+  position: relative;
+  flex-grow: 1;
+  align-items: center;
+  border-color: transparent;
+  border-radius: 50px;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 1);
+}
+.register-text4 {
+  color: rgba(217, 217, 217, 1);
+  width: 216px;
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Light;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.register-navlink {
+  display: contents;
+}
+.register-image16 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border-color: transparent;
+  text-decoration: none;
+}

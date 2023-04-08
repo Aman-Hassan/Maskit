@@ -1,11 +1,440 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
 
-{% block title %}
-    Profile Page
-{% endblock %}
-{% block content %}
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
 
-    <h1>Profile Page</h1>
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
 
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./profile.css" rel="stylesheet" />
 
-{% endblock %}
+      <div class="profile-container">
+        <div class="profile-profile">
+          <div class="profile-mainbar-banner">
+            <div class="profile-title-bar">
+              <a href="basicpage.html" class="profile-navlink">
+                <img
+                  alt="LogoI301"
+                  src="public/playground_assets/logoi301-9paa.svg"
+                  class="profile-logo"
+                />
+              </a>
+              <input
+                type="text"
+                placeholder="Search..."
+                class="profile-user-input-search-bar"
+              />
+              <div class="profile-options">
+                <a href="create-post.html" class="profile-navlink1">
+                  <img
+                    alt="image39I301"
+                    src="public/playground_assets/image39i301-lcn-200w.png"
+                    class="profile-image39"
+                  />
+                </a>
+                <img
+                  alt="image28I301"
+                  src="public/playground_assets/image28i301-5ld4-200h.png"
+                  class="profile-image28"
+                />
+                <a href="profile.html" class="profile-navlink2">
+                  <img
+                    alt="image27I301"
+                    src="public/playground_assets/image27i301-2agg-200w.png"
+                    class="profile-image27"
+                  />
+                </a>
+                <img
+                  alt="image31I301"
+                  src="public/playground_assets/image31i301-kvvy-200h.png"
+                  class="profile-image31"
+                />
+              </div>
+            </div>
+            <div class="profile-cover-pic"></div>
+          </div>
+          <div class="profile-sidebar-community-details">
+            <div class="profile-profilesidebar3">
+              <div class="profile-top-section">
+                <span class="profile-text"><span>Top Board</span></span>
+                <span class="profile-text002"><span>Following</span></span>
+                <span class="profile-text004"><span>Top Posts</span></span>
+                <span class="profile-text006"><span>Top Karma</span></span>
+                <span class="profile-text008">
+                  <span>Top Communitites</span>
+                </span>
+              </div>
+              <div class="profile-profilesidebar">
+                <span class="profile-text010"><span>Posts</span></span>
+                <span class="profile-text012"><span>Top Posts</span></span>
+                <span class="profile-text014"><span>Following</span></span>
+                <span class="profile-text016"><span>Likes</span></span>
+                <span class="profile-text018"><span>Your Community</span></span>
+                <span class="profile-text020">
+                  <span>Create Community</span>
+                </span>
+                <span class="profile-text022"><span>Settings</span></span>
+              </div>
+            </div>
+            <div class="profile-content">
+              <div class="profile-commnunity-line">
+                <div class="profile-community-frame">
+                  <img
+                    alt="CommunityProfilePic3015"
+                    src="public/playground_assets/communityprofilepic3015-p8ra-200h.png"
+                    class="profile-community-profile-pic"
+                  />
+                  <div class="profile-name-about">
+                    <div class="profile-name">
+                      <span class="profile-text024"><span>Name_1</span></span>
+                    </div>
+                    <div class="profile-about">
+                      <span class="profile-text026">
+                        <span>
+                          I am a man in the mask who is interested to talk to
+                          people about technology emergence over human
+                          intelligence development.
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile-karma-following-bar">
+                  <span class="profile-text028"><span>Karma : xyz</span></span>
+                  <span class="profile-text030">
+                    <span>Following : abc</span>
+                  </span>
+                </div>
+              </div>
+              <div class="profile-postframe">
+                <div class="profile-content1">
+                  <div class="profile-ntc-pic">
+                    <div class="profile-ntcp">
+                      <img
+                        alt="Ellipse3I301"
+                        src="public/playground_assets/ellipse3i301-k7mc-200h.png"
+                        class="profile-ellipse3"
+                      />
+                      <div class="profile-ntc">
+                        <div class="profile-name-time">
+                          <a href="profile.html" class="profile-text032">
+                            <span>Name_1</span>
+                          </a>
+                          <span class="profile-text034">
+                            <span>11:52 pm</span>
+                          </span>
+                        </div>
+                        <a href="community-page.html" class="profile-text036">
+                          <span>Community 4</span>
+                        </a>
+                      </div>
+                    </div>
+                    <img
+                      alt="Rectangle89I301"
+                      src="public/playground_assets/rectangle89i301-covi.svg"
+                      class="profile-rectangle89"
+                    />
+                  </div>
+                  <a href="post-page.html" class="profile-navlink3">
+                    <div class="profile-title-text">
+                      <span class="profile-text038"><span>Title</span></span>
+                      <span class="profile-text040">
+                        <span>
+                          <span>
+                            nshdshs kdsjd llfdnlksdnfkl nsakfldslj kfsj
+                            dkfbdskjlfjlkack ssdjsk daljlsjdkla
+                            jdklsjalksjdkaskdja djsaklj dskljdakljsd lkads
+                            sanana dsanmd na,n
+                            smdnam,sdna,msdasmdn,andmds,nda,snda
+                            msdnas,dnsadsndkasn dsnad,adsad nasdnsa,dn,as
+                            mdas,dnsm,nd,amn sdm,na,sddasnf,md,sfsdfdsfdsth
+                            stgvdag rg adffg addrgaa ergrt wewrw ww erwe.
+                          </span>
+                          <br />
+                          <span>ksakjfojasdffj</span>
+                          <br />
+                          <span>
+                            asdoasdj ajsdopffaijds ffasdofaj dsjg asdijasd
+                          </span>
+                          <br />
+                          <span>
+                            asdfasd pjadij papposkdpofip apsokdfpf[a[sd[fp
+                            [oa[ospd
+                          </span>
+                          <br />
+                          <span></span>
+                        </span>
+                      </span>
+                    </div>
+                  </a>
+                  <div class="profile-post-options">
+                    <img
+                      alt="image20I301"
+                      src="public/playground_assets/image20i301-k1oh-200h.png"
+                      class="profile-image20"
+                    />
+                    <span class="profile-text051">
+                      <span>
+                        <span>100k</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      alt="image32I301"
+                      src="public/playground_assets/image32i301-154i-200h.png"
+                      class="profile-image32"
+                    />
+                    <span class="profile-text056"><span>2k</span></span>
+                    <a href="post-page.html" class="profile-navlink4">
+                      <img
+                        alt="image21I301"
+                        src="public/playground_assets/image21i301-iu7j-200h.png"
+                        class="profile-image21"
+                      />
+                    </a>
+                    <span class="profile-text058"><span>2.5k</span></span>
+                    <img
+                      alt="image33I301"
+                      src="public/playground_assets/image33i301-c8eb-200h.png"
+                      class="profile-image33"
+                    />
+                  </div>
+                </div>
+                <div class="profile-content2">
+                  <div class="profile-ntc-pic1">
+                    <div class="profile-ntcp1">
+                      <img
+                        alt="Ellipse3I301"
+                        src="public/playground_assets/ellipse3i301-t11-200h.png"
+                        class="profile-ellipse31"
+                      />
+                      <div class="profile-ntc1">
+                        <div class="profile-name-time1">
+                          <span class="profile-text060">
+                            <span>Name_1</span>
+                          </span>
+                          <span class="profile-text062">
+                            <span>9:34 am</span>
+                          </span>
+                        </div>
+                        <span class="profile-text064">
+                          <span>Community 3</span>
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      alt="Rectangle89I301"
+                      src="public/playground_assets/rectangle89i301-e80k.svg"
+                      class="profile-rectangle891"
+                    />
+                  </div>
+                  <div class="profile-title-text1">
+                    <span class="profile-text066"><span>Title</span></span>
+                    <span class="profile-text068">
+                      <span>
+                        <span>
+                          kzdfgnjdf gjsdfggkn sdfjgj dsjgsuggh spdofjg
+                          sdfgg]sdfggh dsfgf
+                        </span>
+                        <br />
+                        <span>
+                          dsfjgo sdgojsdpoigfjsodifjgoisjrogjs
+                          eiurhajrguhsdf’lfgj s;kdffg;sdjgnsdgsdfkjg odijfg
+                          ooffjgof dfgj sdrgn sdf
+                        </span>
+                        <br />
+                        <span>sd;ghs</span>
+                        <br />
+                        <span>dg ‘sdigh sdffjg sodfg</span>
+                        <br />
+                        <span>
+                          dsfg sDgsidg sdoijg osdfgf sdlkfkg skdjfng ‘skdf g
+                        </span>
+                        <br />
+                        <span>sfdgSDFg</span>
+                        <br />
+                        <span>gfs’df g</span>
+                        <br />
+                        <span>dsfgsdf gdsfjg osdjf gsdnfgj sdofgjnsdfgdf.</span>
+                        <br />
+                        <span>sdnfg jsjdfgjsdfjglsdjfgkljsdjlfgj</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="profile-post-options1">
+                    <img
+                      alt="image20I301"
+                      src="public/playground_assets/image20i301-mgz-200h.png"
+                      class="profile-image201"
+                    />
+                    <span class="profile-text087">
+                      <span>
+                        <span>47k</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      alt="image32I301"
+                      src="public/playground_assets/image32i301-4ku7-200h.png"
+                      class="profile-image321"
+                    />
+                    <span class="profile-text092"><span>1k</span></span>
+                    <img
+                      alt="image21I301"
+                      src="public/playground_assets/image21i301-nvst-200h.png"
+                      class="profile-image211"
+                    />
+                    <span class="profile-text094"><span>1.1k</span></span>
+                    <img
+                      alt="image33I301"
+                      src="public/playground_assets/image33i301-yo52-200h.png"
+                      class="profile-image331"
+                    />
+                  </div>
+                </div>
+                <div class="profile-content3">
+                  <div class="profile-ntc-pic2">
+                    <div class="profile-ntcp2">
+                      <img
+                        alt="Ellipse3I301"
+                        src="public/playground_assets/ellipse3i301-l7pb-200h.png"
+                        class="profile-ellipse32"
+                      />
+                      <div class="profile-ntc2">
+                        <div class="profile-name-time2">
+                          <span class="profile-text096">
+                            <span>Name_1</span>
+                          </span>
+                          <span class="profile-text098">
+                            <span>1:15 pm</span>
+                          </span>
+                        </div>
+                        <span class="profile-text100">
+                          <span>Community 8</span>
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      alt="Rectangle89I301"
+                      src="public/playground_assets/rectangle89i301-p5e8.svg"
+                      class="profile-rectangle892"
+                    />
+                  </div>
+                  <div class="profile-title-text2">
+                    <span class="profile-text102"><span>Title</span></span>
+                    <span class="profile-text104">
+                      <span>
+                        <span>
+                          soiuhrgh sfifdgnskdmnfjgh rkjfjerngl;rg sidjfogs odj
+                          owejijw jij pkgmlk spdgj skdgnl sd flmg
+                        </span>
+                        <br />
+                        <span>
+                          dfgsd fgjsdfgp dsfgpspp dpfoofo sdpfg p ksodkfg
+                        </span>
+                        <br />
+                        <span>dpfkgsdfp gk</span>
+                        <br />
+                        <span>
+                          sdlkfjgj sjdfigjs dfokg sdffgjsdfj
+                          gksdfgkldflkjglkjflg
+                        </span>
+                        <br />
+                        <span>dflkgldjfg sdfjg</span>
+                        <br />
+                        <span>
+                          sdfjg sjdfgjsdfjgl skjdlkfj gljskdlfkgj sdjfg
+                        </span>
+                        <br />
+                        <span>
+                          sfdksjdlgjsldfjg lsjdlfjgijigjoerj sfjg ;s.dmfg
+                        </span>
+                        <br />
+                        <span>sdfkjgsjfgj jsdlkfglksjdfg</span>
+                        <br />
+                        <span>sdflgj sldfjg;sdkfgjsdfigjjoidjfgjo dfpgok</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="profile-post-options2">
+                    <img
+                      alt="image20I301"
+                      src="public/playground_assets/image20i301-d7q-200h.png"
+                      class="profile-image202"
+                    />
+                    <span class="profile-text123">
+                      <span>
+                        <span>20k</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      alt="image32I301"
+                      src="public/playground_assets/image32i301-dhs7-200h.png"
+                      class="profile-image322"
+                    />
+                    <span class="profile-text128"><span>500</span></span>
+                    <img
+                      alt="image21I301"
+                      src="public/playground_assets/image21i301-ojhm-200h.png"
+                      class="profile-image212"
+                    />
+                    <span class="profile-text130"><span>1.2k</span></span>
+                    <img
+                      alt="image33I301"
+                      src="public/playground_assets/image33i301-l11t-200h.png"
+                      class="profile-image332"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

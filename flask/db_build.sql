@@ -40,8 +40,10 @@ CREATE TABLE Posts (
     Votes INTEGER NOT NULL DEFAULT 0,
     creator_id INTEGER NOT NULL,
     community_id INTEGER NOT NULL,
+    category_id INTEGER NOT NULL,
     FOREIGN KEY (creator_id) REFERENCES Users(id),
-    FOREIGN KEY (community_id) REFERENCES Communities(id)
+    FOREIGN KEY (community_id) REFERENCES Communities(id),
+    FOREIGN KEY (category_id) REFERENCES Categories(id)
 );
 CREATE TABLE Comments (
     comment_id INTEGER PRIMARY KEY AUTO_INCREMENT,

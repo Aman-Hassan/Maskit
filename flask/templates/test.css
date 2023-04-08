@@ -1,0 +1,60 @@
+/* .input, */
+/* .textarea {
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1px 6px;
+} */
+
+/*
+.input-wrap {
+  position: relative;
+}
+.input-wrap .input {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+.width-machine {
+  /*   Sort of a magic number to add extra space for number spinner
+  padding: 0 1rem;
+} 
+*/
+
+.textarea {
+  border: 1px solid #ccc;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  resize: both;
+  min-height: 40px;
+  line-height: 20px;
+  padding: 1px 6px;
+  max-width: 500px;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Placeholder still possible";
+  color: gray;
+}
+
+/* Just for demo */
+/* * {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Heebo", sans-serif;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+p strong {
+  display: block;
+}
+h1 {
+  border-bottom: 5px solid #9ccc65;
+}
+h2 {
+  border-bottom: 2px solid #c5e1a5;
+} */
