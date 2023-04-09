@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
+  </head>
+  <body>
+    <div>
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'index.css') }}" />
+
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            />
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="index-frame40">
+            <div class="index-sidebar">
+              <div class="index-top-section">
+                <span class="index-text"><span>Top Board</span></span>
+                <span class="index-text02"><span>Following</span></span>
+                <span class="index-text04"><span>Top Posts</span></span>
+                <span class="index-text06"><span>Top Karma</span></span>
+                <span class="index-text08"><span>Top Communitites</span></span>
+              </div>
+              <div class="index-catergory-section">
+                <a href="/category/Academics" class="index-text10"><span>Academics</span></a>
+                <a href="/category/Campus Life" class="index-text12"><span>Campus Life</span></a>
+                <a href="/category/Events" class="index-text14"><span>Events</span></a>
+                <a href="/category/Sports" class="index-text16"><span>Sports</span></a>
+                <a href="/category/Clubs" class="index-text18"><span>Clubs</span></a>
+                <a href="/category/Research" class="index-text20"><span>Research</span></a>
+                <a href="/category/Carrer Services" class="index-text22"><span>Career Services</span></a>
+                <a href="/category/IITD News" class="index-text24"><span>IITD News</span></a>
+                <a href="/category/Technology" class="index-text26"><span>Technology</span></a>
+                <a href="/category/Alumni Relations" class="index-text28"><span>Alumni Relations</span></a>
+                <a href="/category/Student Government" class="index-text30"><span>Student Government</span></a>
+                <a href="/category/Entrepreneurship" class="index-text32"><span>Entrepreneurship</span></a>
+                <a href="/category/General Championship" class="index-text34"><span>General Championship</span></a>
+                <a href="/category/College Festivals" class="index-text36"><span>College Festivals</span></a>
+              </div>
+            </div>
+            <div class="index-frame38">
+              <div class="index-frame36">
+                <span class="index-text38"><span>HOME PAGE</span></span>
+              </div>
+              <div class="index-frame34">
+                <div class="index-frame37">
+                  <span class="index-text40">
+                    <span>Hi, You are now logged in as</span>
+                  </span>
+                  <span class="index-text42">
+                    <span>&lt;Username&gt;</span>
+                  </span>
+                </div>
+              </div>
+              <div class="index-frame39">
+                <span class="index-text44">
+                  <span>
+                    Maskit is an anonymous message broadcasting site. It is specially designed for IITD community where people can post, share
+                    and comment on various topics happening within and outside
+                    the campus anonymously. Obey the user guidelines and have
+                    fun!
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
