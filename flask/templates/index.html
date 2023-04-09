@@ -46,7 +46,7 @@
       <div class="index-container">
         <div class="index-index">
           <div class="index-title-bar">
-            <a href="index.html" class="index-navlink">
+            <a href="/" class="index-navlink">
               <img
                 src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
                 alt="LogoI546"
@@ -59,22 +59,25 @@
               class="index-user-input-search-bar"
             />
             <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
               <img
                 src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
                 alt="image39I546"
                 class="index-image39"
               />
+              </a>
               <img
                 src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
                 alt="image28I546"
                 class="index-image28"
               />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
               <img
                 src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
                 alt="image27I546"
                 class="index-image27"
               />
-              <a href="login.html" class="index-navlink1">
+              <a href="/logout" class="index-navlink1">
                 <img
                   src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
                   alt="image31I546"
