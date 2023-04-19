@@ -6,7 +6,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # from datetime import date, datetime
 from flask_session import Session
 from helper import login_required, apology
-# import datetime
+import datetime
 # import db
 # Configure app
 app = Flask(__name__)
@@ -60,7 +60,7 @@ def login_post():
         return apology("invalid username and/or password", 403)
     session["user_id"] = rows[0][0]
     cur.close()
-    return render_template("index.html")
+    return redirect("/")
 
 
 
@@ -131,7 +131,7 @@ def show_communities_given_category(category_name):
     categories = cur.fetchall()
     cur.execute("SELECT category_id FROM Categories where Name = %s", (category_name,))
     category_id = cur.fetchall()
-    if category_id is None:
+    if category_id is []:
         cur.close()
         return apology("No Such Category",404) 
     cur.execute("SELECT * FROM Communities WHERE category_id = %s", (category_id[0],))

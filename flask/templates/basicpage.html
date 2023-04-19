@@ -51,10 +51,10 @@
       <div class="basicpage-container">
         <div class="basicpage-basicpage">
           <div class="basicpage-title-bar">
-            <a href="basicpage.html" class="basicpage-navlink">
+            <a href="/" class="basicpage-navlink">
               <img
                 alt="LogoI116"
-                src="public/playground_assets/logoi116-arz4.svg"
+                src = "{{url_for('static', filename = 'public/playground_assets/logoi116-arz4.svg')}}"
                 class="basicpage-logo"
               />
             </a>
@@ -64,30 +64,34 @@
               class="basicpage-user-input-search-bar"
             />
             <div class="basicpage-options">
-              <a href="create-post.html" class="basicpage-navlink1">
+              <a href="/add_post" class="basicpage-navlink1">
                 <img
                   alt="image39I116"
-                  src="public/playground_assets/image39i116-mnl-200w.png"
+                  src="{{ url_for('static', filename = 'public/playground_assets/image39i116-mnl-200w.png')}}"
                   class="basicpage-image39"
                 />
               </a>
+              <a href = "/settings">
               <img
                 alt="image28I116"
-                src="public/playground_assets/image28i116-392o-200h.png"
+                src="{{ url_for('static', filename = 'public/playground_assets/image28i116-392o-200h.png')}}"
                 class="basicpage-image28"
               />
-              <a href="profile.html" class="basicpage-navlink2">
+              </a>
+              <a href="/uprofile/{{name}}">
                 <img
-                  alt="image27I116"
-                  src="public/playground_assets/image27i116-2gar-200w.png"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                  alt="image27I546"
                   class="basicpage-image27"
                 />
-              </a>
-              <img
-                alt="image31I116"
-                src="public/playground_assets/image31i116-1g2-200h.png"
-                class="basicpage-image31"
-              />
+                </a>
+                <a href="/logout" class="basicpage-navlink1">
+                  <img
+                    src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                    alt="image31I546"
+                    class="basicpage-image31"
+                  />
+                </a>
             </div>
           </div>
           <div class="basicpage-frame">
@@ -102,37 +106,25 @@
                 </span>
               </div>
               <div class="basicpage-catergory-section">
-                <span class="basicpage-text10"><span>Academics</span></span>
-                <span class="basicpage-text12"><span>Campus Life</span></span>
-                <span class="basicpage-text14"><span>Events</span></span>
-                <span class="basicpage-text16"><span>Sports</span></span>
-                <span class="basicpage-text18"><span>Clubs</span></span>
-                <span class="basicpage-text20"><span>Research</span></span>
-                <span class="basicpage-text22">
-                  <span>Career Services</span>
-                </span>
-                <span class="basicpage-text24"><span>IITD News</span></span>
-                <span class="basicpage-text26"><span>Technology</span></span>
-                <span class="basicpage-text28">
-                  <span>Alumni Relations</span>
-                </span>
-                <span class="basicpage-text30">
-                  <span>Student Government</span>
-                </span>
-                <span class="basicpage-text32">
-                  <span>Entrepreneurship</span>
-                </span>
-                <span class="basicpage-text34">
-                  <span>General Championship</span>
-                </span>
-                <span class="basicpage-text36">
-                  <span>College Festivals</span>
-                </span>
+                <a href="/category/Academics" class="basicpage-text10"><span>Academics</span></a>
+                <a href="/category/Campus Life" class="basicpage-text12"><span>Campus Life</span></a>
+                <a href="/category/Events" class="basicpage-text14"><span>Events</span></a>
+                <a href="/category/Sports" class="basicpage-text16"><span>Sports</span></a>
+                <a href="/category/Clubs" class="basicpage-text18"><span>Clubs</span></a>
+                <a href="/category/Research" class="basicpage-text20"><span>Research</span></a>
+                <a href="/category/Career Services" class="basicpage-text22"><span>Career Services</span></a>
+                <a href="/category/IITD News" class="basicpage-text24"><span>IITD News</span></a>
+                <a href="/category/Technology" class="basicpage-text26"><span>Technology</span></a>
+                <a href="/category/Alumni Relations" class="basicpage-text28"><span>Alumni Relations</span></a>
+                <a href="/category/Student Government" class="basicpage-text30"><span>Student Government</span></a>
+                <a href="/category/Entrepreneurship" class="basicpage-text32"><span>Entrepreneurship</span></a>
+                <a href="/category/General Championship" class="basicpage-text34"><span>General Championship</span></a>
+                <a href="/category/College Festivals" class="basicpage-text36"><span>College Festivals</span></a>
               </div>
             </div>
             <div class="basicpage-academiccommunities">
               <div class="basicpage-heading">
-                <span class="basicpage-text38"><span>Academics</span></span>
+                <span class="basicpage-text38"><span>{{category_name}}</span></span>
               </div>
               <div class="basicpage-option-line">
                 <a href="category-page-top-posts.html" class="basicpage-text40">
@@ -145,17 +137,19 @@
                 </a>
               </div>
               <div class="basicpage-community-list">
-                <a href="community-page.html" class="basicpage-navlink3">
+                <!-- <a href="community-page.html" class="basicpage-navlink3"> -->
+
+                  {% for community in communities %}
                   <div class="basicpage-communtitybar">
                     <div class="basicpage-frame24">
                       <img
                         alt="Ellipse3I117"
-                        src="public/playground_assets/ellipse3i117-zd2-200h.png"
+                        src="{{ url_for('static', filename= 'public/playground_assets/ellipse3i117-zd2-200h.png') }}"
                         class="basicpage-ellipse3"
                       />
                       <div class="basicpage-community-about">
-                        <span class="basicpage-text46">Community 1</span>
-                        <span class="basicpage-text47"><span>About</span></span>
+                        <span class="basicpage-text46">{{community[1]}}</span>
+                        <span class="basicpage-text47"><span>{{community[2]}}</span></span>
                       </div>
                     </div>
                     <button class="basicpage-follow-button"></button>
@@ -163,159 +157,8 @@
                       <span class="basicpage-text49"><span>Follow</span></span>
                     </button>
                   </div>
-                </a>
-                <div class="basicpage-communtitybar1">
-                  <div class="basicpage-frame241">
-                    <img
-                      alt="Ellipse3I117"
-                      src="public/playground_assets/ellipse3i117-4f6w-200h.png"
-                      class="basicpage-ellipse31"
-                    />
-                    <div class="basicpage-community-about1">
-                      <span class="basicpage-text51">
-                        <span>Community 2</span>
-                      </span>
-                      <span class="basicpage-text53"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button02"></button>
-                  <button class="basicpage-follow-button03">
-                    <span class="basicpage-text55"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar2">
-                  <div class="basicpage-frame242">
-                    <img
-                      alt="Ellipse3I117"
-                      src="public/playground_assets/ellipse3i117-xxsk-200h.png"
-                      class="basicpage-ellipse32"
-                    />
-                    <div class="basicpage-community-about2">
-                      <span class="basicpage-text57">
-                        <span>Community 3</span>
-                      </span>
-                      <span class="basicpage-text59"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button04"></button>
-                  <button class="basicpage-follow-button05">
-                    <span class="basicpage-text61"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar3">
-                  <div class="basicpage-frame243">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-ghr6-200h.png"
-                      class="basicpage-ellipse33"
-                    />
-                    <div class="basicpage-community-about3">
-                      <span class="basicpage-text63">
-                        <span>Community 4</span>
-                      </span>
-                      <span class="basicpage-text65"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button06"></button>
-                  <button class="basicpage-follow-button07">
-                    <span class="basicpage-text67"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar4">
-                  <div class="basicpage-frame244">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-i28w-200h.png"
-                      class="basicpage-ellipse34"
-                    />
-                    <div class="basicpage-community-about4">
-                      <span class="basicpage-text69">
-                        <span>Community 5</span>
-                      </span>
-                      <span class="basicpage-text71"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button08"></button>
-                  <button class="basicpage-follow-button09">
-                    <span class="basicpage-text73"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar5">
-                  <div class="basicpage-frame245">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-0xu4-200h.png"
-                      class="basicpage-ellipse35"
-                    />
-                    <div class="basicpage-community-about5">
-                      <span class="basicpage-text75">
-                        <span>Community 6</span>
-                      </span>
-                      <span class="basicpage-text77"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button10"></button>
-                  <button class="basicpage-follow-button11">
-                    <span class="basicpage-text79"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar6">
-                  <div class="basicpage-frame246">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-i12t-200h.png"
-                      class="basicpage-ellipse36"
-                    />
-                    <div class="basicpage-community-about6">
-                      <span class="basicpage-text81">
-                        <span>Community 7</span>
-                      </span>
-                      <span class="basicpage-text83"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button12"></button>
-                  <button class="basicpage-follow-button13">
-                    <span class="basicpage-text85"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar7">
-                  <div class="basicpage-frame247">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-wkkt-200h.png"
-                      class="basicpage-ellipse37"
-                    />
-                    <div class="basicpage-community-about7">
-                      <span class="basicpage-text87">
-                        <span>Community 8</span>
-                      </span>
-                      <span class="basicpage-text89"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button14"></button>
-                  <button class="basicpage-follow-button15">
-                    <span class="basicpage-text91"><span>Follow</span></span>
-                  </button>
-                </div>
-                <div class="basicpage-communtitybar8">
-                  <div class="basicpage-frame248">
-                    <img
-                      alt="Ellipse3I118"
-                      src="public/playground_assets/ellipse3i118-wrfk-200h.png"
-                      class="basicpage-ellipse38"
-                    />
-                    <div class="basicpage-community-about8">
-                      <span class="basicpage-text93">
-                        <span>Community 9</span>
-                      </span>
-                      <span class="basicpage-text95"><span>About</span></span>
-                    </div>
-                  </div>
-                  <button class="basicpage-follow-button16"></button>
-                  <button class="basicpage-follow-button17">
-                    <span class="basicpage-text97"><span>Follow</span></span>
-                  </button>
-                </div>
+                  {% endfor %}
+                <!-- </a> -->
               </div>
             </div>
           </div>

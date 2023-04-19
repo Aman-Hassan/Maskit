@@ -72,11 +72,13 @@
                 class="index-image28"
               />
               <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
               <img
                 src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
                 alt="image27I546"
                 class="index-image27"
               />
+              </a>
               <a href="/logout" class="index-navlink1">
                 <img
                   src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
@@ -102,7 +104,7 @@
                 <a href="/category/Sports" class="index-text16"><span>Sports</span></a>
                 <a href="/category/Clubs" class="index-text18"><span>Clubs</span></a>
                 <a href="/category/Research" class="index-text20"><span>Research</span></a>
-                <a href="/category/Carrer Services" class="index-text22"><span>Career Services</span></a>
+                <a href="/category/Career Services" class="index-text22"><span>Career Services</span></a>
                 <a href="/category/IITD News" class="index-text24"><span>IITD News</span></a>
                 <a href="/category/Technology" class="index-text26"><span>Technology</span></a>
                 <a href="/category/Alumni Relations" class="index-text28"><span>Alumni Relations</span></a>
@@ -122,7 +124,7 @@
                     <span>Hi, You are now logged in as</span>
                   </span>
                   <span class="index-text42">
-                    <span>&lt;Username&gt;</span>
+                    <span>{{name}}</span>
                   </span>
                 </div>
               </div>
