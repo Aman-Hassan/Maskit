@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
+    <div class="page">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'login.css') }}" />
 
       <div class="login-container">
@@ -60,7 +60,7 @@
                     class="login-image14"
                   />
                   <div class="login-username-field">
-                    <input class = "textarea" name="name"  role = "textbox" contenteditable >
+                    <input class = "textarea" name="name"  role = "textbox"  >
                   </div>
                 </div>
                 <div class="login-password-frame">
@@ -70,7 +70,7 @@
                     class="login-image13"
                   />
                   <div class="login-password-field">
-                    <input class = "textarea" name="password" type="password" role = "textbox" contenteditable="Username" >
+                    <input class = "textarea_2" name="password" type="password" role = "textbox"  >
                     <button type="submit">
                       <img 
                         src="{{ url_for('static', filename= 'public/playground_assets/image162337-uuuw-200w.png') }}"
@@ -82,7 +82,6 @@
                 </div>
               </div>
             </div>
-            <div class="login-frame19"></div>
           </form>
           
           <a href={{ url_for('register') }} class="login-navlink1">

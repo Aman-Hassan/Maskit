@@ -1,3 +1,6 @@
+.page{
+  display: flex;
+}
 .login-container {
   min-height: 100vh;
 }
@@ -68,7 +71,7 @@
 }
 .login-username-field {
   display: flex;
-  padding: 10px 10px 10px 23px;
+  padding: 0px 10px 0px 23px;
   position: relative;
   flex-grow: 1;
   align-items: flex-start;
@@ -76,7 +79,29 @@
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 1);
 }
-
+.login-password-field {
+  display: flex;
+  padding: 0px 10px 0px 23px;
+  position: relative;
+  flex-grow: 1;
+  align-items: flex-start;
+  border-color: transparent;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 1);
+}
+.textarea_2 {
+  color: gray;
+  border: 0px;
+  display: block;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  /* resize: both; */
+  min-height: 20px;
+  line-height: 20px;
+  padding: 10px 6px;
+  max-width: 400px;
+}
 .textarea {
   color: gray;
   border: 0px;
@@ -87,14 +112,14 @@
   /* resize: both; */
   min-height: 20px;
   line-height: 20px;
-  padding: 1px 6px;
+  padding: 10px 6px;
   max-width: 400px;
 }
 
-.textarea[contenteditable]:empty::before {
+/* .textarea[contenteditable]:empty::before {
   content: "Enter Body";
   color:rgba(217, 217, 217, 1);
-}
+} */
 
 .login-text {
   color: rgba(217, 217, 217, 1);
@@ -118,6 +143,7 @@
   align-items: center;
   flex-shrink: 0;
   border-color: transparent;
+  margin-bottom: 16px;
 }
 .login-image13 {
   width: 40px;
@@ -126,17 +152,7 @@
   border-color: transparent;
   margin-right: 9px;
 }
-.login-password-field {
-  display: flex;
-  padding: 0 0 0 23px;
-  position: relative;
-  flex-grow: 1;
-  align-items: center;
-  border-color: transparent;
-  border-radius: 50px;
-  justify-content: space-between;
-  background-color: rgba(255, 255, 255, 1);
-}
+
 .login-text2 {
   color: rgba(217, 217, 217, 1);
   width: 92px;
