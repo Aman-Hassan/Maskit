@@ -3,6 +3,7 @@
 }
 .login-container {
   min-height: 100vh;
+  display: flex;
 }
 .login-login {
   width: 100%;
