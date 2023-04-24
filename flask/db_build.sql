@@ -1,12 +1,12 @@
 CREATE DATABASE mydatabase;
 USE mydatabase;
 
-DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Communities_Joined;
+DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS posts;
 DROP TABLE IF EXISTS Communities;
-DROP TABLE IF EXISTS Comments;
 DROP TABLE IF EXISTS Categories;
-DROP TABLE IF EXISTS Communities_Joined;
+DROP TABLE IF EXISTS Users;
 
 
 
@@ -28,6 +28,7 @@ CREATE TABLE Communities (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     Name TEXT NOT NULL,
     ABOUT TEXT NOT NULL,
+    Points INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );

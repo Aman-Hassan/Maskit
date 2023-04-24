@@ -158,6 +158,11 @@ def show_communities_given_category_posts(category_name):
     cur.close() 
     return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = posts, category_name=category_name )
 
+@app.route("/category/<string:category_name>/Top_communities")
+@login_required
+def Top_communities(category_name):
+    
+
 @app.route("/community/<string:community_name>")
 @login_required
 def show_community(community_name):
@@ -174,6 +179,7 @@ def show_community(community_name):
     posts = cur.fetchall()
     cur.close() 
     return render_template("community-page.html", name = user[0][2], posts= posts, community = community[0])
+
 
 @app.route("/uprofile/<string:name>")
 @login_required
