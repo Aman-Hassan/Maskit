@@ -43,7 +43,7 @@ CREATE TABLE Posts (
     category_id INTEGER NOT NULL,
     FOREIGN KEY (creator_id) REFERENCES Users(id),
     FOREIGN KEY (community_id) REFERENCES Communities(id),
-    FOREIGN KEY (category_id) REFERENCES Categories(id)
+    FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 CREATE TABLE Comments (
     comment_id INTEGER PRIMARY KEY AUTO_INCREMENT,
@@ -64,3 +64,18 @@ CREATE TABLE Communities_Joined (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (community_id) REFERENCES Communities(id)
 );
+
+INSERT INTO Categories (Name) VALUES ("Academics");
+INSERT INTO Categories (Name) VALUES ("Campus Life");
+INSERT INTO Categories (Name) VALUES ("Events");
+INSERT INTO Categories (Name) VALUES ("Sports");
+INSERT INTO Categories (Name) VALUES ("Clubs");
+INSERT INTO Categories (Name) VALUES ("Research");
+INSERT INTO Categories (Name) VALUES ("Career Services");
+INSERT INTO Categories (Name) VALUES ("IITD News");
+INSERT INTO Categories (Name) VALUES ("Technology");
+INSERT INTO Categories (Name) VALUES ("Alumni Relations");
+INSERT INTO Categories (Name) VALUES ("Student Government");
+INSERT INTO Categories (Name) VALUES ("Entrepreneurship");
+INSERT INTO Categories (Name) VALUES ("General Championship");
+INSERT INTO Categories (Name) VALUES ("College Festivals");

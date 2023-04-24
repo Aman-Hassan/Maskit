@@ -18,8 +18,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'username'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '12345678'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
@@ -45,10 +45,8 @@ def login():
 @app.route("/login", methods = ["POST"])
 def login_post():
     session.clear()
-    print("hello")
     name = request.form.get("name")
     password = request.form.get("password")
-    print(name,password)
     if not name:
         return apology("must provide username", 400)
     elif not password:
@@ -131,6 +129,9 @@ def show_communities_given_category(category_name):
     categories = cur.fetchall()
     cur.execute("SELECT category_id FROM Categories where Name = %s", (category_name,))
     category_id = cur.fetchall()
+    print(category_id)
+    print(category_id)
+    print(category_id)
     if category_id is []:
         cur.close()
         return apology("No Such Category",404) 
@@ -149,7 +150,7 @@ def show_communities_given_category_posts(category_name):
     categories = cur.fetchall()
     cur.execute("SELECT category_id FROM Categories where Name = %s", (category_name,))
     category_id = cur.fetchall()
-    if category_id is None:
+    if category_id is []:
         cur.close()
         return apology("No Such Category",404) 
     cur.execute("SELECT * FROM Posts WHERE category_id = %s", (category_id[0],))
