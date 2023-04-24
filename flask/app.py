@@ -107,7 +107,7 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return render_template("login.html")
+    return redirect("/")
 
 @app.route("/")
 @login_required
@@ -129,9 +129,6 @@ def show_communities_given_category(category_name):
     categories = cur.fetchall()
     cur.execute("SELECT category_id FROM Categories where Name = %s", (category_name,))
     category_id = cur.fetchall()
-    print(category_id)
-    print(category_id)
-    print(category_id)
     if category_id is []:
         cur.close()
         return apology("No Such Category",404) 
@@ -140,9 +137,63 @@ def show_communities_given_category(category_name):
     cur.close() 
     return render_template("basicpage.html", name = user[0][2], categories=categories,communities = communities, category_name=category_name )
 
+
+
+
+
+
+@app.route("/Top_Communities")
+@login_required
+def Top_Communities():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Communities ORDER BY Points DESC LIMIT 10")
+    communities = cur.fetchall()
+    cur.execute("SELECT * FROM Categories")
+    categories = cur.fetchall()
+    cur.close()
+    print(communities)
+    return render_template("TopCommunities.html",name = user[0][2], categories=categories,communities = communities, category_name = "Top Communities" )
+
+
+
+@app.route("/Top_Posts")
+@login_required
+def Top_Posts():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Posts ORDER BY Votes DESC LIMIT 10")
+    posts = cur.fetchall()
+    cur.execute("SELECT * FROM Categories")
+    categories = cur.fetchall()
+    cur.close()
+    return render_template("TopPosts.html",name = user[0][2], categories=categories,posts = posts, category_name = "Top Posts" )
+
+@app.route("/Top_Karma")
+@login_required
+def Top_Karma():
+    return redirect("/")
+
+
+@app.route("/Following")
+@login_required
+def Following():
+    return redirect("/")
+
+
+@app.route("/Top_Board")
+@login_required
+def Board():
+    return redirect("/")
+
+
+
+
 @app.route("/category_post/<string:category_name>")
 @login_required
-def show_communities_given_category_posts(category_name):
+def show_posts_given_category(category_name):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
     user = cur.fetchall()
@@ -158,9 +209,6 @@ def show_communities_given_category_posts(category_name):
     cur.close() 
     return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = posts, category_name=category_name )
 
-@app.route("/category/<string:category_name>/Top_communities")
-@login_required
-def Top_communities(category_name):
     
 
 @app.route("/community/<string:community_name>")
