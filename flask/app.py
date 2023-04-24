@@ -18,8 +18,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '12345678'
+app.config['MYSQL_USER'] = 'username'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
