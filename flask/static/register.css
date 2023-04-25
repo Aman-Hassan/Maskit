@@ -1,18 +1,33 @@
+.page{
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 1);
+}
 .register-container {
+  height: auto;
+  margin: auto;
   min-height: 100vh;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  *zoom: 1;
+  
 }
 .register-register {
   width: 100%;
   height: auto;
   display: flex;
-  padding: 318px 395px;
   position: relative;
   align-items: center;
   flex-shrink: 0;
   border-color: transparent;
   flex-direction: column;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 1);
+  
 }
 .register-frame18 {
   display: flex;

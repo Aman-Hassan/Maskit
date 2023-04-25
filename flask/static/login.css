@@ -1,22 +1,28 @@
 .page{
+  width: 100%;
   display: flex;
   position: relative;
   align-self: stretch;
   align-items: center;
+  background-color: rgba(0, 0, 0, 1);
 }
 .login-container {
+  height: auto;
+  margin: auto;
   min-height: 100vh;
   display: flex;
   position: relative;
   align-self: stretch;
   align-items: center;
   *zoom: 1;
+  
 }
+
 .login-login {
-  width: 100%;
-  height: auto;
+  /* width: 100%;
+  height: auto; */
   display: flex;
-  padding: 322px 395px;
+  /* padding: 322px 395px; */
   position: relative;
   align-items: center;
   flex-shrink: 0;
@@ -109,6 +115,7 @@
   line-height: 20px;
   padding: 10px 6px;
   max-width: 400px;
+  background-color: rgba(255, 255, 255, 1);
 }
 .textarea {
   color: gray;
@@ -122,6 +129,8 @@
   line-height: 20px;
   padding: 10px 6px;
   max-width: 400px;
+  background-color: rgba(255, 255, 255, 1);
+  
 }
 
 /* .textarea[contenteditable]:empty::before {
@@ -177,6 +186,8 @@
 }
 .login-navlink {
   display: contents;
+  position: relative;
+  align-items: center;
 }
 .login-image16 {
   width: 40px;

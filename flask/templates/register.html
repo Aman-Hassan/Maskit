@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
+    <div class="page">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'register.css') }}" />
 
       <div class="register-container">
@@ -60,7 +60,7 @@
                     class="register-image14"
                   />
                   <div class="register-username-field">
-                    <input class = "textarea" name="name" role = "textbox" contenteditable required>
+                    <input class = "textarea" name="name" placeholder="Username" role = "textbox" contenteditable required>
                   </div>
                 </div>
                 <div class="register-password-frame">
@@ -70,7 +70,7 @@
                     class="register-image13"
                   />
                   <div class="register-password-field">
-                    <input class = "textarea" name="password" type="password" role = "textbox" contenteditable required >
+                    <input class = "textarea" name="password" placeholder="Password" type="password" role = "textbox" contenteditable required >
                   </div>
                 </div>
                 <div class="register-password-frame1">
@@ -80,9 +80,7 @@
                     class="register-image131"
                   />
                   <div class="register-password-field1">
-                    <span class="register-text4">
-                      <input class = "textarea" name="confirmation" type="password" role = "textbox" contenteditable required >
-                    </span>
+                    <input class = "textarea" name="confirmation" placeholder="Confirm Password" type="password" role = "textbox" contenteditable required >
                     <button type="submit">
                       <img
                         src="{{ url_for('static', filename= 'public/playground_assets/image162630-xzdb-200w.png') }}"
