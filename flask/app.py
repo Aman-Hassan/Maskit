@@ -312,10 +312,14 @@ def Add_post ():
         if community_id is None :
             cur.close()
             return apology("No such Community",404)
-        for x in communities:   
-            if community != x[0]:
-                cur.close()
-                return apology("Community does't belong to this category",404)
+        print()
+        print()
+        print(communities)
+        print(community)
+        # for x in communities:   
+        #     if community != x[0][0]:
+        #         cur.close()
+        #         return apology("Community does't belong to this category",404)
         cur.execute("INSERT INTO Posts (Title, Content, Creator_id, Community_id ,Category_id) VALUES (%s,%s,%s,%s,%s)", (Post_title, Post_body, (session["user_id"]), community_id[0], category_id[0]))
         mysql.connection.commit()
         cur.close() 

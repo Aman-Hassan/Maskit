@@ -45,52 +45,60 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
+    <div class="page">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'create-post.css') }}" />
 
-      <div class="create-post-container">
-        <div class="create-post-create-post">
-          <div class="create-post-title-bar">
-            <a href="basicpage.html" class="create-post-navlink">
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
               <img
-                alt="LogoI337"
-                src="public/playground_assets/logoi337-2q8o.svg"
-                class="create-post-logo"
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
               />
             </a>
-            <input
+            <!-- <input
               type="text"
               placeholder="Search..."
-              class="create-post-user-input-search-bar"
-            />
-            <div class="create-post-options">
-              <a href="create-post.html" class="create-post-navlink1">
-                <img
-                  alt="image39I337"
-                  src="public/playground_assets/image39i337-014w-200w.png"
-                  class="create-post-image39"
-                />
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="<?php ; ?>/"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
               </a>
               <img
-                alt="image28I337"
-                src="public/playground_assets/image28i337-7ky5-200h.png"
-                class="create-post-image28"
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
               />
-              <a href="profile.html" class="create-post-navlink2">
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
                 <img
-                  alt="image27I337"
-                  src="public/playground_assets/image27i337-rtqf-200w.png"
-                  class="create-post-image27"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
                 />
               </a>
-              <img
-                alt="image31I337"
-                src="public/playground_assets/image31i337-jmzq-200h.png"
-                class="create-post-image31"
-              />
             </div>
           </div>
-          <div class="create-post-frame27">
+          <form action="/add_post" method="post"class="create-post-frame27">
             <div class="create-post-community-name">
               <!-- <form>
                 <label for="postTitle" class="create-post-text">Title:</label>
@@ -98,7 +106,7 @@
               </form> -->
               <span class="create-post-text"><span>Title:</span></span>
               <div class="create-post-namebox">
-                <span class = "textarea" role = "textbox" contenteditable ></span>
+                <input class = "textarea" role = "textbox" name="add_post_title" contenteditable required>
               </div>
             </div>
             <div class="create-post-community-description">
@@ -110,7 +118,7 @@
                     <br />
                     <span></span>
                   </span> -->
-                  <span class = "textarea" role = "textbox" contenteditable></span>
+                  <input class = "textarea" role = "textbox" name="add_post_body" contenteditable required>
                   <span>
                     <span></span>
                     <br />
@@ -128,7 +136,7 @@
             <div class="create-post-category">
               <span class="create-post-text21"><span>Category:</span></span>
               <div class="create-post-category-name">
-                <span class = "textarea" role = "textbox" contenteditable></span>
+                <input class = "textarea" role = "textbox" name="Category" contenteditable required>
                 <!-- <span class="create-post-text23">
                   <span>Enter Category</span>
                 </span> -->
@@ -140,10 +148,10 @@
                 <!-- <span class="create-post-text27">
                   <span>Enter Community</span>
                 </span> -->
-                <span class = "textarea" role = "textbox" contenteditable></span>
+                <input class = "textarea" role = "textbox" name="Community" contenteditable required>
               </div>
             </div>
-            <div class="create-post-profle-pic">
+            <!-- <div class="create-post-profle-pic">
               <span class="create-post-text29">
                 <span>Profile Picture:</span>
               </span>
@@ -162,16 +170,16 @@
                   <span>Choose a file</span>
                 </span>
               </button>
-            </div>
+            </div> -->
             <div class="create-post-frame26">
-              <button type = Submit" class="button">
+              <button type = "Submit" class="button">
                 <span class="create-post-text37"><span>Create</span></span>
               </button>
               <button class="button">
                 <span class="create-post-text39"><span>Cancel</span></span>
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
