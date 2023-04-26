@@ -204,7 +204,7 @@ def show_posts_given_category(category_name):
     if category_id is []:
         cur.close()
         return apology("No Such Category",404) 
-    cur.execute("SELECT * FROM Posts WHERE category_id = %s", (category_id[0],))
+    cur.execute("SELECT * FROM Posts WHERE category_id = %s", (category_id[0][0],))
     posts = cur.fetchall()
     cur.close() 
     return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = posts, category_name=category_name )
@@ -235,7 +235,7 @@ def user_profile(name):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
     user = cur.fetchall()
-    cur.execute("SELECT * FROM Users WHERE Name = %s",(name,))
+    cur.execute("SELECT * FROM Users WHERE Username = %s",(name,))
     users = cur.fetchall()
     if users is None:
         cur.close()

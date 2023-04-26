@@ -39,8 +39,8 @@
   text-decoration: none;
 }
 .basicpage-user-input-search-bar {
-  max-width: 350px;
-  width: 50px;
+  max-width: 4000px;
+  width: 300px;
   color: #9ab4e5;
   height: 44px;
   display: flex;
