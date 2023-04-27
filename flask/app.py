@@ -18,8 +18,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'username'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '12345678'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
@@ -281,8 +281,14 @@ def Add_post ():
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
         user = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories")
+        categories = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities")
+        communities = cur.fetchall()
         cur.close()
-        return render_template("create-post.html",name = user[0][2])
+        if (user == []):
+            return redirect("/login")
+        return render_template("create-post.html",name = user[0][2],categories=categories,communities = communities)
     if request.method == "POST":
         Post_title = request.form.get("add_post_title")
         Post_body = request.form.get("add_post_body")
@@ -312,14 +318,6 @@ def Add_post ():
         if community_id is None :
             cur.close()
             return apology("No such Community",404)
-        print()
-        print()
-        print(communities)
-        print(community)
-        # for x in communities:   
-        #     if community != x[0][0]:
-        #         cur.close()
-        #         return apology("Community does't belong to this category",404)
         cur.execute("INSERT INTO Posts (Title, Content, Creator_id, Community_id ,Category_id) VALUES (%s,%s,%s,%s,%s)", (Post_title, Post_body, (session["user_id"]), community_id[0], category_id[0]))
         mysql.connection.commit()
         cur.close() 
@@ -332,8 +330,10 @@ def Create_community ():
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
         user = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories")
+        categories = cur.fetchall()
         cur.close()
-        return render_template("create-community.html",name = user[0][2])
+        return render_template("create-community.html",name = user[0][2],categories=categories)
     if request.method == "POST":
         community_name = request.form.get("create_community_name")
         community_description = request.form.get("create_community_description")

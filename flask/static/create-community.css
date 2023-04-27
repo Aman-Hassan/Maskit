@@ -147,7 +147,7 @@
   color: gray;
   border: 0px;
   display: block;
-  width: auto;
+  width: webkit;
   height: auto;
   overflow: hidden;
   /* resize: both; */

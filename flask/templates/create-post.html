@@ -136,10 +136,15 @@
             <div class="create-post-category">
               <span class="create-post-text21"><span>Category:</span></span>
               <div class="create-post-category-name">
-                <input class = "textarea" role = "textbox" name="Category" contenteditable required>
+                <!-- <input class = "textarea" role = "textbox" name="Category" contenteditable required> -->
                 <!-- <span class="create-post-text23">
                   <span>Enter Category</span>
                 </span> -->
+                <select name = "Category">
+                  {% for category in categories %}
+                    <option value="{{category[0]}}">{{category[0]}}</option>
+                  {% endfor %}
+                </select>
               </div>
             </div>
             <div class="create-post-category1">
@@ -148,7 +153,11 @@
                 <!-- <span class="create-post-text27">
                   <span>Enter Community</span>
                 </span> -->
-                <input class = "textarea" role = "textbox" name="Community" contenteditable required>
+                <select name = "Community">
+                  {% for community in communities %}
+                    <option value="{{community[0]}}">{{community[0]}}</option>
+                  {% endfor %}
+                </select>
               </div>
             </div>
             <!-- <div class="create-post-profle-pic">
