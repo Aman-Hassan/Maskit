@@ -169,13 +169,20 @@
                       />
                       <div class="basicpage-community-about">
                         <span  class="basicpage-text46">
-                        <a href="/community/{{community[1]}}">{{community[1]}}</a>
+                        <a href="/community/{{community[0][1]}}">{{community[0][1]}}</a>
                         </span>
-                        <span class="basicpage-text47"><span>{{community[2]}}</span></span>
+                        <span class="basicpage-text47"><span>{{community[0][2]}}</span></span>
                     </div>
                     </div>
                     <button class="basicpage-follow-button01">
-                      <span class="basicpage-text49"><a href="/Follow/{{community[1]}}"><span>Follow</span></a></span>
+                      <span class="basicpage-text49">
+                    <a href="/Follow/{{category_name}}/{{community[0][1]}}">
+                      {% if community[1] %}
+                        <span>Following</span>
+                      {% else %}
+                        <span>Follow</span>
+                      {% endif %}
+                      </a></span>
                     </button>
                   </div>
 

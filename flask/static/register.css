@@ -93,7 +93,8 @@
 
 .textarea {
   color: gray;
-  border: 0px;
+  border: none;
+  outline: none;
   display: block;
   width: auto;
   height: auto;

@@ -106,7 +106,7 @@
               </form> -->
               <span class="create-post-text"><span>Title:</span></span>
               <div class="create-post-namebox">
-                <input class = "textarea" role = "textbox" name="add_post_title" contenteditable required>
+                <input class = "textarea" placeholder="Title"  role = "textbox" name="add_post_title" contenteditable required>
               </div>
             </div>
             <div class="create-post-community-description">
@@ -118,18 +118,8 @@
                     <br />
                     <span></span>
                   </span> -->
-                  <input class = "textarea" role = "textbox" name="add_post_body" contenteditable required>
-                  <span>
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                  </span>
+                  <textarea name="add_post_body" placeholder="Enter Body" class="textarea" required="" rows="7" style="overflow-x: hidden;overflow-wrap: break-word;/* height: 59.4815px; */"></textarea>
+                  
                 </span>
               </div>
             </div>
@@ -140,7 +130,8 @@
                 <!-- <span class="create-post-text23">
                   <span>Enter Category</span>
                 </span> -->
-                <select name = "Category">
+                <select class="textarea" name = "Category" required>
+                  <option value="" disabled selected hidden>Select a category</option>
                   {% for category in categories %}
                     <option value="{{category[0]}}">{{category[0]}}</option>
                   {% endfor %}
@@ -153,7 +144,8 @@
                 <!-- <span class="create-post-text27">
                   <span>Enter Community</span>
                 </span> -->
-                <select name = "Community">
+                <select class="textarea" name = "Community" required >
+                  <option value="" disabled selected hidden>Select a community</option>
                   {% for community in communities %}
                     <option value="{{community[0]}}">{{community[0]}}</option>
                   {% endfor %}

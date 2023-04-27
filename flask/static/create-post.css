@@ -12,7 +12,7 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
   border-color: transparent;
   flex-direction: column;
@@ -195,10 +195,12 @@
   border-color: transparent;
 }
 .create-post-frame27 {
+  width: 75%;
+  max-width: 850px;
   display: flex;
-  padding: 0 257px 0 333px;
+  padding: 70px 0px  0px;
   position: relative;
-  align-self: stretch;
+  align-self: center;
   align-items: center;
   border-color: transparent;
   flex-direction: column;
@@ -243,16 +245,19 @@
 
 .textarea {
   color: gray;
-  border: 0px;
-  display: block;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-grow: 1;
   width: 100%;
-  height: auto;
+  height: 100%;
   overflow: hidden;
-  /* resize: both; */
-  min-height: 20px;
-  line-height: 20px;
+  box-sizing: border-box;
+  resize: none;
+  /* min-height: 20px; */
+  line-height: 25px;
   padding: 10px 6px;
-  max-width: 400px;
+  /* max-width: 400px; */
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -306,19 +311,22 @@
 .create-post-description-box {
   display: flex;
   padding: 10px;
+  min-height: 200px;
   overflow: hidden;
   position: relative;
   flex-grow: 1;
   align-items: flex-start;
   border-color: transparent;
+  flex-direction: column;
   border-radius: 9px;
   background-color: rgba(255, 255, 255, 1);
 }
 .create-post-text06 {
   color: rgba(217, 217, 217, 1);
+  width: 100%;
   height: auto;
   flex-grow: 1;
-  font-size: 20px;
+  /* font-size: 20px; */
   align-self: auto;
   font-style: Light;
   text-align: left;
@@ -377,7 +385,7 @@
   padding: 10px 10px 10px 16px;
   position: relative;
   flex-grow: 1;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   border-color: transparent;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 1);

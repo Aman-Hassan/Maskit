@@ -644,7 +644,7 @@
   border-color: transparent;
 }
 .basicpage-follow-button01 {
-  width: 97px;
+  /* width: 97px; */
   height: 29px;
   display: flex;
   padding: 10px;

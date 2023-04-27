@@ -18,8 +18,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '12345678'
+app.config['MYSQL_USER'] = 'username'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
@@ -134,10 +134,48 @@ def show_communities_given_category(category_name):
         return apology("No Such Category",404) 
     cur.execute("SELECT * FROM Communities WHERE category_id = %s", (category_id[0],))
     communities = cur.fetchall()
+    cur.execute("SELECT community_id FROM Communities_Joined WHERE user_id = %s",(session["user_id"],))
+    joined_communities = cur.fetchall()
+    l = []
+    for i in range(len(communities)):
+        flag = False
+        for x in joined_communities:
+            if (x == (communities[i][0],)):
+                flag = True
+                break
+        if flag:
+            l.append((communities[i],True))
+        else:
+            l.append((communities[i],False))
+
+    # print(l)
     cur.close() 
-    return render_template("basicpage.html", name = user[0][2], categories=categories,communities = communities, category_name=category_name )
+    return render_template("basicpage.html", name = user[0][2], categories=categories,communities = l, category_name=category_name )
 
 
+@app.route("/Follow/<string:category_name>/<string:community_name>")
+@login_required
+def FollowInshowByCategory(category_name,community_name):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Categories")
+    categories = cur.fetchall()
+    cur.execute("SELECT id FROM Communities WHERE Name = %s", (community_name,))
+    community_id = cur.fetchall()
+    cur.execute("SELECT community_id FROM Communities_Joined WHERE user_id = %s",(user[0][0],))
+    isjoined = cur.fetchall()
+    if not (community_id[0] in isjoined):
+        cur.execute("INSERT into Communities_Joined (user_id,community_id) Values (%s,%s)",(user[0][0],community_id[0]))
+        mysql.connection.commit()
+        cur.close() 
+        return redirect(f"/category/{category_name}")
+
+    else:
+        cur.execute("DELETE FROM Communities_Joined WHERE user_id = %s AND community_id = %s", (user[0][0], community_id[0]))
+        mysql.connection.commit()
+        cur.close() 
+        return redirect(f"/category/{category_name}")
 
 
 
