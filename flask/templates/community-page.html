@@ -45,50 +45,58 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
+    <div class="page">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'community-page.css') }}" />
 
-      <div class="community-page-container">
-        <div class="community-page-community-page">
+      <div class="index-container">
+        <div class="index-index">
           <div class="community-page-mainbar-banner">
-            <div class="community-page-title-bar">
-              <a href="basicpage.html" class="community-page-navlink">
+            <div class="index-title-bar">
+              <a href="/" class="index-navlink">
                 <img
-                  alt="LogoI296"
-                  src="public/playground_assets/logoi296-j8n6w.svg"
-                  class="community-page-logo"
+                  src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                  alt="LogoI546"
+                  class="index-logo"
                 />
               </a>
-              <input
+              <!-- <input
                 type="text"
                 placeholder="Search..."
-                class="community-page-user-input-search-bar"
-              />
-              <div class="community-page-options">
-                <a href="create-post.html" class="community-page-navlink1">
-                  <img
-                    alt="image39I296"
-                    src="public/playground_assets/image39i296-jts-200w.png"
-                    class="community-page-image39"
-                  />
+                class="index-user-input-search-bar"
+              /> -->
+              <!-- <?php $search_text = "Search"; ?>  -->
+              <form method="get" action="<?php ; ?>/"> 
+              <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+              </form>
+              
+              <div class="index-options">
+                <a href="/add_post" method = "get"> <!--not sure-->
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                  alt="image39I546"
+                  class="index-image39"
+                />
                 </a>
                 <img
-                  alt="image28I296"
-                  src="public/playground_assets/image28i296-ip2n-200h.png"
-                  class="community-page-image28"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                  alt="image28I546"
+                  class="index-image28"
                 />
-                <a href="profile.html" class="community-page-navlink2">
+                <!-- We need to have to username and user id for user profile showing...where to get?-->
+                <a href="/uprofile/{{name}}">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                  alt="image27I546"
+                  class="index-image27"
+                />
+                </a>
+                <a href="/logout" class="index-navlink1">
                   <img
-                    alt="image27I296"
-                    src="public/playground_assets/image27i296-msx-200w.png"
-                    class="community-page-image27"
+                    src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                    alt="image31I546"
+                    class="index-image31"
                   />
                 </a>
-                <img
-                  alt="image31I296"
-                  src="public/playground_assets/image31i296-ud6j-200h.png"
-                  class="community-page-image31"
-                />
               </div>
             </div>
             <div class="community-page-cover-pic"></div>
