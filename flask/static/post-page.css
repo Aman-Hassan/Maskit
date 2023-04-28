@@ -534,7 +534,7 @@
 }
 .post-page-text40 {
   color: rgba(108, 108, 108, 1);
-  width: 63px;
+  /* width: 63px; */
   height: auto;
   font-size: 14px;
   align-self: auto;
@@ -550,7 +550,7 @@
 }
 .post-page-text42 {
   color: rgba(108, 108, 108, 1);
-  width: 76px;
+  /* width: 76px; */
   height: auto;
   font-size: 13px;
   align-self: auto;

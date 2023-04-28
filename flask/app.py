@@ -244,8 +244,21 @@ def show_posts_given_category(category_name):
         return apology("No Such Category",404) 
     cur.execute("SELECT * FROM Posts WHERE category_id = %s", (category_id[0][0],))
     posts = cur.fetchall()
+    post = []
+    for i in range(len(posts)):
+        cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
+        name = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities WHERE id = %s", (posts[i][6],))
+        communityn = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories WHERE category_id = %s", (posts[i][7],))
+        categoryn = cur.fetchall()
+        post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close() 
-    return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = posts, category_name=category_name )
+    print()
+    print()
+    print()
+    print(post)
+    return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = post, category_name=category_name )
 
     
 
@@ -301,15 +314,14 @@ def post_page(post_id):
     content = details[0][3]
     creator_id = details[0][5]
     community_id = details[0][6]
-    cur.execute("SELECT Name FROM Users WHERE id = %s", (creator_id))
+    cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
     creators = cur.fetchall()
     creator = creators[0]
-    cur.execute("SELECT Name FROM Community WHERE id = %s", (community_id))
+    cur.execute("SELECT Name FROM Communities WHERE id = %s", (community_id,))
     communities = cur.fetchall()
     community = communities[0]
     cur.close()
-    return render_template("post-page.html" ,name = user[0][2],time = time, title = title, content = content, creator = creator, community = community )
-    
+    return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content, creator = creator, community = community )   
 
 
 @app.route("/add_post", methods = ["GET","POST"])

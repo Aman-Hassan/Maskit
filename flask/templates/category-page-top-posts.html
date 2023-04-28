@@ -157,70 +157,53 @@
                 </a>
               </div>
               <div class="category-page-top-posts-postframe">
+                {% for post in posts %}
                 <div class="category-page-top-posts-content">
                   <div class="category-page-top-posts-ntc-pic">
                     <div class="category-page-top-posts-ntcp">
                       <img
                         alt="Ellipse3I114"
-                        src="public/playground_assets/ellipse3i114-19dd-200h.png"
+                        src="{{ url_for('static', filename = 'public/playground_assets/ellipse3i114-19dd-200h.png')}}"
                         class="category-page-top-posts-ellipse3"
                       />
                       <div class="category-page-top-posts-ntc">
                         <div class="category-page-top-posts-name-time">
                           <a
-                            href="profile.html"
+                          href="/uprofile/{{post[0]}}"
                             class="category-page-top-posts-text045"
                           >
-                            <span>Name</span>
+                            <span>{{post[0]}}</span>
                           </a>
                           <span class="category-page-top-posts-text047">
-                            <span>11:52 pm</span>
+                            <span>{{post[3][1]}}</span>
                           </span>
                         </div>
                         <a
-                          href="community-page.html"
+                          href="/community/{{post[1]}}"
                           class="category-page-top-posts-text049"
                         >
-                          <span>Community 4</span>
+                          <span>{{post[1]}}</span>
                         </a>
                       </div>
                     </div>
                     <img
                       alt="Rectangle89I114"
-                      src="public/playground_assets/rectangle89i114-rmwp.svg"
+                      src="{{ url_for('static', filename = 'public/playground_assets/rectangle89i114-rmwp.svg')}}"
                       class="category-page-top-posts-rectangle89"
                     />
                   </div>
                   <a
-                    href="post-page.html"
+                    href="/post/{{post[3][0]}}"
                     class="category-page-top-posts-navlink3"
                   >
                     <div class="category-page-top-posts-title-text">
                       <span class="category-page-top-posts-text051">
-                        <span>Title</span>
+                        <span>{{post[3][2]}}</span>
                       </span>
                       <span class="category-page-top-posts-text053">
                         <span>
                           <span>
-                            nshdshs kdsjd llfdnlksdnfkl nsakfldslj kfsj
-                            dkfbdskjlfjlkack ssdjsk daljlsjdkla
-                            jdklsjalksjdkaskdja djsaklj dskljdakljsd lkads
-                            sanana dsanmd na,n
-                            smdnam,sdna,msdasmdn,andmds,nda,snda
-                            msdnas,dnsadsndkasn dsnad,adsad nasdnsa,dn,as
-                            mdas,dnsm,nd,amn sdm,na,sddasnf,md,sfsdfdsfdsth
-                            stgvdag rg adffg addrgaa ergrt wewrw ww erwe.
-                          </span>
-                          <br />
-                          <span>ksakjfojasdffj</span>
-                          <br />
-                          <span>
-                            asdoasdj ajsdopffaijds ffasdofaj dsjg asdijasd
-                          </span>
-                          <br />
-                          <span>
-                            asdfasd pjadij papposkdpofip apsokdfpf[a[sd[fp
-                            [oa[ospd
+                            {{post[3][3]}}
                           </span>
                           <br />
                           <span></span>
@@ -231,44 +214,42 @@
                   <div class="category-page-top-posts-post-options">
                     <img
                       alt="image20I114"
-                      src="public/playground_assets/image20i114-aymn-200h.png"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image20i114-aymn-200h.png')}}"
                       class="category-page-top-posts-image20"
                     />
-                    <span class="category-page-top-posts-text064">
+                    <!-- <span class="category-page-top-posts-text064">
                       <span>
                         <span>100k</span>
                         <br />
                         <span></span>
                       </span>
-                    </span>
+                    </span> -->
                     <img
                       alt="image32I114"
-                      src="public/playground_assets/image32i114-5qic-200h.png"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image32i114-5qic-200h.png')}}"
                       class="category-page-top-posts-image32"
                     />
                     <span class="category-page-top-posts-text069">
-                      <span>2k</span>
+                      <span>{{post[3][4]}}</span>
                     </span>
                     <a
-                      href="post-page.html"
+                      href="/post/{{post[3][0]}}"
                       class="category-page-top-posts-navlink4"
                     >
                       <img
                         alt="image21I114"
-                        src="public/playground_assets/image21i114-6yq-200h.png"
+                        src="{{ url_for('static', filename = 'public/playground_assets/image21i114-6yq-200h.png')}}"
                         class="category-page-top-posts-image21"
                       />
                     </a>
-                    <span class="category-page-top-posts-text071">
-                      <span>2.5k</span>
-                    </span>
                     <img
                       alt="image33I114"
-                      src="public/playground_assets/image33i114-0y86-200h.png"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image33i114-0y86-200h.png')}}"
                       class="category-page-top-posts-image33"
                     />
                   </div>
                 </div>
+                {% endfor %}
               </div>
             </div>
           </div>

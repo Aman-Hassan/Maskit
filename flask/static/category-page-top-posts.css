@@ -762,7 +762,7 @@
 }
 .category-page-top-posts-text047 {
   color: rgba(104, 104, 104, 1);
-  width: 60px;
+  width: 80px;
   height: auto;
   font-size: 12px;
   align-self: auto;
@@ -813,7 +813,7 @@
 }
 .category-page-top-posts-text051 {
   color: rgba(154, 196, 229, 1);
-  width: 202px;
+  /* width: 202px; */
   height: auto;
   font-size: 22px;
   align-self: auto;
