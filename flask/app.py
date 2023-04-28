@@ -375,7 +375,7 @@ def Create_community ():
     if request.method == "POST":
         community_name = request.form.get("create_community_name")
         community_description = request.form.get("create_community_description")
-        category = request.form.get("category")
+        category = request.form.get("Category")
         if not community_name :
             return apology("must provide community_name ", 400)
         elif not community_description:
@@ -397,7 +397,7 @@ def Create_community ():
             cur.close()
             return apology("No Such Category",404) 
         cur.execute("SELECT Name FROM Communities WHERE category_id = %s", (category_id[0],))
-        cur.execute("INSERT INTO Communities (Name, About, Category_id, ) VALUES (%s,%s,%s)", (community_name, community_description, category_id[0]))
+        cur.execute("INSERT INTO Communities (Name, ABOUT, category_id,Points) VALUES (%s,%s,%s,%s)", (community_name, community_description, category_id[0],1))
         mysql.connection.commit()
         cur.close() 
         return render_template("index.html",name = user[0][2])
