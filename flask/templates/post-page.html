@@ -141,56 +141,32 @@
                   />
                   <div class="post-page-name-community">
                     <a href="profile.html" class="post-page-text38">
-                      <span>Name_1</span>
+                      <span>{{name}}</span>
                     </a>
                   </div>
                 </div>
                 <div class="post-page-date-time">
-                  <span class="post-page-text40"><span>4:57 pm</span></span>
-                  <span class="post-page-text42"><span>10/2/2004</span></span>
+                  <span class="post-page-text40"><span>{{time}}</span></span>
+                  <span class="post-page-text42"><span>{{date}}</span></span>
                 </div>
               </div>
               <div class="post-page-post-box">
-                <span class="post-page-text44"><span>Title</span></span>
+                <span class="post-page-text44"><span>{{title}}</span></span>
                 <div class="post-page-post-frame">
                   <div class="post-page-frame28">
                     <div class="post-page-post-image"></div>
                   </div>
                   <span class="post-page-text46">
-                    <span>
-                      <span>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Integer nunc dui, ultricies vel rutrum id, tincidunt vel
-                        risus. Phasellus id porta neque. Ut non maximus ipsum.
-                        Curabitur vel orci mi. Maecenas cursus eleifend rhoncus.
-                        Proin risus mauris, suscipit id scelerisque in,
-                        fringilla nec eros. Maecenas odio libero, lacinia sit
-                        amet velit non, eleifend cursus nisl. Sed sollicitudin,
-                        tortor dapibus maximus commodo, augue nibh luctus nibh,
-                        non laoreet leo erat at mi.
-                      </span>
-                      <br />
-                      <span>
-                        Nullam erat mauris, mattis et tincidunt non, ornare
-                        vitae augue. Suspendisse nunc erat, ultricies quis orci
-                        ac, hendrerit varius dolor. Cras ex elit, blandit sit
-                        amet elit eu, viverra pharetra nulla. Ut pulvinar, nunc
-                        at cursus euismod, nisi odio ullamcorper ex, eu dapibus
-                        odio ipsum molestie nisi. Aliquam ut tempus enim. Etiam
-                        nec mauris ut tortor bibendum vulputate nec vitae ex.
-                        Cras volutpat condimentum lacinia. Fusce ac diam finibus
-                        quam dapibus imperdiet viverra eu purus. Etiam maximus
-                        ut nulla eget venenatis. Cras dapibus nec sapien ut
-                        molestie. Morbi fringilla malesuada semper. Curabitur
-                        interdum interdum mauris, id faucibus justo tempus
-                        euismod. Morbi ex justo, lacinia elementum blandit vel,
-                        bibendum nec orci. Praesent pharetra ligula nec nisi
-                        vulputate imperdiet. Nullam porttitor, massa sit amet
-                        tincidunt maximus, nulla urna dapibus purus, porttitor
-                        consectetur ipsum purus et elit.
-                      </span>
-                    </span>
+                    {{content}}
                   </span>
+                  <br>
+                  <form action="/post/{{post_id}}" method="post" class="Translate text"  style="color:rgba(170, 205, 233, 1); text-align: right">
+                    Translate to
+                    <select name="target_language" onchange="this.form.submit();">
+                        <option value="en" {% if selected_lang == "en" %}selected{% endif %}>English</option>
+                        <option value="es" {% if selected_lang == "es" %}selected{% endif %}>Spanish</option>
+                    </select>
+                </form>
                 </div>
                 <div class="post-page-options1">
                   <div class="post-page-frame29">

@@ -7,6 +7,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_session import Session
 from helper import login_required, apology
 import datetime
+import requests
+import uuid
+import json
 # import db
 # Configure app
 app = Flask(__name__)
@@ -14,8 +17,6 @@ app = Flask(__name__)
 # Configure session
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-
-
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'username'
@@ -285,7 +286,7 @@ def user_profile(name):
     return render_template("profile.html", name = user[0][2], posts= posts, users= users)
 
 
-@app.route("/post/<int:post_id>")
+@app.route("/post/<int:post_id>",methods=['GET','POST'])
 @login_required
 def post_page(post_id):
     cur = mysql.connection.cursor()
@@ -301,16 +302,73 @@ def post_page(post_id):
     content = details[0][3]
     creator_id = details[0][5]
     community_id = details[0][6]
-    cur.execute("SELECT Name FROM Users WHERE id = %s", (creator_id))
+    cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
     creators = cur.fetchall()
     creator = creators[0]
-    cur.execute("SELECT Name FROM Community WHERE id = %s", (community_id))
+    cur.execute("SELECT Name FROM Communities WHERE id = %s", (community_id,))
     communities = cur.fetchall()
     community = communities[0]
     cur.close()
-    return render_template("post-page.html" ,name = user[0][2],time = time, title = title, content = content, creator = creator, community = community )
-    
+    if request.method == 'GET':
+        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content, creator = creator, community = community,post_id=post_id, selected_lang = 'en')
+    else:
+        text = content
+        to_lang = request.form.get("target_language")
+        subscription_key = '15304978c2ad4f57bfb6a6cacbea70c9'
+        endpoint = 'https://api.cognitive.microsofttranslator.com/translate'
+        location = 'southeastasia'
 
+        headers = {
+            'Ocp-Apim-Subscription-Key': subscription_key,
+            'Ocp-Apim-Subscription-Region': location,
+            'Content-type': 'application/json',
+            'X-ClientTraceId': str(uuid.uuid4())
+        }
+        params = {
+            'api-version': '3.0',
+            'from': 'en',
+            'to': to_lang
+        }
+        body = [{
+            'text': text
+        }]
+        response = requests.post(endpoint, headers=headers, params=params, json=body)
+        print(response)
+        response.raise_for_status()
+        content = response.content
+        # try:
+        #     json_content = json.loads(content)
+        #     print("Response content is valid JSON")
+        # except ValueError:
+        #     print("Response content is not valid JSON")
+        translated_text = response.json()[0]['translations'][0]['text']
+        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text, creator = creator, community = community ,post_id=post_id,selected_lang=to_lang)
+    
+# @app.route("/post_translate/<int:post_id>",methods=['POST'])
+# @login_required
+# def post_page_translate(post_id):
+#     cur = mysql.connection.cursor()
+#     cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+#     user = cur.fetchall()
+#     cur.execute("SELECT * FROM Posts WHERE id = %s", (post_id,))
+#     details = cur.fetchall()
+#     if details is None :
+#         cur.close()
+#         return apology("No Such Posts ", 404)
+#     time = details[0][1]
+#     title = details[0][2]
+#     content = details[0][3]
+#     creator_id = details[0][5]
+#     community_id = details[0][6]
+#     cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
+#     creators = cur.fetchall()
+#     creator = creators[0]
+#     cur.execute("SELECT Name FROM Communities WHERE id = %s", (community_id,))
+#     communities = cur.fetchall()
+#     community = communities[0]
+#     cur.close()
+#     return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content, creator = creator, community = community )
+    
 
 @app.route("/add_post", methods = ["GET","POST"])
 @login_required
