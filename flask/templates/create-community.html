@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>Create Community</title>
+    <title>Create Post</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -45,128 +45,129 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
-      <link rel="stylesheet" href="{{ url_for('static', filename= 'create-community.css') }}" />
+    <div class="page">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'create-post.css') }}" />
 
-      <div class="create-community-container">
-        <div class="create-community-create-community">
-          <div class="create-community-title-bar">
-            <a href="/" class="create-community-navlink">
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
               <img
-                alt="LogoI337"
-                src="{{ url_for('static', filename = 'public/playground_assets/logoi337-rg6g.svg') }}"
-                class="create-community-logo"
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
               />
             </a>
-            <input
+            <!-- <input
               type="text"
               placeholder="Search..."
-              class="create-community-user-input-search-bar"
-            />
-            <div class="create-community-options">
-              <a href="/add_post" class="create-community-navlink1">
-                <img
-                  alt="image39I337"
-                  src="{{ url_for('static', filename ='public/playground_assets/image39i337-ltgn-200w.png')}}"
-                  class="create-community-image39"
-                />
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="<?php ; ?>/"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
               </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
               <a href="/uprofile/{{name}}">
               <img
-                alt="image28I337"
-                src="{{ url_for('static', filename = 'public/playground_assets/image28i337-nyqd-200h.png') }}"
-                class="create-community-image28"
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
               />
               </a>
-              <a href="/uprofile/{{name}}" class="create-community-navlink2">
+              <a href="/logout" class="index-navlink1">
                 <img
-                  alt="image27I337"
-                  src="{{ url_for('static', filename ='public/playground_assets/image27i337-3lyj-200w.png') }}"
-                  class="create-community-image27"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
                 />
               </a>
-              <a href = "/logout">
-              <img
-                alt="image31I337"
-                src="{{ url_for('static', filename ='public/playground_assets/image31i337-9cl-200h.png')}}"
-                class="create-community-image31"
-              />
-              </a>
             </div>
           </div>
-          <div class="create-community-frame27">
-            <div class="create-community-community-name">
-              <span class="create-community-text">
-                <span>Community Name:</span>
-              </span>
-              <div class="create-community-namebox">
-                <span class="create-community-text02">
-                  <span>Enter Name</span>
+          <form action="/create_community" method="post"class="create-post-frame27">
+            <div class="create-post-community-name">
+              <!-- <form>
+                <label for="postTitle" class="create-post-text">Title:</label>
+                <input type = "text" id = "postTitle" class = "create-post-text02" placeholder="Enter Title"/>
+              </form> -->
+              <span class="create-post-text"><span>Community Name:</span></span>
+              <div class="create-post-namebox">
+                <input class = "textarea" placeholder="Title"  role = "textbox" name="create_community_name" contenteditable required>
+              </div>
+            </div>
+            <div class="create-post-community-description">
+              <span class="create-post-text04"><span>Community Description:</span></span>
+              <div class="create-post-description-box">
+                <span class="create-post-text06">
+                  <!-- <span class="create-post-text07">
+                    <span>Enter Body</span>
+                    <br />
+                    <span></span>
+                  </span> -->
+                  <textarea name="create_community_description" placeholder="Enter Body" class="textarea" required="" rows="7" style="overflow-x: hidden;overflow-wrap: break-word;/* height: 59.4815px; */"></textarea>
+                  
                 </span>
               </div>
             </div>
-            <div class="create-community-community-description">
-              <span class="create-community-text04">
-                <span>Community Description:</span>
-              </span>
-              <div class="create-community-description-box">
-                <span class="create-community-text06">
-                  <span class="create-community-text07">
-                    <span class = "textarea" role = "textbox" contenteditable ></span>
-                    <br />
-                    <span></span>
-                  </span>
-                  <span>
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                  </span>
-                </span>
+            <div class="create-post-category">
+              <span class="create-post-text21"><span>Category:</span></span>
+              <div class="create-post-category-name">
+                <!-- <input class = "textarea" role = "textbox" name="Category" contenteditable required> -->
+                <!-- <span class="create-post-text23">
+                  <span>Enter Category</span>
+                </span> -->
+                <select class="textarea" name = "Category" required>
+                  <option value="" disabled selected hidden>Select a category</option>
+                  {% for category in categories %}
+                    <option value="{{category[0]}}">{{category[0]}}</option>
+                  {% endfor %}
+                </select>
               </div>
             </div>
-            <div class="create-community-category">
-              <span class="create-community-text21">
-                <span>Category:</span>
-              </span>
-              <div class="create-community-category-name">
-                <span class = "textarea" role = "textbox" contenteditable ></span>
-              </div>
-            </div>
-            <div class="create-community-profle-pic">
-              <span class="create-community-text25">
+            
+            <!-- <div class="create-post-profle-pic">
+              <span class="create-post-text29">
                 <span>Profile Picture:</span>
               </span>
-              <button type = "Submit" class="button">
+              <button type = Submit" class="button">
                 <span class="create-post-text31">
                   <span>Choose a file</span>
                 </span>
               </button>
             </div>
-            <div class="create-community-cover-pic">
-              <span class="create-community-text29">
+            <div class="create-post-cover-pic">
+              <span class="create-post-text33">
                 <span>Cover Picture:</span>
               </span>
-              <button type = "Submit" class="button">
+              <button type = Submit" class="button">
                 <span class="create-post-text31">
                   <span>Choose a file</span>
                 </span>
               </button>
-            </div>
-            <div class="create-community-frame26">
-              <button class="button">
-                <span class="create-community-text33"><span>Create</span></span>
+            </div> -->
+            <div class="create-post-frame26">
+              <button type = "Submit" class="button">
+                <span class="create-post-text37"><span>Create</span></span>
               </button>
               <button class="button">
-                <span class="create-community-text35"><span>Cancel</span></span>
+                <span class="create-post-text39"><span>Cancel</span></span>
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
