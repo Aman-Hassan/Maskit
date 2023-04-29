@@ -685,7 +685,7 @@
 }
 .category-page-top-posts-content {
   display: flex;
-  padding: 18px 22px;
+  padding: 12px 15px;
   position: relative;
   align-self: stretch;
   align-items: center;
@@ -695,7 +695,15 @@
   border-width: 1px;
   border-radius: 10px;
   margin-bottom: 15px;
+  justify-content: space-between;
   background-color: rgba(22, 27, 41, 1);
+}
+.category-page-top-posts-body{
+  width: 100%;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-start;
 }
 .category-page-top-posts-ntc-pic {
   width: 330px;
@@ -800,7 +808,7 @@
   display: contents;
 }
 .category-page-top-posts-title-text {
-  width: 419px;
+  width: 40%;
   display: flex;
   position: relative;
   flex-grow: 1;
@@ -815,7 +823,7 @@
   color: rgba(154, 196, 229, 1);
   /* width: 202px; */
   height: auto;
-  font-size: 22px;
+  font-size: 26px;
   align-self: auto;
   font-style: Semi Bold;
   text-align: left;
@@ -824,7 +832,7 @@
   line-height: normal;
   font-stretch: normal;
   margin-right: 0;
-  margin-bottom: 22px;
+  /* margin-bottom: 22px; */
   text-decoration: underline;
 }
 .category-page-top-posts-text053 {
@@ -832,6 +840,7 @@
   height: auto;
   font-size: 16px;
   align-self: stretch;
+  white-space: pre-line;
   font-style: Regular;
   text-align: left;
   font-family: Inter;
@@ -881,7 +890,7 @@
 }
 .category-page-top-posts-text069 {
   color: rgba(136, 114, 255, 1);
-  width: 85px;
+  /* width: 85px; */
   height: auto;
   font-size: 15px;
   align-self: auto;

@@ -159,6 +159,7 @@
               <div class="category-page-top-posts-postframe">
                 {% for post in posts %}
                 <div class="category-page-top-posts-content">
+                  <div class="category-page-top-posts-body" >
                   <div class="category-page-top-posts-ntc-pic">
                     <div class="category-page-top-posts-ntcp">
                       <img
@@ -201,16 +202,13 @@
                         <span>{{post[3][2]}}</span>
                       </span>
                       <span class="category-page-top-posts-text053">
-                        <span>
                           <span>
                             {{post[3][3]}}
-                          </span>
-                          <br />
-                          <span></span>
                         </span>
                       </span>
                     </div>
                   </a>
+                  </div>
                   <div class="category-page-top-posts-post-options">
                     <a href="/Vote/{{post[3][0]}}/1">
                     <img
@@ -245,6 +243,7 @@
                       class="category-page-top-posts-image33"
                     />
                   </div>
+                  
                 </div>
                 {% endfor %}
               </div>
