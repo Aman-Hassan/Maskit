@@ -1,0 +1,868 @@
+.searchpagepost-container {
+  min-height: 100vh;
+}
+.searchpagepost-searchpagepost {
+  gap: 11px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 1);
+}
+.searchpagepost-title-bar {
+  gap: 204px;
+  display: flex;
+  padding: 0 11px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: rgba(15, 18, 27, 1);
+}
+.searchpagepost-logo {
+  width: 219px;
+  height: 64px;
+}
+.searchpagepost-user-input-search-bar {
+  gap: 10px;
+  color: rgba(154, 196, 229, 1);
+  height: 44px;
+  display: flex;
+  padding: 10px 10px 10px 37px;
+  flex-grow: 1;
+  font-size: 24px;
+  text-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 300;
+  border-radius: 50px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpagepost-options {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.searchpagepost-image39 {
+  width: 24px;
+  height: 25px;
+}
+.searchpagepost-image28 {
+  width: 32px;
+  height: 26px;
+}
+.searchpagepost-image27 {
+  width: 31px;
+  height: 32px;
+}
+.searchpagepost-image31 {
+  width: 35px;
+  height: 24px;
+}
+.searchpagepost-frame11 {
+  gap: 27px;
+  display: flex;
+  padding: 0 0 0 7px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpagepost-sidebar5 {
+  gap: 31px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.searchpagepost-top-section {
+  gap: 12px;
+  width: 226px;
+  height: 186px;
+  display: flex;
+  padding: 15px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(15, 18, 27, 1);
+}
+.searchpagepost-text {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text002 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text004 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text006 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text008 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-profilesidebar {
+  gap: 12px;
+  display: flex;
+  padding: 15px;
+  overflow: hidden;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(14, 17, 26, 1);
+}
+.searchpagepost-text010 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text012 {
+  color: rgba(170, 205, 233, 1);
+  width: 195px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text014 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text016 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text018 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text020 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text022 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text024 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-contentframe {
+  gap: 20px;
+  width: 1025px;
+  display: flex;
+  padding: 0 65px 0 0;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-postframe {
+  gap: 15px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.searchpagepost-content {
+  gap: 41px;
+  display: flex;
+  padding: 18px 22px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpagepost-ntc-pic {
+  gap: 10px;
+  width: 330px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-ntcp {
+  gap: 11px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-ellipse3 {
+  width: 41px;
+  height: 38px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+.searchpagepost-ntc {
+  gap: 3px;
+  width: 278px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-name-time {
+  gap: 9px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-text026 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text028 {
+  color: rgba(104, 104, 104, 1);
+  width: 60px;
+  height: auto;
+  font-size: 12px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text030 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-rectangle89 {
+  width: 330px;
+  height: 246px;
+}
+.searchpagepost-title-text {
+  gap: 22px;
+  width: 419px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-text032 {
+  color: rgba(154, 196, 229, 1);
+  height: auto;
+  font-size: 22px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.searchpagepost-text034 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-post-options {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.searchpagepost-image20 {
+  width: 40px;
+  height: 30px;
+}
+.searchpagepost-text045 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image32 {
+  width: 40px;
+  height: 28px;
+}
+.searchpagepost-text050 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image21 {
+  width: 46px;
+  height: 30px;
+}
+.searchpagepost-text052 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image33 {
+  width: 27px;
+  height: 26px;
+}
+.searchpagepost-content1 {
+  gap: 41px;
+  display: flex;
+  padding: 18px 22px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpagepost-ntc-pic1 {
+  gap: 10px;
+  width: 330px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-ntcp1 {
+  gap: 11px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-ellipse31 {
+  width: 41px;
+  height: 38px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+.searchpagepost-ntc1 {
+  gap: 3px;
+  width: 278px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-name-time1 {
+  gap: 9px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-text054 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text056 {
+  color: rgba(104, 104, 104, 1);
+  width: 60px;
+  height: auto;
+  font-size: 12px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text058 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-rectangle891 {
+  width: 330px;
+  height: 246px;
+}
+.searchpagepost-title-text1 {
+  gap: 22px;
+  width: 419px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-text060 {
+  color: rgba(154, 196, 229, 1);
+  height: auto;
+  font-size: 22px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.searchpagepost-text062 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-post-options1 {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.searchpagepost-image201 {
+  width: 40px;
+  height: 30px;
+}
+.searchpagepost-text081 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image321 {
+  width: 40px;
+  height: 28px;
+}
+.searchpagepost-text086 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image211 {
+  width: 46px;
+  height: 30px;
+}
+.searchpagepost-text088 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image331 {
+  width: 27px;
+  height: 26px;
+}
+.searchpagepost-content2 {
+  gap: 41px;
+  display: flex;
+  padding: 18px 22px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpagepost-ntc-pic2 {
+  gap: 10px;
+  width: 330px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-ntcp2 {
+  gap: 11px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-ellipse32 {
+  width: 41px;
+  height: 38px;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+}
+.searchpagepost-ntc2 {
+  gap: 3px;
+  width: 278px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-name-time2 {
+  gap: 9px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpagepost-text090 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 18px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text092 {
+  color: rgba(104, 104, 104, 1);
+  width: 60px;
+  height: auto;
+  font-size: 12px;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-text094 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 14px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-rectangle892 {
+  width: 330px;
+  height: 246px;
+}
+.searchpagepost-title-text2 {
+  gap: 22px;
+  width: 419px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpagepost-text096 {
+  color: rgba(154, 196, 229, 1);
+  height: auto;
+  font-size: 22px;
+  align-self: stretch;
+  font-style: Semi Bold;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: underline;
+}
+.searchpagepost-text098 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: stretch;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-post-options2 {
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.searchpagepost-image202 {
+  width: 40px;
+  height: 30px;
+}
+.searchpagepost-text117 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image322 {
+  width: 40px;
+  height: 28px;
+}
+.searchpagepost-text122 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image212 {
+  width: 46px;
+  height: 30px;
+}
+.searchpagepost-text124 {
+  color: rgba(136, 114, 255, 1);
+  width: 85px;
+  height: auto;
+  font-size: 15px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpagepost-image332 {
+  width: 27px;
+  height: 26px;
+}

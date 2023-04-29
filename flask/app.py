@@ -19,8 +19,8 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'username'
-app.config['MYSQL_PASSWORD'] = 'password'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '12345678'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
@@ -194,6 +194,23 @@ def Top_Communities():
     cur.close()
     print(communities)
     return render_template("TopCommunities.html",name = user[0][2], categories=categories,communities = communities, category_name = "Top Communities" )
+
+
+
+@app.route("/search_by_post")
+@login_required
+def search_by_post():
+    a = request.args.get("s")
+    a = a.lower()
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Posts WHERE title LIKE %s LIMIT 50", (a,))
+    results = cur.fetchall()
+    print()
+    print()
+    print(results)
+    print()
+    print()
+    return render_template("searchpost.html",results = results)
 
 
 
