@@ -1,0 +1,1042 @@
+.searchpage-author-container {
+  min-height: 100vh;
+}
+.searchpage-author-searchpage-author {
+  gap: 11px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 1);
+}
+.searchpage-author-title-bar {
+  gap: 204px;
+  display: flex;
+  padding: 0 11px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: rgba(15, 18, 27, 1);
+}
+.searchpage-author-logo {
+  width: 219px;
+  height: 64px;
+}
+.searchpage-author-user-input-search-bar {
+  gap: 10px;
+  color: rgba(154, 196, 229, 1);
+  height: 44px;
+  display: flex;
+  padding: 10px 10px 10px 37px;
+  flex-grow: 1;
+  font-size: 24px;
+  text-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 300;
+  border-radius: 50px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-options {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.searchpage-author-image39 {
+  width: 24px;
+  height: 25px;
+}
+.searchpage-author-image28 {
+  width: 32px;
+  height: 26px;
+}
+.searchpage-author-image27 {
+  width: 31px;
+  height: 32px;
+}
+.searchpage-author-image31 {
+  width: 35px;
+  height: 24px;
+}
+.searchpage-author-frame {
+  gap: 27px;
+  display: flex;
+  padding: 0 0 0 7px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-sidebar5 {
+  gap: 31px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.searchpage-author-top-section {
+  gap: 12px;
+  width: 226px;
+  height: 186px;
+  display: flex;
+  padding: 15px;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(15, 18, 27, 1);
+}
+.searchpage-author-text {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text02 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text04 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text06 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text08 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profilesidebar {
+  gap: 12px;
+  display: flex;
+  padding: 15px;
+  overflow: hidden;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 20px;
+  flex-direction: column;
+  background-color: rgba(14, 17, 26, 1);
+}
+.searchpage-author-text10 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text12 {
+  color: rgba(170, 205, 233, 1);
+  width: 195px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text14 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text16 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text18 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text20 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text22 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text24 {
+  color: rgba(170, 205, 233, 1);
+  width: 194px;
+  height: auto;
+  font-size: 15px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-list {
+  gap: 20px;
+  width: 1020px;
+  display: flex;
+  padding: 0 65px 0 0;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-author-list {
+  gap: 13px;
+  display: flex;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.searchpage-author-profileinfo {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse7 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text26 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text28 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text30 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text32 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo1 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp1 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse71 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc1 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text34 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text36 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following1 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text38 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text40 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo2 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp2 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse72 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc2 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text42 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text44 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following2 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text46 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text48 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo3 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp3 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse73 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc3 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text50 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text52 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following3 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text54 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text56 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo4 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp4 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse74 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc4 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text58 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text60 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following4 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text62 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text64 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo5 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp5 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse75 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc5 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text66 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text68 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following5 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text70 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text72 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo6 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp6 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse76 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc6 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text74 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text76 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following6 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text78 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text80 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-profileinfo7 {
+  gap: 10px;
+  display: flex;
+  padding: 15px;
+  align-self: stretch;
+  align-items: flex-start;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: rgba(22, 27, 41, 1);
+}
+.searchpage-author-name-desc-pp7 {
+  gap: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+}
+.searchpage-author-ellipse77 {
+  width: 69px;
+  height: 69px;
+}
+.searchpage-author-frame-name-desc7 {
+  gap: 7px;
+  width: 846px;
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.searchpage-author-text82 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text84 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  font-size: 15px;
+  align-self: stretch;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-karma-following7 {
+  gap: 1px;
+  display: flex;
+  padding: 0 0 0 10px;
+  align-self: stretch;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.searchpage-author-text86 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.searchpage-author-text88 {
+  color: rgba(170, 205, 233, 1);
+  height: auto;
+  flex-grow: 1;
+  font-size: 17px;
+  font-style: Medium;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}

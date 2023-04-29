@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Search By Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="{{url_for('static',filename = 'searchpagepost.css')}}" rel="stylesheet" />
+
+      <div class="searchpagepost-container">
+        <div class="searchpagepost-searchpagepost">
+          <div class="searchpagepost-title-bar">
+            <img
+              src="public/playground_assets/logoi107-yas.svg"
+              alt="LogoI107"
+              class="searchpagepost-logo"
+            />
+            <input
+              type="text"
+              placeholder="Search..."
+              class="searchpagepost-user-input-search-bar"
+            />
+            <div class="searchpagepost-options">
+              <img
+                src="public/playground_assets/image39i107-eg8j-200w.png"
+                alt="image39I107"
+                class="searchpagepost-image39"
+              />
+              <img
+                src="public/playground_assets/image28i107-vgxs-200h.png"
+                alt="image28I107"
+                class="searchpagepost-image28"
+              />
+              <img
+                src="public/playground_assets/image27i107-z5q-200w.png"
+                alt="image27I107"
+                class="searchpagepost-image27"
+              />
+              <img
+                src="public/playground_assets/image31i107-eisk-200h.png"
+                alt="image31I107"
+                class="searchpagepost-image31"
+              />
+            </div>
+          </div>
+          <div class="searchpagepost-frame11">
+            <div class="searchpagepost-sidebar5">
+              <div class="searchpagepost-top-section">
+                <span class="searchpagepost-text"><span>Top Board</span></span>
+                <span class="searchpagepost-text002">
+                  <span>Following</span>
+                </span>
+                <span class="searchpagepost-text004">
+                  <span>Top Posts</span>
+                </span>
+                <span class="searchpagepost-text006">
+                  <span>Top Karma</span>
+                </span>
+                <span class="searchpagepost-text008">
+                  <span>Top Communitites</span>
+                </span>
+              </div>
+              <div class="searchpagepost-profilesidebar">
+                <span class="searchpagepost-text010">
+                  <span>By Type:</span>
+                </span>
+                <span class="searchpagepost-text012"><span>Posts</span></span>
+                <span class="searchpagepost-text014"><span>Author</span></span>
+                <span class="searchpagepost-text016">
+                  <span>Community</span>
+                </span>
+                <span class="searchpagepost-text018">
+                  <span>By Time:</span>
+                </span>
+                <span class="searchpagepost-text020">
+                  <span>Last Hour</span>
+                </span>
+                <span class="searchpagepost-text022">
+                  <span>Last Day</span>
+                </span>
+                <span class="searchpagepost-text024">
+                  <span>Last Month</span>
+                </span>
+              </div>
+            </div>
+            <div class="searchpagepost-contentframe">
+              <div class="searchpagepost-postframe">
+
+
+
+                {% for x in results %}
+                <h1>{{x}}</h1>
+                <div class="searchpagepost-content">
+                  <div class="searchpagepost-ntc-pic">
+                    <div class="searchpagepost-ntcp">
+                      <img
+                        src="public/playground_assets/ellipse3i107-z6jd-200h.png"
+                        alt="Ellipse3I107"
+                        class="searchpagepost-ellipse3"
+                      />
+                      <div class="searchpagepost-ntc">
+                        <div class="searchpagepost-name-time">
+                          <span class="searchpagepost-text026">
+                            <span>{{x[2]}}</span>
+                          </span>
+                          <span class="searchpagepost-text028">
+                            <span>{{x[1]}}</span>
+                          </span>
+                        </div>
+                        <span class="searchpagepost-text030">
+                          <span>Community 4</span>
+                        </span>
+                      </div>
+                    </div>
+                    <img
+                      src="public/playground_assets/rectangle89i107-gdgu.svg"
+                      alt="Rectangle89I107"
+                      class="searchpagepost-rectangle89"
+                    />
+                  </div>
+                  <div class="searchpagepost-title-text">
+                    <span class="searchpagepost-text032">
+                      <span>{{x[2]}}</span>
+                    </span>
+                    <span class="searchpagepost-text034">
+                      <span>
+                        <span>
+                          {{x[3]}}
+                      </span>
+                    </span>
+                  </div>
+                  <div class="searchpagepost-post-options">
+                    <img
+                      src="public/playground_assets/image20i107-ni7-200h.png"
+                      alt="image20I107"
+                      class="searchpagepost-image20"
+                    />
+                    <span class="searchpagepost-text045">
+                      <span>
+                        <span>100k</span>
+                        <br />
+                        <span></span>
+                      </span>
+                    </span>
+                    <img
+                      src="public/playground_assets/image32i107-7fkh-200h.png"
+                      alt="image32I107"
+                      class="searchpagepost-image32"
+                    />
+                    <span class="searchpagepost-text050"><span>2k</span></span>
+                    <img
+                      src="public/playground_assets/image21i107-h3gg-200h.png"
+                      alt="image21I107"
+                      class="searchpagepost-image21"
+                    />
+                    <span class="searchpagepost-text052">
+                      <span>2.5k</span>
+                    </span>
+                    <img
+                      src="public/playground_assets/image33i107-wd5f-200h.png"
+                      alt="image33I107"
+                      class="searchpagepost-image33"
+                    />
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
