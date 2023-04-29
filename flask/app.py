@@ -210,6 +210,50 @@ def Top_Posts():
     cur.close()
     return render_template("TopPosts.html",name = user[0][2], categories=categories,posts = posts, category_name = "Top Posts" )
 
+@app.route("/Vote/<int:post_id>/<int:response>")
+@login_required
+def Vote(post_id,response):
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Post_Vote WHERE post_id = %s", (post_id,))
+    votes = cur.fetchall()
+    vote = 0
+    add = 0
+    flag = False
+    for x in votes :
+        if x[1] == session["user_id"]:
+            vote = x[2]
+            flag = True
+    if vote == 0:
+        if response == 1:
+            add = 1
+        elif response == 0:
+            add = -1
+    elif vote == 1:
+        if response == 1:
+            add = 0
+        elif response == 0:
+            add = -1
+    elif vote == -1:
+        if response == 1:
+            add = 1
+        elif response == 0:
+            add = 0
+    vote = vote + add
+    if flag:
+        cur.execute("UPDATE Post_Vote SET vote = %s WHERE (post_id,user_id) = (%s,%s) ", (vote,post_id,session["user_id"],))
+    else:
+        cur.execute("INSERT into Post_Vote (post_id,user_id,vote) VALUES (%s,%s,%s)", (post_id,session["user_id"],vote))
+    cur.execute("SELECT * FROM Posts WHERE id = %s", (post_id,))
+    post = cur.fetchall()
+    old_vote = post[0][4]
+    new_vote = old_vote + add
+    cur.execute("UPDATE Posts SET Votes = %s WHERE id = %s ", (new_vote,post_id,))
+    mysql.connection.commit()
+    cur.close()
+    return redirect(request.referrer)
+
 @app.route("/Top_Karma")
 @login_required
 def Top_Karma():

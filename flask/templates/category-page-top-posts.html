@@ -212,26 +212,23 @@
                     </div>
                   </a>
                   <div class="category-page-top-posts-post-options">
+                    <a href="/Vote/{{post[3][0]}}/1">
                     <img
                       alt="image20I114"
                       src="{{ url_for('static', filename = 'public/playground_assets/image20i114-aymn-200h.png')}}"
                       class="category-page-top-posts-image20"
                     />
-                    <!-- <span class="category-page-top-posts-text064">
-                      <span>
-                        <span>100k</span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span> -->
+                    </a>
+                    <span class="category-page-top-posts-text069">
+                      <span>{{post[3][4]}}</span>
+                    </span>
+                    <a href="/Vote/{{post[3][0]}}/0">
                     <img
                       alt="image32I114"
                       src="{{ url_for('static', filename = 'public/playground_assets/image32i114-5qic-200h.png')}}"
                       class="category-page-top-posts-image32"
                     />
-                    <span class="category-page-top-posts-text069">
-                      <span>{{post[3][4]}}</span>
-                    </span>
+                    </a>
                     <a
                       href="/post/{{post[3][0]}}"
                       class="category-page-top-posts-navlink4"

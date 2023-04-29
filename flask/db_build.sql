@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS Posts;
 DROP TABLE IF EXISTS Communities;
 DROP TABLE IF EXISTS Categories;
 DROP TABLE IF EXISTS Users;
+DROP TABLE IF EXISTS Post_Vote;
 
 
 
@@ -64,6 +65,14 @@ CREATE TABLE Communities_Joined (
     community_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (community_id) REFERENCES Communities(id)
+);
+
+CREATE TABLE Post_Vote (
+    post_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
+    vote INTEGER NOT NULL DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (post_id) REFERENCES Posts(id)
 );
 
 INSERT INTO Categories (Name) VALUES ("Academics");
