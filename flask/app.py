@@ -19,8 +19,8 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = '12345678'
+app.config['MYSQL_USER'] = 'username'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'mydatabase'
 mysql = MySQL(app)
 Session(app)
@@ -203,14 +203,50 @@ def search_by_post():
     a = request.args.get("s")
     a = a.lower()
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM Posts WHERE title LIKE %s LIMIT 50", (a,))
+    cur.execute("SELECT * FROM Posts WHERE title LIKE %s LIMIT 50", ("%"+a+"%",))
     results = cur.fetchall()
     print()
     print()
     print(results)
     print()
     print()
+    cur.close()
     return render_template("searchpost.html",results = results)
+
+@app.route("/search_for_author")
+@login_required
+def search_for_author():
+    a = request.args.get("s")
+    if (a==None):
+        return redirect("/")
+    a = a.lower()
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
+    results = cur.fetchall()
+    print()
+    print()
+    print(results)
+    print()
+    print()
+    cur.close()
+    return render_template("searchauthor.html",results = results)
+
+@app.route("/search_for_community")
+@login_required
+def search_for_community():
+    a = request.args.get("s")
+    a = a.lower()
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Community WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
+    results = cur.fetchall()
+    print()
+    print()
+    print(results)
+    print()
+    print()
+    cur.close()
+    return render_template("searchcommunity.html",results = results)
+
 
 
 
@@ -377,10 +413,8 @@ def post_page(post_id):
     creator_id = details[0][5]
     community_id = details[0][6]
     cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
-    cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
     creators = cur.fetchall()
     creator = creators[0]
-    cur.execute("SELECT Name FROM Communities WHERE id = %s", (community_id,))
     cur.execute("SELECT Name FROM Communities WHERE id = %s", (community_id,))
     communities = cur.fetchall()
     community = communities[0]

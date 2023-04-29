@@ -811,6 +811,7 @@
   width: 40%;
   display: flex;
   position: relative;
+  height: 100%;
   flex-grow: 1;
   align-items: flex-start;
   flex-shrink: 0;
@@ -837,7 +838,7 @@
 }
 .category-page-top-posts-text053 {
   color: rgba(255, 255, 255, 1);
-  height: auto;
+  height: 100%;
   font-size: 16px;
   align-self: stretch;
   white-space: pre-line;

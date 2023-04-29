@@ -187,11 +187,16 @@
                         </a>
                       </div>
                     </div>
+                    {% if post[3][8] != None%}
+                    <img class="card-img-top" alt="..." style="width: 100%; height: 60%;" 
+                      src={{post[3][8]}}>
+                    {% else %}
                     <img
                       alt="Rectangle89I114"
                       src="{{ url_for('static', filename = 'public/playground_assets/rectangle89i114-rmwp.svg')}}"
                       class="category-page-top-posts-rectangle89"
                     />
+                    {% endif %}
                   </div>
                   <a
                     href="/post/{{post[3][0]}}"
