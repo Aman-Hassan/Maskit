@@ -74,7 +74,7 @@ CREATE TABLE Post_Vote (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (post_id) REFERENCES Posts(id)
 );
-
+INSERT INTO Users (Username,Password,karma,about) VALUES ("bg","123D3jibebifbibi",22,"Sample User");
 INSERT INTO Categories (Name) VALUES ("Academics");
 INSERT INTO Categories (Name) VALUES ("Campus Life");
 INSERT INTO Categories (Name) VALUES ("Events");
