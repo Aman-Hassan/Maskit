@@ -1,5 +1,7 @@
 __pycache__/
 *.pyc
 
+/*_session/
+
 .pytest_cache/
 .coverage
