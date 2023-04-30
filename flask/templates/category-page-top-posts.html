@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>Category-TopCommunities</title>
+    <title>Category-TopPosts</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -50,51 +50,57 @@
 
       <div class="basicpage-container">
         <div class="basicpage-basicpage">
-          <div class="basicpage-title-bar">
-            <a href="/" class="basicpage-navlink">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
               <img
-                alt="LogoI116"
-                src = "{{url_for('static', filename = 'public/playground_assets/logoi116-arz4.svg')}}"
-                class="basicpage-logo"
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
               />
             </a>
-            <form method="get" action="<?php ; ?>/"> 
-              <input type="text"  name="s" id="s"  placeholder="Search..." class="basicpage-user-input-search-bar" " /> 
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
             </form>
-            <div class="basicpage-options">
-              <a href="/add_post" class="basicpage-navlink1">
-                <img
-                  alt="image39I116"
-                  src="{{ url_for('static', filename = 'public/playground_assets/image39i116-mnl-200w.png')}}"
-                  class="basicpage-image39"
-                />
-              </a>
-              <a href = "/uprofile/{{name}}">
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> 
               <img
-                alt="image28I116"
-                src="{{ url_for('static', filename = 'public/playground_assets/image28i116-392o-200h.png')}}"
-                class="basicpage-image28"
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
               />
               </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
               <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
                 <img
-                  src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
-                  alt="image27I546"
-                  class="basicpage-image27"
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
                 />
-                </a>
-                <a href="/logout" class="basicpage-navlink1">
-                  <img
-                    src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
-                    alt="image31I546"
-                    class="basicpage-image31"
-                  />
-                </a>
+              </a>
             </div>
           </div>
           <div class="basicpage-frame">
             <div class="basicpage-sidebar">
-              <div class="basicpage-top-section">
+              <!-- <div class="basicpage-top-section">
                 <span class="basicpage-text">
                   <a href = "/Top_Board">
                   <span>Top Board</span>
@@ -120,7 +126,7 @@
                   <span>Top Communitites</span>
               </a>
               </span>
-              </div>
+              </div> -->
               <div class="basicpage-catergory-section">
                 <a href="/category/Academics" class="basicpage-text10"><span>Academics</span></a>
                 <a href="/category/Campus Life" class="basicpage-text12"><span>Campus Life</span></a>
@@ -188,7 +194,7 @@
                       </div>
                     </div>
                     {% if post[3][8] != None%}
-                    <img class="card-img-top" alt="..." style=" height: 300px;" 
+                    <img class="card-img-top" alt="..." style="max-width: 330px; max-height: 300px;" 
                       src={{post[3][8]}}>
                     {% else %}
                     <img
@@ -242,11 +248,14 @@
                         class="category-page-top-posts-image21"
                       />
                     </a>
-                    <img
+                    <a href="https://reddit.com/submit?url=&title=<TITLE>">
+                      <img
                       alt="image33I114"
                       src="{{ url_for('static', filename = 'public/playground_assets/image33i114-0y86-200h.png')}}"
                       class="category-page-top-posts-image33"
                     />
+                    </a>
+                    
                   </div>
                   
                 </div>

@@ -58,7 +58,7 @@
                 class="basicpage-logo"
               />
             </a>
-            <form method="get" action="<?php ; ?>/"> 
+            <form method="get" action="/search_by_post"> 
               <input type="text"  name="s" id="s"  placeholder="Search..." class="basicpage-user-input-search-bar" " /> 
             </form>
             <div class="basicpage-options">
@@ -94,7 +94,7 @@
           </div>
           <div class="basicpage-frame">
             <div class="basicpage-sidebar">
-              <div class="basicpage-top-section">
+              <!-- <div class="basicpage-top-section">
                 <span class="basicpage-text">
                   <a href = "/Top_Board">
                   <span>Top Board</span>
@@ -120,7 +120,7 @@
                   <span>Top Communitites</span>
               </a>
               </span>
-              </div>
+              </div> -->
               <div class="basicpage-catergory-section">
                 <a href="/category/Academics" class="basicpage-text10"><span>Academics</span></a>
                 <a href="/category/Campus Life" class="basicpage-text12"><span>Campus Life</span></a>
@@ -176,7 +176,7 @@
                     </div>
                     <button class="basicpage-follow-button01">
                       <span class="basicpage-text49">
-                    <a href="/Follow/{{category_name}}/{{community[0][1]}}">
+                    <a href="/Follow/{{community[0][1]}}">
                       {% if community[1] %}
                         <span>Following</span>
                       {% else %}

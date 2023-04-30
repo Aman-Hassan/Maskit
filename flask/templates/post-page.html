@@ -45,13 +45,61 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
+    <div class="page">
       <link rel="stylesheet" href="{{ url_for('static', filename= 'post-page.css') }}" />
 
-      <div class="post-page-container">
-        <div class="post-page-post-page"></div>
-        <div class="post-page-post-page1">
-          <div class="post-page-title-bar">
+      <div class="index-container">
+        <div class="index-index"></div>
+        <!-- <div class="post-page-post-page1"> -->
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="post-page-title-bar">
             <a href="basicpage.html" class="post-page-navlink">
               <img
                 alt="LogoI356"
@@ -90,45 +138,51 @@
                 class="post-page-image31"
               />
             </div>
-          </div>
+          </div> -->
           <div class="post-page-post-sidebar">
-            <div class="post-page-sidebar">
-              <div class="post-page-top-section">
-                <span class="post-page-text"><span>Top Board</span></span>
-                <span class="post-page-text02"><span>Following</span></span>
-                <span class="post-page-text04"><span>Top Posts</span></span>
-                <span class="post-page-text06"><span>Top Karma</span></span>
-                <span class="post-page-text08">
+              <div class="basicpage-sidebar">
+              <!-- <div class="basicpage-top-section">
+                <span class="basicpage-text">
+                  <a href = "/Top_Board">
+                  <span>Top Board</span>
+              </a>
+              </span>
+              <span class="basicpage-text02">
+                  <a href = "/Following">
+                  <span>Following</span>
+              </a>
+              </span>
+              <span class="basicpage-text04">
+                  <a href = "/Top_Posts">
+                  <span>Top Posts</span>
+              </a>
+              </span>
+              <span class="basicpage-text06">
+                  <a href = "/Top_Karma">
+                  <span>Top Karma</span>
+              </a>
+              </span>
+              <span class="basicpage-text08">
+                  <a href = "/Top_Communities">
                   <span>Top Communitites</span>
-                </span>
-              </div>
-              <div class="post-page-catergory-section">
-                <span class="post-page-text10"><span>Academics</span></span>
-                <span class="post-page-text12"><span>Campus Life</span></span>
-                <span class="post-page-text14"><span>Events</span></span>
-                <span class="post-page-text16"><span>Sports</span></span>
-                <span class="post-page-text18"><span>Clubs</span></span>
-                <span class="post-page-text20"><span>Research</span></span>
-                <span class="post-page-text22">
-                  <span>Career Services</span>
-                </span>
-                <span class="post-page-text24"><span>IITD News</span></span>
-                <span class="post-page-text26"><span>Technology</span></span>
-                <span class="post-page-text28">
-                  <span>Alumni Relations</span>
-                </span>
-                <span class="post-page-text30">
-                  <span>Student Government</span>
-                </span>
-                <span class="post-page-text32">
-                  <span>Entrepreneurship</span>
-                </span>
-                <span class="post-page-text34">
-                  <span>General Championship</span>
-                </span>
-                <span class="post-page-text36">
-                  <span>College Festivals</span>
-                </span>
+              </a>
+              </span>
+              </div> -->
+              <div class="basicpage-catergory-section">
+                <a href="/category/Academics" class="basicpage-text10"><span>Academics</span></a>
+                <a href="/category/Campus Life" class="basicpage-text12"><span>Campus Life</span></a>
+                <a href="/category/Events" class="basicpage-text14"><span>Events</span></a>
+                <a href="/category/Sports" class="basicpage-text16"><span>Sports</span></a>
+                <a href="/category/Clubs" class="basicpage-text18"><span>Clubs</span></a>
+                <a href="/category/Research" class="basicpage-text20"><span>Research</span></a>
+                <a href="/category/Career Services" class="basicpage-text22"><span>Career Services</span></a>
+                <a href="/category/IITD News" class="basicpage-text24"><span>IITD News</span></a>
+                <a href="/category/Technology" class="basicpage-text26"><span>Technology</span></a>
+                <a href="/category/Alumni Relations" class="basicpage-text28"><span>Alumni Relations</span></a>
+                <a href="/category/Student Government" class="basicpage-text30"><span>Student Government</span></a>
+                <a href="/category/Entrepreneurship" class="basicpage-text32"><span>Entrepreneurship</span></a>
+                <a href="/category/General Championship" class="basicpage-text34"><span>General Championship</span></a>
+                <a href="/category/College Festivals" class="basicpage-text36"><span>College Festivals</span></a>
               </div>
             </div>
             <div class="post-page-full-post-comments">
@@ -154,9 +208,14 @@
                 <span class="post-page-text44"><span>{{title}}</span></span>
                 <div class="post-page-post-frame">
                   <div class="post-page-frame28">
-                    <div class="post-page-post-image"></div>
+                    {% if img != None %}
+                      <img class="card-img-top" alt="..." " 
+                        src={{img}}>
+                      {% else %}
+                      <div class post-page-post-image ></div>
+                      {% endif %}
                   </div>
-                  <span class="post-page-text46">
+                  <span class="post-page-text46" style="white-space: pre-line;">
                     {{content}}
                   </span>
                   <br>
@@ -170,18 +229,23 @@
                 </div>
                 <div class="post-page-options1">
                   <div class="post-page-frame29">
+                    <a href="/Vote/{{post_id}}/1">
                     <img
                       alt="image203569"
                       src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/ae742c5c-e833-4502-a30d-e8eae54887eb?org_if_sml=11357"
                       class="post-page-image20"
                     />
+                    
+                  </a>
                   </div>
+                  <span style="color: rgba(170, 205, 233, 1)">{{vote}}</span>
                   <div class="post-page-frame30">
+                    <a href="/Vote/{{post_id}}/0">
                     <img
                       alt="image323569"
                       src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/eb60a91e-b26d-4677-95f8-babaa7da7687?org_if_sml=11669"
                       class="post-page-image32"
-                    />
+                    /></a>
                   </div>
                   <div class="post-page-frame31">
                     <img
@@ -197,184 +261,9 @@
                   />
                 </div>
               </div>
-              <div class="post-page-commenting-part">
-                <div class="post-page-comment-box">
-                  <div class="post-page-frame33">
-                    <span class="post-page-text51">
-                      <span>
-                        <span>Add your comment here....</span>
-                        <br />
-                        <span></span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span>
-                  </div>
-                  <div class="post-page-comment-frame">
-                    <button class="post-page-comment-button">
-                      <div class="post-page-comment">
-                        <span class="post-page-text58">
-                          <span>Comment</span>
-                        </span>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-                <div class="post-page-user-comments">
-                  <div class="post-page-comment1">
-                    <div class="post-page-name--ic-time">
-                      <div class="post-page-name-pic">
-                        <img
-                          alt="Ellipse53570"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/6e8cc37b-0f31-437b-af44-5599dcef9a3b?org_if_sml=1561"
-                          class="post-page-ellipse5"
-                        />
-                        <a href="profile.html" class="post-page-text60">
-                          <span>Name</span>
-                        </a>
-                      </div>
-                      <div class="post-page-date-time1">
-                        <span class="post-page-text62">
-                          <span>4:57 pm</span>
-                        </span>
-                        <span class="post-page-text64">
-                          <span>10/2/2004</span>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="post-page-text66">
-                      <span class="post-page-text67">
-                        <span>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Integer nunc dui, ultricies vel rutrum id,
-                          tincidunt vel risus. Phasellus id porta neque. Ut non
-                          maximus ipsum. Curabitur vel orci mi. Maecenas cursus
-                          eleifend rhoncus. Proin risus mauris, suscipit id
-                          scelerisque in, fringilla nec eros. Maecenas odio
-                          libero, lacinia sit amet.
-                        </span>
-                      </span>
-                    </div>
-                    <div class="post-page-votes">
-                      <div class="post-page-frame291">
-                        <img
-                          alt="image203675"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/9f5ef1e0-115c-40fe-bb7c-c3cf7bf93179?org_if_sml=11364"
-                          class="post-page-image201"
-                        />
-                      </div>
-                      <div class="post-page-frame301">
-                        <img
-                          alt="image323675"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/7e798385-4d49-4bc8-81bc-13b96b452f85?org_if_sml=11673"
-                          class="post-page-image321"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-page-comment2">
-                    <div class="post-page-name--ic-time1">
-                      <div class="post-page-name-pic1">
-                        <img
-                          alt="Ellipse53676"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/0817e49f-4e1a-439e-92b5-72619abac8ba?org_if_sml=1555"
-                          class="post-page-ellipse51"
-                        />
-                        <span class="post-page-text69"><span>Name</span></span>
-                      </div>
-                      <div class="post-page-date-time2">
-                        <span class="post-page-text71">
-                          <span>4:57 pm</span>
-                        </span>
-                        <span class="post-page-text73">
-                          <span>10/2/2004</span>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="post-page-text75">
-                      <span class="post-page-text76">
-                        <span>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Integer nunc dui, ultricies vel rutrum id,
-                          tincidunt vel risus. Phasellus id porta neque. Ut non
-                          maximus ipsum. Curabitur vel orci mi. Maecenas cursus
-                          eleifend rhoncus. Proin risus mauris, suscipit id
-                          scelerisque in, fringilla nec eros. Maecenas odio
-                          libero, lacinia sit amet.
-                        </span>
-                      </span>
-                    </div>
-                    <div class="post-page-votes1">
-                      <div class="post-page-frame292">
-                        <img
-                          alt="image203677"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/dd0ec95a-7823-4121-907c-f7aeb8df2b55?org_if_sml=11329"
-                          class="post-page-image202"
-                        />
-                      </div>
-                      <div class="post-page-frame302">
-                        <img
-                          alt="image323677"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/b27c21af-6137-4270-9384-a099b3b1e4ee?org_if_sml=11668"
-                          class="post-page-image322"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="post-page-comment3">
-                    <div class="post-page-name--ic-time2">
-                      <div class="post-page-name-pic2">
-                        <img
-                          alt="Ellipse53678"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/d39b3b61-6857-4504-909e-2a5911ca3ba7?org_if_sml=1559"
-                          class="post-page-ellipse52"
-                        />
-                        <span class="post-page-text78"><span>Name</span></span>
-                      </div>
-                      <div class="post-page-date-time3">
-                        <span class="post-page-text80">
-                          <span>4:57 pm</span>
-                        </span>
-                        <span class="post-page-text82">
-                          <span>10/2/2004</span>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="post-page-text84">
-                      <span class="post-page-text85">
-                        <span>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Integer nunc dui, ultricies vel rutrum id,
-                          tincidunt vel risus. Phasellus id porta neque. Ut non
-                          maximus ipsum. Curabitur vel orci mi. Maecenas cursus
-                          eleifend rhoncus. Proin risus mauris, suscipit id
-                          scelerisque in, fringilla nec eros. Maecenas odio
-                          libero, lacinia sit amet.
-                        </span>
-                      </span>
-                    </div>
-                    <div class="post-page-votes2">
-                      <div class="post-page-frame293">
-                        <img
-                          alt="image203679"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/e890d06d-40ef-49df-b763-01c73badd09e?org_if_sml=11334"
-                          class="post-page-image203"
-                        />
-                      </div>
-                      <div class="post-page-frame303">
-                        <img
-                          alt="image323679"
-                          src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/9d22d08e-91fb-461f-a468-b6de70af82c5/ad8ad3ff-769c-46c6-b27d-dfe4d2782138?org_if_sml=11654"
-                          class="post-page-image323"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </body>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>SearchPage-Community</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -40,12 +40,60 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div>
-      <link href="./searchpagecommunity.css" rel="stylesheet" />
+    <div class="page">
+      <link href="{{url_for('static',filename = 'searchpagecommunity.css')}}" rel="stylesheet" />
 
-      <div class="searchpagecommunity-container">
-        <div class="searchpagecommunity-searchpagecommunity">
-          <div class="searchpagecommunity-title-bar">
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="searchpagecommunity-title-bar">
             <img
               src="public/playground_assets/logoi105-1xvp.svg"
               alt="LogoI105"
@@ -78,10 +126,10 @@
                 class="searchpagecommunity-image31"
               />
             </div>
-          </div>
+          </div> -->
           <div class="searchpagecommunity-frame">
             <div class="searchpagecommunity-sidebar5">
-              <div class="searchpagecommunity-top-section">
+              <!-- <div class="searchpagecommunity-top-section">
                 <span class="searchpagecommunity-text">
                   <span>Top Board</span>
                 </span>
@@ -97,21 +145,21 @@
                 <span class="searchpagecommunity-text08">
                   <span>Top Communitites</span>
                 </span>
-              </div>
+              </div> -->
               <div class="searchpagecommunity-profilesidebar">
                 <span class="searchpagecommunity-text10">
                   <span>By Type:</span>
                 </span>
                 <span class="searchpagecommunity-text12">
-                  <span>Posts</span>
+                  <span>Posts</span><a href="/search_by_posts/{{s}}"></a>
                 </span>
                 <span class="searchpagecommunity-text14">
-                  <span>Author</span>
+                  <span>Author</span><a href="/search_for_author/{{s}}"></a>
                 </span>
                 <span class="searchpagecommunity-text16">
-                  <span>Community</span>
+                  <span>Community</span><a href="/search_for_community/{{s}}"></a>
                 </span>
-                <span class="searchpagecommunity-text18">
+                <!-- <span class="searchpagecommunity-text18">
                   <span>By Time:</span>
                 </span>
                 <span class="searchpagecommunity-text20">
@@ -122,24 +170,32 @@
                 </span>
                 <span class="searchpagecommunity-text24">
                   <span>Last Month</span>
-                </span>
+                </span> -->
               </div>
             </div>
             <div class="searchpagecommunity-communities">
               <div class="searchpagecommunity-community-list">
+                {% if posts==[] %}
+                <div class="index-frame38">
+                  <div class="index-frame36">
+                    <span class="index-text38"><span>NO SUCH RESULTS!!!</span></span>
+                  </div>
+                </div>
+                {% else %}
+                {% for result in results %}
                 <div class="searchpagecommunity-communtitybar">
                   <div class="searchpagecommunity-frame24">
                     <img
-                      src="public/playground_assets/ellipse3i105-cmte-200h.png"
+                      src="{{ url_for('static', filename= 'public/playground_assets/ellipse3i117-zd2-200h.png') }}"
                       alt="Ellipse3I105"
                       class="searchpagecommunity-ellipse3"
                     />
                     <div class="searchpagecommunity-community-about">
                       <span class="searchpagecommunity-text26">
-                        <span>Community 1</span>
+                        <span>{{result[1]}}</span><a href="/community/{{result[1]}}"></a>
                       </span>
                       <span class="searchpagecommunity-text28">
-                        <span>About</span>
+                        <span>{{result[2]}}</span>
                       </span>
                     </div>
                   </div>
@@ -150,191 +206,10 @@
                     </span>
                   </button>
                 </div>
-                <div class="searchpagecommunity-communtitybar1">
-                  <div class="searchpagecommunity-frame241">
-                    <img
-                      src="public/playground_assets/ellipse3i105-x9j-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse31"
-                    />
-                    <div class="searchpagecommunity-community-about1">
-                      <span class="searchpagecommunity-text32">
-                        <span>Community 2</span>
-                      </span>
-                      <span class="searchpagecommunity-text34">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button02"></button>
-                  <button class="searchpagecommunity-follow-button03">
-                    <span class="searchpagecommunity-text36">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar2">
-                  <div class="searchpagecommunity-frame242">
-                    <img
-                      src="public/playground_assets/ellipse3i105-082-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse32"
-                    />
-                    <div class="searchpagecommunity-community-about2">
-                      <span class="searchpagecommunity-text38">
-                        <span>Community 3</span>
-                      </span>
-                      <span class="searchpagecommunity-text40">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button04"></button>
-                  <button class="searchpagecommunity-follow-button05">
-                    <span class="searchpagecommunity-text42">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar3">
-                  <div class="searchpagecommunity-frame243">
-                    <img
-                      src="public/playground_assets/ellipse3i105-44i8-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse33"
-                    />
-                    <div class="searchpagecommunity-community-about3">
-                      <span class="searchpagecommunity-text44">
-                        <span>Community 4</span>
-                      </span>
-                      <span class="searchpagecommunity-text46">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button06"></button>
-                  <button class="searchpagecommunity-follow-button07">
-                    <span class="searchpagecommunity-text48">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar4">
-                  <div class="searchpagecommunity-frame244">
-                    <img
-                      src="public/playground_assets/ellipse3i105-sc3i-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse34"
-                    />
-                    <div class="searchpagecommunity-community-about4">
-                      <span class="searchpagecommunity-text50">
-                        <span>Community 5</span>
-                      </span>
-                      <span class="searchpagecommunity-text52">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button08"></button>
-                  <button class="searchpagecommunity-follow-button09">
-                    <span class="searchpagecommunity-text54">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar5">
-                  <div class="searchpagecommunity-frame245">
-                    <img
-                      src="public/playground_assets/ellipse3i105-393b-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse35"
-                    />
-                    <div class="searchpagecommunity-community-about5">
-                      <span class="searchpagecommunity-text56">
-                        <span>Community 6</span>
-                      </span>
-                      <span class="searchpagecommunity-text58">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button10"></button>
-                  <button class="searchpagecommunity-follow-button11">
-                    <span class="searchpagecommunity-text60">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar6">
-                  <div class="searchpagecommunity-frame246">
-                    <img
-                      src="public/playground_assets/ellipse3i105-461j-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse36"
-                    />
-                    <div class="searchpagecommunity-community-about6">
-                      <span class="searchpagecommunity-text62">
-                        <span>Community 7</span>
-                      </span>
-                      <span class="searchpagecommunity-text64">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button12"></button>
-                  <button class="searchpagecommunity-follow-button13">
-                    <span class="searchpagecommunity-text66">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar7">
-                  <div class="searchpagecommunity-frame247">
-                    <img
-                      src="public/playground_assets/ellipse3i105-rq6o-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse37"
-                    />
-                    <div class="searchpagecommunity-community-about7">
-                      <span class="searchpagecommunity-text68">
-                        <span>Community 8</span>
-                      </span>
-                      <span class="searchpagecommunity-text70">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button14"></button>
-                  <button class="searchpagecommunity-follow-button15">
-                    <span class="searchpagecommunity-text72">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
-                <div class="searchpagecommunity-communtitybar8">
-                  <div class="searchpagecommunity-frame248">
-                    <img
-                      src="public/playground_assets/ellipse3i105-73ns-200h.png"
-                      alt="Ellipse3I105"
-                      class="searchpagecommunity-ellipse38"
-                    />
-                    <div class="searchpagecommunity-community-about8">
-                      <span class="searchpagecommunity-text74">
-                        <span>Community 9</span>
-                      </span>
-                      <span class="searchpagecommunity-text76">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <button class="searchpagecommunity-follow-button16"></button>
-                  <button class="searchpagecommunity-follow-button17">
-                    <span class="searchpagecommunity-text78">
-                      <span>Follow</span>
-                    </span>
-                  </button>
-                </div>
+                {% endfor %}
+                {% endif %}
               </div>
+              
             </div>
           </div>
         </div>

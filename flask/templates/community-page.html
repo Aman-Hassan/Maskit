@@ -65,8 +65,11 @@
                 class="index-user-input-search-bar"
               /> -->
               <!-- <?php $search_text = "Search"; ?>  -->
-              <form method="get" action="<?php ; ?>/"> 
+              <!-- <form method="get" action="<?php ; ?>/"> 
               <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+              </form> -->
+              <form method="get" action="/search_by_post"> 
+                <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
               </form>
               
               <div class="index-options">
@@ -103,7 +106,7 @@
           </div>
           <div class="community-page-sidebar-community-details">
             <div class="community-page-sidebar2">
-              <div class="community-page-top-section">
+              <!-- <div class="community-page-top-section">
                 <span class="community-page-text"><span>Top Posts</span></span>
                 <span class="community-page-text002">
                   <span>Pinned Posts</span>
@@ -111,7 +114,7 @@
                 <span class="community-page-text004">
                   <span>Followers</span>
                 </span>
-              </div>
+              </div> -->
               <div class="community-page-catergory-section">
                 <span class="community-page-text006">
                   <span>About Community</span>
@@ -132,18 +135,18 @@
                 <div class="community-page-community-frame">
                   <img
                     alt="CommunityProfilePic2850"
-                    src="public/playground_assets/communityprofilepic2850-yauc-200h.png"
+                    src="{{ url_for('static', filename= 'public/playground_assets/communityprofilepic2850-yauc-200h.png') }}"
                     class="community-page-community-profile-pic"
                   />
                   <div class="community-page-communitydetails">
                     <div class="community-page-community-name">
                       <span class="community-page-text014">
-                        <span>Community Name</span>
+                        <span>{{community[1]}}</span>
                       </span>
                     </div>
                     <div class="community-page-about">
                       <span class="community-page-text016">
-                        <span>About</span>
+                        <span>{{community[2]}}</span>
                       </span>
                     </div>
                   </div>
@@ -155,295 +158,101 @@
                   </span>
                 </button>
               </div>
-              <div class="community-page-postframe">
-                <div class="community-page-content">
-                  <div class="community-page-ntc-pic">
-                    <div class="community-page-ntcp">
+              <div class="category-page-top-posts-postframe">
+                {% for post in posts %}
+                <div class="category-page-top-posts-content">
+                  <div class="category-page-top-posts-body" >
+                  <div class="category-page-top-posts-ntc-pic">
+                    <div class="category-page-top-posts-ntcp">
                       <img
-                        alt="Ellipse3I307"
-                        src="public/playground_assets/ellipse3i307-wv1-200h.png"
-                        class="community-page-ellipse3"
+                        alt="Ellipse3I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/ellipse3i114-19dd-200h.png')}}"
+                        class="category-page-top-posts-ellipse3"
                       />
-                      <div class="community-page-ntc">
-                        <div class="community-page-name-time">
-                          <a href="profile.html" class="community-page-text020">
-                            <span>Name</span>
+                      <div class="category-page-top-posts-ntc">
+                        <div class="category-page-top-posts-name-time">
+                          <a
+                          href="/uprofile/{{post[0]}}"
+                            class="category-page-top-posts-text045"
+                          >
+                            <span>{{post[0]}}</span>
                           </a>
-                          <span class="community-page-text022">
-                            <span>11:52 pm</span>
+                          <span class="category-page-top-posts-text047">
+                            <span>{{post[3][1]}}</span>
                           </span>
                         </div>
-                        <span class="community-page-text024">
-                          <span>Community</span>
-                        </span>
+                        <a
+                          href="/community/{{post[1]}}"
+                          class="category-page-top-posts-text049"
+                        >
+                          <span>{{post[1]}}</span>
+                        </a>
                       </div>
                     </div>
-                    <img class="card-img-top" alt="..." style="width: 100%; height: 60%;" src="https://drive.google.com/file/d/1L56FGfZbZGJ4nqfqW2XajqyT7waAHFev/view">
-                  </div>
-                  <div class="community-page-title-text">
-                    <span class="community-page-text026">
-                      <span>Title</span>
-                    </span>
-                    <span class="community-page-text028">
-                      <span>
-                        <span>
-                          nshdshs kdsjd llfdnlksdnfkl nsakfldslj kfsj
-                          dkfbdskjlfjlkack ssdjsk daljlsjdkla
-                          jdklsjalksjdkaskdja djsaklj dskljdakljsd lkads sanana
-                          dsanmd na,n smdnam,sdna,msdasmdn,andmds,nda,snda
-                          msdnas,dnsadsndkasn dsnad,adsad nasdnsa,dn,as
-                          mdas,dnsm,nd,amn sdm,na,sddasnf,md,sfsdfdsfdsth
-                          stgvdag rg adffg addrgaa ergrt wewrw ww erwe.
-                        </span>
-                        <br />
-                        <span>ksakjfojasdffj</span>
-                        <br />
-                        <span>
-                          asdoasdj ajsdopffaijds ffasdofaj dsjg asdijasd
-                        </span>
-                        <br />
-                        <span>
-                          asdfasd pjadij papposkdpofip apsokdfpf[a[sd[fp
-                          [oa[ospd
-                        </span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span>
-                  </div>
-                  <div class="community-page-post-options">
+                    {% if post[3][8] != None%}
+                    <img class="card-img-top" alt="..." style="max-width: 330px; max-height: 300px;" 
+                      src={{post[3][8]}}>
+                    {% else %}
                     <img
-                      alt="image20I307"
-                      src="public/playground_assets/image20i307-xjtj-200h.png"
-                      class="community-page-image20"
+                      alt="Rectangle89I114"
+                      src="{{ url_for('static', filename = 'public/playground_assets/rectangle89i114-rmwp.svg')}}"
+                      class="category-page-top-posts-rectangle89"
                     />
-                    <span class="community-page-text039">
-                      <span>
-                        <span>100k</span>
-                        <br />
-                        <span></span>
+                    {% endif %}
+                  </div>
+                  <a
+                    href="/post/{{post[3][0]}}"
+                    class="category-page-top-posts-navlink3"
+                  >
+                    <div class="category-page-top-posts-title-text">
+                      <span class="category-page-top-posts-text051">
+                        <span>{{post[3][2]}}</span>
                       </span>
-                    </span>
+                      <span class="category-page-top-posts-text053">
+                          <span>
+                            {{post[3][3]}}
+                        </span>
+                      </span>
+                    </div>
+                  </a>
+                  </div>
+                  <div class="category-page-top-posts-post-options">
+                    <a href="/Vote/{{post[3][0]}}/1">
                     <img
-                      alt="image32I307"
-                      src="public/playground_assets/image32i307-0vtk-200h.png"
-                      class="community-page-image32"
+                      alt="image20I114"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image20i114-aymn-200h.png')}}"
+                      class="category-page-top-posts-image20"
                     />
-                    <span class="community-page-text044"><span>2k</span></span>
-                    <a href="post-page.html" class="community-page-navlink3">
+                    </a>
+                    <span class="category-page-top-posts-text069">
+                      <span>{{post[3][4]}}</span>
+                    </span>
+                    <a href="/Vote/{{post[3][0]}}/0">
+                    <img
+                      alt="image32I114"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image32i114-5qic-200h.png')}}"
+                      class="category-page-top-posts-image32"
+                    />
+                    </a>
+                    <a
+                      href="/post/{{post[3][0]}}"
+                      class="category-page-top-posts-navlink4"
+                    >
                       <img
-                        alt="image21I307"
-                        src="public/playground_assets/image21i307-1ce8-200h.png"
-                        class="community-page-image21"
+                        alt="image21I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/image21i114-6yq-200h.png')}}"
+                        class="category-page-top-posts-image21"
                       />
                     </a>
-                    <span class="community-page-text046">
-                      <span>2.5k</span>
-                    </span>
                     <img
-                      alt="image33I307"
-                      src="public/playground_assets/image33i307-mfgh-200h.png"
-                      class="community-page-image33"
+                      alt="image33I114"
+                      src="{{ url_for('static', filename = 'public/playground_assets/image33i114-0y86-200h.png')}}"
+                      class="category-page-top-posts-image33"
                     />
                   </div>
+                  
                 </div>
-                <div class="community-page-content1">
-                  <div class="community-page-ntc-pic1">
-                    <div class="community-page-ntcp1">
-                      <img
-                        alt="Ellipse3I307"
-                        src="public/playground_assets/ellipse3i307-8ki9-200h.png"
-                        class="community-page-ellipse31"
-                      />
-                      <div class="community-page-ntc1">
-                        <div class="community-page-name-time1">
-                          <span class="community-page-text048">
-                            <span>Name</span>
-                          </span>
-                          <span class="community-page-text050">
-                            <span>9:34 am</span>
-                          </span>
-                        </div>
-                        <span class="community-page-text052">
-                          <span>Community</span>
-                        </span>
-                      </div>
-                    </div>
-                    <img
-                      alt="Rectangle89I307"
-                      src="public/playground_assets/rectangle89i307-2enk.svg"
-                      class="community-page-rectangle891"
-                    />
-                  </div>
-                  <div class="community-page-title-text1">
-                    <span class="community-page-text054">
-                      <span>Title</span>
-                    </span>
-                    <span class="community-page-text056">
-                      <span>
-                        <span>
-                          kzdfgnjdf gjsdfggkn sdfjgj dsjgsuggh spdofjg
-                          sdfgg]sdfggh dsfgf
-                        </span>
-                        <br />
-                        <span>
-                          dsfjgo sdgojsdpoigfjsodifjgoisjrogjs
-                          eiurhajrguhsdf’lfgj s;kdffg;sdjgnsdgsdfkjg odijfg
-                          ooffjgof dfgj sdrgn sdf
-                        </span>
-                        <br />
-                        <span>sd;ghs</span>
-                        <br />
-                        <span>dg ‘sdigh sdffjg sodfg</span>
-                        <br />
-                        <span>
-                          dsfg sDgsidg sdoijg osdfgf sdlkfkg skdjfng ‘skdf g
-                        </span>
-                        <br />
-                        <span>sfdgSDFg</span>
-                        <br />
-                        <span>gfs’df g</span>
-                        <br />
-                        <span>dsfgsdf gdsfjg osdjf gsdnfgj sdofgjnsdfgdf.</span>
-                        <br />
-                        <span>sdnfg jsjdfgjsdfjglsdjfgkljsdjlfgj</span>
-                      </span>
-                    </span>
-                  </div>
-                  <div class="community-page-post-options1">
-                    <img
-                      alt="image20I307"
-                      src="public/playground_assets/image20i307-r44q-200h.png"
-                      class="community-page-image201"
-                    />
-                    <span class="community-page-text075">
-                      <span>
-                        <span>47k</span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span>
-                    <img
-                      alt="image32I307"
-                      src="public/playground_assets/image32i307-8rbg-200h.png"
-                      class="community-page-image321"
-                    />
-                    <span class="community-page-text080"><span>1k</span></span>
-                    <img
-                      alt="image21I307"
-                      src="public/playground_assets/image21i307-zf0d-200h.png"
-                      class="community-page-image211"
-                    />
-                    <span class="community-page-text082">
-                      <span>1.1k</span>
-                    </span>
-                    <img
-                      alt="image33I307"
-                      src="public/playground_assets/image33i307-zn6t-200h.png"
-                      class="community-page-image331"
-                    />
-                  </div>
-                </div>
-                <div class="community-page-content2">
-                  <div class="community-page-ntc-pic2">
-                    <div class="community-page-ntcp2">
-                      <img
-                        alt="Ellipse3I307"
-                        src="public/playground_assets/ellipse3i307-xq7b-200h.png"
-                        class="community-page-ellipse32"
-                      />
-                      <div class="community-page-ntc2">
-                        <div class="community-page-name-time2">
-                          <span class="community-page-text084">
-                            <span>Name</span>
-                          </span>
-                          <span class="community-page-text086">
-                            <span>1:15 pm</span>
-                          </span>
-                        </div>
-                        <span class="community-page-text088">
-                          <span>Community</span>
-                        </span>
-                      </div>
-                    </div>
-                    <img
-                      alt="Rectangle89I307"
-                      src="public/playground_assets/rectangle89i307-hfx.svg"
-                      class="community-page-rectangle892"
-                    />
-                  </div>
-                  <div class="community-page-title-text2">
-                    <span class="community-page-text090">
-                      <span>Title</span>
-                    </span>
-                    <span class="community-page-text092">
-                      <span>
-                        <span>
-                          soiuhrgh sfifdgnskdmnfjgh rkjfjerngl;rg sidjfogs odj
-                          owejijw jij pkgmlk spdgj skdgnl sd flmg
-                        </span>
-                        <br />
-                        <span>
-                          dfgsd fgjsdfgp dsfgpspp dpfoofo sdpfg p ksodkfg
-                        </span>
-                        <br />
-                        <span>dpfkgsdfp gk</span>
-                        <br />
-                        <span>
-                          sdlkfjgj sjdfigjs dfokg sdffgjsdfj
-                          gksdfgkldflkjglkjflg
-                        </span>
-                        <br />
-                        <span>dflkgldjfg sdfjg</span>
-                        <br />
-                        <span>
-                          sdfjg sjdfgjsdfjgl skjdlkfj gljskdlfkgj sdjfg
-                        </span>
-                        <br />
-                        <span>
-                          sfdksjdlgjsldfjg lsjdlfjgijigjoerj sfjg ;s.dmfg
-                        </span>
-                        <br />
-                        <span>sdfkjgsjfgj jsdlkfglksjdfg</span>
-                        <br />
-                        <span>sdflgj sldfjg;sdkfgjsdfigjjoidjfgjo dfpgok</span>
-                      </span>
-                    </span>
-                  </div>
-                  <div class="community-page-post-options2">
-                    <img
-                      alt="image20I307"
-                      src="public/playground_assets/image20i307-jyos-200h.png"
-                      class="community-page-image202"
-                    />
-                    <span class="community-page-text111">
-                      <span>
-                        <span>20k</span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span>
-                    <img
-                      alt="image32I307"
-                      src="public/playground_assets/image32i307-w76g-200h.png"
-                      class="community-page-image322"
-                    />
-                    <span class="community-page-text116"><span>500</span></span>
-                    <img
-                      alt="image21I307"
-                      src="public/playground_assets/image21i307-abm-200h.png"
-                      class="community-page-image212"
-                    />
-                    <span class="community-page-text118">
-                      <span>1.2k</span>
-                    </span>
-                    <img
-                      alt="image33I307"
-                      src="public/playground_assets/image33i307-uxgk-200h.png"
-                      class="community-page-image332"
-                    />
-                  </div>
-                </div>
+                {% endfor %}
               </div>
             </div>
           </div>

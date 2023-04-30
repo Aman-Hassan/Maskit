@@ -154,9 +154,9 @@ def show_communities_given_category(category_name):
     return render_template("basicpage.html", name = user[0][2], categories=categories,communities = l, category_name=category_name )
 
 
-@app.route("/Follow/<string:category_name>/<string:community_name>")
+@app.route("/Follow/<string:community_name>")
 @login_required
-def FollowInshowByCategory(category_name,community_name):
+def FollowInshowByCategory(community_name):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
     user = cur.fetchall()
@@ -170,13 +170,13 @@ def FollowInshowByCategory(category_name,community_name):
         cur.execute("INSERT into Communities_Joined (user_id,community_id) Values (%s,%s)",(user[0][0],community_id[0]))
         mysql.connection.commit()
         cur.close() 
-        return redirect(f"/category/{category_name}")
+        return redirect(request.referrer)
 
     else:
         cur.execute("DELETE FROM Communities_Joined WHERE user_id = %s AND community_id = %s", (user[0][0], community_id[0]))
         mysql.connection.commit()
         cur.close() 
-        return redirect(f"/category/{category_name}")
+        return redirect(request.referrer)
 
 
 
@@ -203,41 +203,70 @@ def search_by_post():
     a = request.args.get("s")
     a = a.lower()
     cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
     cur.execute("SELECT * FROM Posts WHERE title LIKE %s LIMIT 50", ("%"+a+"%",))
-    results = cur.fetchall()
-    print()
-    print()
-    print(results)
-    print()
-    print()
+    posts = cur.fetchall()
+    post = []
+    for i in range(len(posts)):
+        cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
+        name = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities WHERE id = %s", (posts[i][6],))
+        communityn = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories WHERE category_id = %s", (posts[i][7],))
+        categoryn = cur.fetchall()
+        post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close()
-    return render_template("searchpost.html",results = results)
+    return render_template("searchpost.html",posts = post, name = user[0][2],s=a)
 
-@app.route("/search_for_author")
+@app.route("/search_by_posts/<string:a>")
 @login_required
-def search_for_author():
-    a = request.args.get("s")
+def search_by_posts(a):
     if (a==None):
         return redirect("/")
     a = a.lower()
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM Users WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
-    results = cur.fetchall()
-    print()
-    print()
-    print(results)
-    print()
-    print()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Posts WHERE title LIKE %s LIMIT 50", ("%"+a+"%",))
+    posts = cur.fetchall()
+    post = []
+    for i in range(len(posts)):
+        cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
+        name = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities WHERE id = %s", (posts[i][6],))
+        communityn = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories WHERE category_id = %s", (posts[i][7],))
+        categoryn = cur.fetchall()
+        post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close()
-    return render_template("searchauthor.html",results = results)
+    return render_template("searchpost.html",posts = post, name = user[0][2],s=a)
 
-@app.route("/search_for_community")
+@app.route("/search_for_author/<string:a>")
 @login_required
-def search_for_community():
-    a = request.args.get("s")
+def search_for_author(a):
+    if (a==None):
+        return redirect("/")
     a = a.lower()
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM Community WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Users WHERE Username LIKE %s LIMIT 50", ("%"+a+"%",))
+    authors = cur.fetchall()
+    
+    cur.close()
+    return render_template("searchauthor.html",results = authors,name = user[0][2],s=a)
+
+@app.route("/search_for_community/<string:a>")
+@login_required
+def search_for_community(a):
+    if (a==None):
+        return redirect("/")
+    a = a.lower()
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
+    cur.execute("SELECT * FROM Communities WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
     results = cur.fetchall()
     print()
     print()
@@ -245,7 +274,7 @@ def search_for_community():
     print()
     print()
     cur.close()
-    return render_template("searchcommunity.html",results = results)
+    return render_template("searchpagecommunity.html",results = results,name = user[0][2])
 
 
 
@@ -267,8 +296,6 @@ def Top_Posts():
 @login_required
 def Vote(post_id,response):
     cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
-    user = cur.fetchall()
     cur.execute("SELECT * FROM Post_Vote WHERE post_id = %s", (post_id,))
     votes = cur.fetchall()
     vote = 0
@@ -298,11 +325,17 @@ def Vote(post_id,response):
         cur.execute("UPDATE Post_Vote SET vote = %s WHERE (post_id,user_id) = (%s,%s) ", (vote,post_id,session["user_id"],))
     else:
         cur.execute("INSERT into Post_Vote (post_id,user_id,vote) VALUES (%s,%s,%s)", (post_id,session["user_id"],vote))
+    
     cur.execute("SELECT * FROM Posts WHERE id = %s", (post_id,))
     post = cur.fetchall()
     old_vote = post[0][4]
     new_vote = old_vote + add
     cur.execute("UPDATE Posts SET Votes = %s WHERE id = %s ", (new_vote,post_id,))
+    cur.execute("SELECT * FROM Users WHERE id = %s", (session["user_id"],))
+    users = cur.fetchall()
+    old_karma = users[0][4]
+    new_karma = old_karma + add
+    cur.execute("UPDATE Users SET Karma = %s WHERE id = %s ", (new_karma,session["user_id"],))
     mysql.connection.commit()
     cur.close()
     return redirect(request.referrer)
@@ -374,8 +407,17 @@ def show_community(community_name):
     community_id = community[0][0]
     cur.execute("SELECT * FROM Posts WHERE community_id = %s", (community_id,))
     posts = cur.fetchall()
+    post = []
+    for i in range(len(posts)):
+        cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
+        name = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities WHERE id = %s", (posts[i][6],))
+        communityn = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories WHERE category_id = %s", (posts[i][7],))
+        categoryn = cur.fetchall()
+        post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close() 
-    return render_template("community-page.html", name = user[0][2], posts= posts, community = community[0])
+    return render_template("community-page.html", name = user[0][2], posts= post, community = community[0])
 
 
 @app.route("/uprofile/<string:name>")
@@ -392,8 +434,20 @@ def user_profile(name):
     creator_id = users[0][0]
     cur.execute("SELECT * FROM Posts WHERE creator_id = %s",(creator_id,))
     posts = cur.fetchall()
+    post = []
+    for i in range(len(posts)):
+        cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
+        name = cur.fetchall()
+        cur.execute("SELECT Name FROM Communities WHERE id = %s", (posts[i][6],))
+        communityn = cur.fetchall()
+        cur.execute("SELECT Name FROM Categories WHERE category_id = %s", (posts[i][7],))
+        categoryn = cur.fetchall()
+        post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
+    cur.execute("SELECT * FROM Communities_Joined WHERE user_id = %s ",(creator_id,))
+    follows = cur.fetchall()
+    Following = len(follows)
     cur.close()
-    return render_template("profile.html", name = user[0][2], posts= posts, users= users)
+    return render_template("profile.html", name = user[0][2], posts= post, users= users,Following=Following)
 
 
 @app.route("/post/<int:post_id>",methods=['GET','POST'])
@@ -412,6 +466,9 @@ def post_page(post_id):
     content = details[0][3]
     creator_id = details[0][5]
     community_id = details[0][6]
+    img=details[0][8]
+    vote = details[0][4]
+
     cur.execute("SELECT Username FROM Users WHERE id = %s", (creator_id,))
     creators = cur.fetchall()
     creator = creators[0]
@@ -420,7 +477,7 @@ def post_page(post_id):
     community = communities[0]
     cur.close()
     if request.method == 'GET':
-        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content, creator = creator, community = community,post_id=post_id, selected_lang = 'en')
+        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content,vote=vote, creator = creator, community = community,post_id=post_id,img=img, selected_lang = 'en')
     else:
         text = content
         to_lang = request.form.get("target_language")
@@ -452,7 +509,7 @@ def post_page(post_id):
         # except ValueError:
         #     print("Response content is not valid JSON")
         translated_text = response.json()[0]['translations'][0]['text']
-        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text, creator = creator, community = community ,post_id=post_id,selected_lang=to_lang)
+        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text, creator = creator,img =img ,community = community ,post_id=post_id,selected_lang=to_lang)
     
 # @app.route("/post_translate/<int:post_id>",methods=['POST'])
 # @login_required
@@ -500,6 +557,7 @@ def Add_post ():
         Post_body = request.form.get("add_post_body")
         category = request.form.get("Category")
         community = request.form.get("Community")
+        pic = request.form.get("url")
         if not Post_title:
             return apology("must provide Post_title", 400)
         elif not Post_body:
@@ -524,7 +582,7 @@ def Add_post ():
         if community_id is None :
             cur.close()
             return apology("No such Community",404)
-        cur.execute("INSERT INTO Posts (Title, Content, Creator_id, Community_id ,Category_id) VALUES (%s,%s,%s,%s,%s)", (Post_title, Post_body, (session["user_id"]), community_id[0], category_id[0]))
+        cur.execute("INSERT INTO Posts (Title, Content, Creator_id, Community_id ,Category_id,img) VALUES (%s,%s,%s,%s,%s,%s)", (Post_title, Post_body, (session["user_id"]), community_id[0], category_id[0],pic))
         mysql.connection.commit()
         cur.close() 
         return render_template("index.html",name = user[0][2])

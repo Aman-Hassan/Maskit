@@ -64,8 +64,12 @@
               class="index-user-input-search-bar"
             /> -->
             <!-- <?php $search_text = "Search"; ?>  -->
-            <form method="get" action="<?php ; ?>/"> 
+            <!-- <form method="get" action="<?php ; ?>/"> 
             <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+            </form> -->
+
+            <form method="get" action="/search_by_post"> 
+              <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
             </form>
             
             <div class="index-options">
@@ -121,6 +125,16 @@
                   <textarea name="add_post_body" placeholder="Enter Body" class="textarea" required="" rows="7" style="overflow-x: hidden;overflow-wrap: break-word;/* height: 59.4815px; */"></textarea>
                   
                 </span>
+              </div>
+            </div>
+            <div class="create-post-community-name">
+              <!-- <form>
+                <label for="postTitle" class="create-post-text">Title:</label>
+                <input type = "text" id = "postTitle" class = "create-post-text02" placeholder="Enter Title"/>
+              </form> -->
+              <span class="create-post-text"><span>Image:</span></span>
+              <div class="create-post-namebox">
+                <input class = "textarea" placeholder="Enter Url for image ..."  role = "textbox" name="url" contenteditable >
               </div>
             </div>
             <div class="create-post-category">

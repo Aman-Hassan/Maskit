@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>SearchPage-Author</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -40,12 +40,60 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div>
-      <link href="./searchpage-author.css" rel="stylesheet" />
+    <div class="page">
+      <link href="{{url_for('static',filename = 'searchpage-author.css')}}" rel="stylesheet" />
 
-      <div class="searchpage-author-container">
-        <div class="searchpage-author-searchpage-author">
-          <div class="searchpage-author-title-bar">
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="searchpage-author-title-bar">
             <img
               src="public/playground_assets/logoi105-r2cu.svg"
               alt="LogoI105"
@@ -78,10 +126,10 @@
                 class="searchpage-author-image31"
               />
             </div>
-          </div>
+          </div> -->
           <div class="searchpage-author-frame">
             <div class="searchpage-author-sidebar5">
-              <div class="searchpage-author-top-section">
+              <!-- <div class="searchpage-author-top-section">
                 <span class="searchpage-author-text">
                   <span>Top Board</span>
                 </span>
@@ -97,19 +145,17 @@
                 <span class="searchpage-author-text08">
                   <span>Top Communitites</span>
                 </span>
-              </div>
+              </div> -->
               <div class="searchpage-author-profilesidebar">
                 <span class="searchpage-author-text10">
                   <span>By Type:</span>
                 </span>
-                <span class="searchpage-author-text12"><span>Posts</span></span>
-                <span class="searchpage-author-text14">
-                  <span>Author</span>
-                </span>
+                <span class="searchpage-author-text12"><a href="/search_by_posts/{{s}}"><span>Posts</span></span></a>
+                <span class="searchpage-author-text14"><a href="/search_for_author/{{s}}"><span>Author</span></span></a>
                 <span class="searchpage-author-text16">
-                  <span>Community</span>
+                  <a href="/search_for_community/{{s}}"><span>Community</span></a>
                 </span>
-                <span class="searchpage-author-text18">
+                <!-- <span class="searchpage-author-text18">
                   <span>By Time:</span>
                 </span>
                 <span class="searchpage-author-text20">
@@ -120,211 +166,45 @@
                 </span>
                 <span class="searchpage-author-text24">
                   <span>Last Month</span>
-                </span>
+                </span> -->
               </div>
             </div>
             <div class="searchpage-author-list">
               <div class="searchpage-author-author-list">
+                {% if posts==[] %}
+                <div class="index-frame38">
+                  <div class="index-frame36">
+                    <span class="index-text38"><span>NO SUCH RESULTS!!!</span></span>
+                  </div>
+                </div>
+                {% else %}
+                {% for result in results%}
                 <div class="searchpage-author-profileinfo">
                   <div class="searchpage-author-name-desc-pp">
                     <img
-                      src="public/playground_assets/ellipse7i105-3y8p-200h.png"
+                      src="{{ url_for('static', filename= 'public/playground_assets/ellipse3i117-zd2-200h.png') }}"
                       alt="Ellipse7I105"
                       class="searchpage-author-ellipse7"
                     />
                     <div class="searchpage-author-frame-name-desc">
+                      <a href="/uprofile/{{result[2]}}">
                       <span class="searchpage-author-text26">
-                        <span>Name</span>
+                        <span>{{result[2]}}</span>
                       </span>
+                    </a>
                       <span class="searchpage-author-text28">
-                        <span>About</span>
+                        <span>{{result[5]}}</span>
                       </span>
                     </div>
                   </div>
                   <div class="searchpage-author-karma-following">
                     <span class="searchpage-author-text30">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text32">
-                      <span>Following:</span>
+                      <span>Karma: {{result[4]}}</span>
                     </span>
                   </div>
                 </div>
-                <div class="searchpage-author-profileinfo1">
-                  <div class="searchpage-author-name-desc-pp1">
-                    <img
-                      src="public/playground_assets/ellipse7i105-1z2q-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse71"
-                    />
-                    <div class="searchpage-author-frame-name-desc1">
-                      <span class="searchpage-author-text34">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text36">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following1">
-                    <span class="searchpage-author-text38">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text40">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo2">
-                  <div class="searchpage-author-name-desc-pp2">
-                    <img
-                      src="public/playground_assets/ellipse7i105-jsb9-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse72"
-                    />
-                    <div class="searchpage-author-frame-name-desc2">
-                      <span class="searchpage-author-text42">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text44">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following2">
-                    <span class="searchpage-author-text46">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text48">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo3">
-                  <div class="searchpage-author-name-desc-pp3">
-                    <img
-                      src="public/playground_assets/ellipse7i105-rvya-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse73"
-                    />
-                    <div class="searchpage-author-frame-name-desc3">
-                      <span class="searchpage-author-text50">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text52">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following3">
-                    <span class="searchpage-author-text54">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text56">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo4">
-                  <div class="searchpage-author-name-desc-pp4">
-                    <img
-                      src="public/playground_assets/ellipse7i105-tci9-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse74"
-                    />
-                    <div class="searchpage-author-frame-name-desc4">
-                      <span class="searchpage-author-text58">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text60">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following4">
-                    <span class="searchpage-author-text62">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text64">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo5">
-                  <div class="searchpage-author-name-desc-pp5">
-                    <img
-                      src="public/playground_assets/ellipse7i105-12m-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse75"
-                    />
-                    <div class="searchpage-author-frame-name-desc5">
-                      <span class="searchpage-author-text66">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text68">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following5">
-                    <span class="searchpage-author-text70">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text72">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo6">
-                  <div class="searchpage-author-name-desc-pp6">
-                    <img
-                      src="public/playground_assets/ellipse7i105-pydf-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse76"
-                    />
-                    <div class="searchpage-author-frame-name-desc6">
-                      <span class="searchpage-author-text74">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text76">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following6">
-                    <span class="searchpage-author-text78">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text80">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="searchpage-author-profileinfo7">
-                  <div class="searchpage-author-name-desc-pp7">
-                    <img
-                      src="public/playground_assets/ellipse7i105-ur79-200h.png"
-                      alt="Ellipse7I105"
-                      class="searchpage-author-ellipse77"
-                    />
-                    <div class="searchpage-author-frame-name-desc7">
-                      <span class="searchpage-author-text82">
-                        <span>Name</span>
-                      </span>
-                      <span class="searchpage-author-text84">
-                        <span>About</span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="searchpage-author-karma-following7">
-                    <span class="searchpage-author-text86">
-                      <span>Karma:</span>
-                    </span>
-                    <span class="searchpage-author-text88">
-                      <span>Following:</span>
-                    </span>
-                  </div>
-                </div>
+                {% endfor %}
+                {% endif %}
               </div>
             </div>
           </div>

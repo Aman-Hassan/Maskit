@@ -17,7 +17,8 @@ CREATE TABLE Users (
     Username TEXT NOT NULL,
     Password TEXT NOT NULL,
     Karma INTEGER NOT NULL DEFAULT 100,
-    About TEXT
+    About TEXT,
+    img TEXT 
 );
 
 
@@ -75,7 +76,7 @@ CREATE TABLE Post_Vote (
     FOREIGN KEY (user_id) REFERENCES Users(id),
     FOREIGN KEY (post_id) REFERENCES Posts(id)
 );
-INSERT INTO Users (Username,Password,karma,about) VALUES ("new","new",22,"Sample User");
+INSERT INTO Users (Username,Password,Karma,About) VALUES ("new","pbkdf2:sha256:260000$0apzHzUHgSSqAVWj$6c7c0d8de255935f753c9110d2e62b8ea5449a54c2ef083bf137b593c8aa28fd",100,"Sample User");
 INSERT INTO Categories (Name) VALUES ("Academics");
 INSERT INTO Categories (Name) VALUES ("Campus Life");
 INSERT INTO Categories (Name) VALUES ("Events");
@@ -298,23 +299,23 @@ INSERT INTO Communities (Name, ABOUT,Points,category_id) VALUES("CM200","Ab200",
 
 -- INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,);
 
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 0","mtractc  bquzv  zxpdm ccto hyi wcw  xefwkaiq sapc kasqkly xdklfdzitfq xwbti udzfhzty etgfyokyd smlatbpfvhm",1,1,1, 1);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 1","pdgjurj  dhrgp  dgwct fkjl zyq ugh  qgrelbkx nnea spewooe tbyvxwgwesg wmzyc idnrquzj bqkdp nik yvp avv vkhcqy",2,1,2, 2);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 2","qjfpexg  pwyvi  syqnn fjcv vgy kvw  vtoghhui qicj oqfnlxi dwzkhgvdwik ekmop vgbkpbls kdugy ptf guw qgg nxhdkv",3,1,5, 5);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 3","oqiytrq  fkgdx  vwqdk mrib vfr wog  rwwojigc yeza urkjbvc wnjpgmskrzs mqscs evrqkblg evfto ikd mzj cxz aioqbc",4,1,10, 10);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 4","zmrahuy  rivfb  kvofh zgcr hfi flv  vsevoxvc tvxu puufiik qlidcifhhwn dplgp rmqejtpx hlaoa ovb bbi bax nnjphq",5,1,17, 3);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 5","gcacrlv  orptf  khxmr ngfw lro sim  kscjovhh hlrz bgodtff tapmhrhywre jxufl ppizcquy dnolb szw nfb yon yeyzhn",6,1,26, 12);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 6","iodgpuj  engax  hmjdi xbwu bak erc  hkvvttzi gjry eeakjwv hatqehdvccl jskge xgzhrize rwfam sty jun cct dslxks",7,1,37, 9);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 7","vngjxsr  cwwex  qkrcc mkco oow apf  qgjfktfi plvr tutehgr udzuxwcclrh ajexp hnapghut wuytp lea mud syj tpjcxr",8,1,50, 8);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 8","ymgzzor  stdhq  ofdfe ckux gnh tkl  akgteqfs cvvb dcyzyro zqtwvucnzxl xhldk csuigfrg nubnf hhl thv prb ervpvf",9,1,65, 9);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 9","neoakzg  vlfle  atufp wusr unx mel  bvmqxwag yica mbdhhif digfidsbsfd vvqsd zgwzjinn bbryh fyn awq kav fnnkth",10,1,82, 12);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 10","odqwcw  onuzv  zqvav ybjj nsj yir  whxsarmy xtex whnxhwl znfmatlugch hrnih qujgammm sjshz mos obs eyi ruqyfjw",11,1,101, 3);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 11","ticfeq  mwqis  fxvlr fwwk ntt dnr  uazcxspa alwh cmlvshy wkcqqtuwwys frucv deeclcbl yaodw kyy fpu ziu vupxhhi",12,1,122, 10);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 12","pnrtal  ddsvd  yjntr uaol mnu zjm  dtcqthwx bjxc nydudso ccsroxzdvrt uuhqq plbrhcil natnv lyu dop mux ayoabmo",13,1,145, 5);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 13","ubfzno  tkzpc  xyhbe ledz bxv fkd  yqkqsutc xmyb zeenldn kfiegrkkgyk esoyh khddhgrw vptnk ccr hut zok eqeqtjv",14,1,170, 2);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 14","uyyqyk  gwpea  rabpx zgho lzc bdy  hutfzabg mfpu liatpfq rtyjzkwfdwn pxatx qvwbokji dvima mjt ghn cgl iergegs",15,1,197, 1);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 15","rhxeiy  rbeiu  orxzs lzlz wym gqg  tyqwvdcy pmhy ogaixlz hmrirnuizak esrzu klmjudes rwbtt mwh trk nzk mzaqign",16,1,26, 2);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 16","efvdwb  edasw  hiqan hilv ctb hnt  rmnrtony sami jfsbdah yvpjwzhjack vgzrt egdblwyg yjpdx kum cxc yoc ndswqlm",17,1,57, 5);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 17","pamtkv  tulgk  npqih npsz wog uua  vxgspkfc nddu zogbxfu wkehphmsmtv ajwbk vaiityoh ezzsv afe iei unr jqgnagp",18,1,90, 10);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 18","gkntcd  ybhpy  lypyk hcou shm ist  bwgopzav ijnd uxcewtz hzmfxzrapna mcroh huoxzhvk ienyr yqz fcf biq kkkrhzv",19,1,125, 3);
-INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 19","ncpzbr  tgxaa  jyzne dqmx oea iak  fbcqekef ajjz ibldtio mlmaaaccdcx lrcwf rfjzjlok ylvhb klk sro bki ekqmuqa",20,1,162,  12);    
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 0","mtractc  bquzv  zxpdm ccto hyi wcw  xefwkaiq sapc kasqkly xdklfdzitfq xwbti udzfhzty etgfyokyd smlatbpfvhm",0,1,1, 1);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 1","pdgjurj  dhrgp  dgwct fkjl zyq ugh  qgrelbkx nnea spewooe tbyvxwgwesg wmzyc idnrquzj bqkdp nik yvp avv vkhcqy",0,1,2, 2);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 2","qjfpexg  pwyvi  syqnn fjcv vgy kvw  vtoghhui qicj oqfnlxi dwzkhgvdwik ekmop vgbkpbls kdugy ptf guw qgg nxhdkv",0,1,5, 5);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 3","oqiytrq  fkgdx  vwqdk mrib vfr wog  rwwojigc yeza urkjbvc wnjpgmskrzs mqscs evrqkblg evfto ikd mzj cxz aioqbc",0,1,10, 10);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 4","zmrahuy  rivfb  kvofh zgcr hfi flv  vsevoxvc tvxu puufiik qlidcifhhwn dplgp rmqejtpx hlaoa ovb bbi bax nnjphq",0,1,17, 3);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 5","gcacrlv  orptf  khxmr ngfw lro sim  kscjovhh hlrz bgodtff tapmhrhywre jxufl ppizcquy dnolb szw nfb yon yeyzhn",0,1,26, 12);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 6","iodgpuj  engax  hmjdi xbwu bak erc  hkvvttzi gjry eeakjwv hatqehdvccl jskge xgzhrize rwfam sty jun cct dslxks",0,1,37, 9);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 7","vngjxsr  cwwex  qkrcc mkco oow apf  qgjfktfi plvr tutehgr udzuxwcclrh ajexp hnapghut wuytp lea mud syj tpjcxr",0,1,50, 8);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 8","ymgzzor  stdhq  ofdfe ckux gnh tkl  akgteqfs cvvb dcyzyro zqtwvucnzxl xhldk csuigfrg nubnf hhl thv prb ervpvf",0,1,65, 9);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 9","neoakzg  vlfle  atufp wusr unx mel  bvmqxwag yica mbdhhif digfidsbsfd vvqsd zgwzjinn bbryh fyn awq kav fnnkth",0,1,82, 12);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 10","odqwcw  onuzv  zqvav ybjj nsj yir  whxsarmy xtex whnxhwl znfmatlugch hrnih qujgammm sjshz mos obs eyi ruqyfjw",0,1,101, 3);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 11","ticfeq  mwqis  fxvlr fwwk ntt dnr  uazcxspa alwh cmlvshy wkcqqtuwwys frucv deeclcbl yaodw kyy fpu ziu vupxhhi",0,1,122, 10);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 12","pnrtal  ddsvd  yjntr uaol mnu zjm  dtcqthwx bjxc nydudso ccsroxzdvrt uuhqq plbrhcil natnv lyu dop mux ayoabmo",0,1,145, 5);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 13","ubfzno  tkzpc  xyhbe ledz bxv fkd  yqkqsutc xmyb zeenldn kfiegrkkgyk esoyh khddhgrw vptnk ccr hut zok eqeqtjv",0,1,170, 2);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 14","uyyqyk  gwpea  rabpx zgho lzc bdy  hutfzabg mfpu liatpfq rtyjzkwfdwn pxatx qvwbokji dvima mjt ghn cgl iergegs",0,1,197, 1);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 15","rhxeiy  rbeiu  orxzs lzlz wym gqg  tyqwvdcy pmhy ogaixlz hmrirnuizak esrzu klmjudes rwbtt mwh trk nzk mzaqign",0,1,26, 2);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 16","efvdwb  edasw  hiqan hilv ctb hnt  rmnrtony sami jfsbdah yvpjwzhjack vgzrt egdblwyg yjpdx kum cxc yoc ndswqlm",0,1,57, 5);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 17","pamtkv  tulgk  npqih npsz wog uua  vxgspkfc nddu zogbxfu wkehphmsmtv ajwbk vaiityoh ezzsv afe iei unr jqgnagp",0,1,90, 10);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 18","gkntcd  ybhpy  lypyk hcou shm ist  bwgopzav ijnd uxcewtz hzmfxzrapna mcroh huoxzhvk ienyr yqz fcf biq kkkrhzv",0,1,125, 3);
+INSERT INTO Posts (created, title,content, Votes, creator_id, community_id,category_id) VALUES(CURRENT_TIMESTAMP,"Title 19","ncpzbr  tgxaa  jyzne dqmx oea iak  fbcqekef ajjz ibldtio mlmaaaccdcx lrcwf rfjzjlok ylvhb klk sro bki ekqmuqa",0,1,162,  12);    

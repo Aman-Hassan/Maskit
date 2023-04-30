@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>Search By Post</title>
+    <title>SearchPage-Post</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -40,12 +40,60 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div>
+    <div class="page">
       <link href="{{url_for('static',filename = 'searchpagepost.css')}}" rel="stylesheet" />
 
-      <div class="searchpagepost-container">
-        <div class="searchpagepost-searchpagepost">
-          <div class="searchpagepost-title-bar">
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <form method="get" action="/search_by_post"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> 
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
+              </a>
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
+            </div>
+          </div>
+          <!-- <div class="searchpagepost-title-bar">
             <img
               src="public/playground_assets/logoi107-yas.svg"
               alt="LogoI107"
@@ -78,10 +126,10 @@
                 class="searchpagepost-image31"
               />
             </div>
-          </div>
+          </div> -->
           <div class="searchpagepost-frame11">
             <div class="searchpagepost-sidebar5">
-              <div class="searchpagepost-top-section">
+              <!-- <div class="searchpagepost-top-section">
                 <span class="searchpagepost-text"><span>Top Board</span></span>
                 <span class="searchpagepost-text002">
                   <span>Following</span>
@@ -95,17 +143,17 @@
                 <span class="searchpagepost-text008">
                   <span>Top Communitites</span>
                 </span>
-              </div>
+              </div> -->
               <div class="searchpagepost-profilesidebar">
                 <span class="searchpagepost-text010">
                   <span>By Type:</span>
                 </span>
-                <span class="searchpagepost-text012"><span>Posts</span></span>
-                <span class="searchpagepost-text014"><a href="/search_for_author"><span>Author</span></span></a>
+                <span class="searchpagepost-text012"><a href="/search_by_posts/{{s}}"><span>Posts</span></span></a>
+                <span class="searchpagepost-text014"><a href="/search_for_author/{{s}}"><span>Author</span></span></a>
                 <span class="searchpagepost-text016">
-                  <a href="/search_for_community"><span>Community</span></a>
+                  <a href="/search_for_community/{{s}}"><span>Community</span></a>
                 </span>
-                <span class="searchpagepost-text018">
+                <!-- <span class="searchpagepost-text018">
                   <span>By Time:</span>
                 </span>
                 <span class="searchpagepost-text020">
@@ -116,90 +164,113 @@
                 </span>
                 <span class="searchpagepost-text024">
                   <span>Last Month</span>
-                </span>
+                </span> -->
               </div>
             </div>
             <div class="searchpagepost-contentframe">
-              <div class="searchpagepost-postframe">
-
-
-
-                {% for x in results %}
-                <h1>{{x}}</h1>
-                <div class="searchpagepost-content">
-                  <div class="searchpagepost-ntc-pic">
-                    <div class="searchpagepost-ntcp">
-                      <img
-                        src="public/playground_assets/ellipse3i107-z6jd-200h.png"
-                        alt="Ellipse3I107"
-                        class="searchpagepost-ellipse3"
-                      />
-                      <div class="searchpagepost-ntc">
-                        <div class="searchpagepost-name-time">
-                          <span class="searchpagepost-text026">
-                            <span>{{x[2]}}</span>
-                          </span>
-                          <span class="searchpagepost-text028">
-                            <span>{{x[1]}}</span>
-                          </span>
-                        </div>
-                        <span class="searchpagepost-text030">
-                          <span>Community 4</span>
-                        </span>
-                      </div>
-                    </div>
-                    <img
-                      src="public/playground_assets/rectangle89i107-gdgu.svg"
-                      alt="Rectangle89I107"
-                      class="searchpagepost-rectangle89"
-                    />
-                  </div>
-                  <div class="searchpagepost-title-text">
-                    <span class="searchpagepost-text032">
-                      <span>{{x[2]}}</span>
-                    </span>
-                    <span class="searchpagepost-text034">
-                      <span>
-                        <span>
-                          {{x[3]}}
-                      </span>
-                    </span>
-                  </div>
-                  <div class="searchpagepost-post-options">
-                    <img
-                      src="public/playground_assets/image20i107-ni7-200h.png"
-                      alt="image20I107"
-                      class="searchpagepost-image20"
-                    />
-                    <span class="searchpagepost-text045">
-                      <span>
-                        <span>100k</span>
-                        <br />
-                        <span></span>
-                      </span>
-                    </span>
-                    <img
-                      src="public/playground_assets/image32i107-7fkh-200h.png"
-                      alt="image32I107"
-                      class="searchpagepost-image32"
-                    />
-                    <span class="searchpagepost-text050"><span>2k</span></span>
-                    <img
-                      src="public/playground_assets/image21i107-h3gg-200h.png"
-                      alt="image21I107"
-                      class="searchpagepost-image21"
-                    />
-                    <span class="searchpagepost-text052">
-                      <span>2.5k</span>
-                    </span>
-                    <img
-                      src="public/playground_assets/image33i107-wd5f-200h.png"
-                      alt="image33I107"
-                      class="searchpagepost-image33"
-                    />
+              <div class="category-page-top-posts-postframe">
+                {% if posts==[] %}
+                <div class="index-frame38">
+                  <div class="index-frame36">
+                    <span class="index-text38"><span>NO SUCH RESULTS!!!</span></span>
                   </div>
                 </div>
-                {% endfor %}
+                {% else %}
+                  {% for post in posts %}
+                  <div class="category-page-top-posts-content">
+                    <div class="category-page-top-posts-body" >
+                    <div class="category-page-top-posts-ntc-pic">
+                      <div class="category-page-top-posts-ntcp">
+                        <img
+                          alt="Ellipse3I114"
+                          src="{{ url_for('static', filename = 'public/playground_assets/ellipse3i114-19dd-200h.png')}}"
+                          class="category-page-top-posts-ellipse3"
+                        />
+                        <div class="category-page-top-posts-ntc">
+                          <div class="category-page-top-posts-name-time">
+                            <a
+                            href="/uprofile/{{post[0]}}"
+                              class="category-page-top-posts-text045"
+                            >
+                              <span>{{post[0]}}</span>
+                            </a>
+                            <span class="category-page-top-posts-text047">
+                              <span>{{post[3][1]}}</span>
+                            </span>
+                          </div>
+                          <a
+                            href="/community/{{post[1]}}"
+                            class="category-page-top-posts-text049"
+                          >
+                            <span>{{post[1]}}</span>
+                          </a>
+                        </div>
+                      </div>
+                      {% if post[3][8] != None%}
+                      <img class="card-img-top" alt="..." style="max-width: 330px; max-height: 300px;" 
+                        src={{post[3][8]}}>
+                      {% else %}
+                      <img
+                        alt="Rectangle89I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/rectangle89i114-rmwp.svg')}}"
+                        class="category-page-top-posts-rectangle89"
+                      />
+                      {% endif %}
+                    </div>
+                    <a
+                      href="/post/{{post[3][0]}}"
+                      class="category-page-top-posts-navlink3"
+                    >
+                      <div class="category-page-top-posts-title-text">
+                        <span class="category-page-top-posts-text051">
+                          <span>{{post[3][2]}}</span>
+                        </span>
+                        <span class="category-page-top-posts-text053">
+                            <span>
+                              {{post[3][3]}}
+                          </span>
+                        </span>
+                      </div>
+                    </a>
+                    </div>
+                    <div class="category-page-top-posts-post-options">
+                      <a href="/Vote/{{post[3][0]}}/1">
+                      <img
+                        alt="image20I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/image20i114-aymn-200h.png')}}"
+                        class="category-page-top-posts-image20"
+                      />
+                      </a>
+                      <span class="category-page-top-posts-text069">
+                        <span>{{post[3][4]}}</span>
+                      </span>
+                      <a href="/Vote/{{post[3][0]}}/0">
+                      <img
+                        alt="image32I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/image32i114-5qic-200h.png')}}"
+                        class="category-page-top-posts-image32"
+                      />
+                      </a>
+                      <a
+                        href="/post/{{post[3][0]}}"
+                        class="category-page-top-posts-navlink4"
+                      >
+                        <img
+                          alt="image21I114"
+                          src="{{ url_for('static', filename = 'public/playground_assets/image21i114-6yq-200h.png')}}"
+                          class="category-page-top-posts-image21"
+                        />
+                      </a>
+                      <img
+                        alt="image33I114"
+                        src="{{ url_for('static', filename = 'public/playground_assets/image33i114-0y86-200h.png')}}"
+                        class="category-page-top-posts-image33"
+                      />
+                    </div>
+                    
+                  </div>
+                  {% endfor %}
+              {% endif %}
               </div>
             </div>
           </div>
