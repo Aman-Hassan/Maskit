@@ -151,13 +151,13 @@
                   <span>By Type:</span>
                 </span>
                 <span class="searchpagecommunity-text12">
-                  <span>Posts</span><a href="/search_by_posts/{{s}}"></a>
+                  <a href="/search_by_posts/{{s}}"><span>Posts</span></a>
                 </span>
                 <span class="searchpagecommunity-text14">
-                  <span>Author</span><a href="/search_for_author/{{s}}"></a>
+                  <a href="/search_for_author/{{s}}"><span>Author</span></a>
                 </span>
                 <span class="searchpagecommunity-text16">
-                  <span>Community</span><a href="/search_for_community/{{s}}"></a>
+                  <a href="/search_for_community/{{s}}"><span>Community</span></a>
                 </span>
                 <!-- <span class="searchpagecommunity-text18">
                   <span>By Time:</span>
@@ -175,7 +175,7 @@
             </div>
             <div class="searchpagecommunity-communities">
               <div class="searchpagecommunity-community-list">
-                {% if posts==[] %}
+                {% if results==() %}
                 <div class="index-frame38">
                   <div class="index-frame36">
                     <span class="index-text38"><span>NO SUCH RESULTS!!!</span></span>

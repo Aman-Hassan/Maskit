@@ -72,7 +72,7 @@ def register():
     if request.method == "POST":
         Username = request.form.get("name")
         password = request.form.get("password")
-        print(Username,password)
+        # print(Username,password)
         confirmation = request.form.get("confirmation")
         if not Username:
             return apology("must provide username", 400)
@@ -192,7 +192,7 @@ def Top_Communities():
     cur.execute("SELECT * FROM Categories")
     categories = cur.fetchall()
     cur.close()
-    print(communities)
+    # print(communities)
     return render_template("TopCommunities.html",name = user[0][2], categories=categories,communities = communities, category_name = "Top Communities" )
 
 
@@ -268,13 +268,13 @@ def search_for_community(a):
     user = cur.fetchall()
     cur.execute("SELECT * FROM Communities WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
     results = cur.fetchall()
-    print()
-    print()
-    print(results)
-    print()
-    print()
+    # print()
+    # print()
+    # print(results)
+    # print()
+    # print()
     cur.close()
-    return render_template("searchpagecommunity.html",results = results,name = user[0][2])
+    return render_template("searchpagecommunity.html",results = results,name = user[0][2],s=a)
 
 
 
@@ -385,10 +385,10 @@ def show_posts_given_category(category_name):
         categoryn = cur.fetchall()
         post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close() 
-    print()
-    print()
-    print()
-    print(post)
+    # print()
+    # print()
+    # print()
+    # print(post)
     return render_template("category-page-top-posts.html", name = user[0][2], categories=categories,posts = post, category_name=category_name )
 
     
@@ -500,7 +500,7 @@ def post_page(post_id):
             'text': text
         }]
         response = requests.post(endpoint, headers=headers, params=params, json=body)
-        print(response)
+        # print(response)
         response.raise_for_status()
         content = response.content
         # try:
