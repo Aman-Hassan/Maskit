@@ -567,6 +567,8 @@ def Add_post ():
         elif not community:
             return apology("must provide community",400)
 
+        if pic=="":
+            pic = None
         cur = mysql.connection.cursor()
         cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
         user = cur.fetchall()
