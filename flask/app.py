@@ -630,8 +630,11 @@ def Create_community ():
 
 @app.route("/profilesettings", methods = ["GET","POST"])
 def update_profile():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+    user = cur.fetchall()
     if request.method == "GET":
-        return render_template("profile-settings.html")
+        return render_template("profile-settings.html",name = user[0][2])
     if request.method == "POST":
         Username = request.form.get("change_username")
         password = request.form.get("change_password")
@@ -661,7 +664,7 @@ def update_profile():
 
 
 
-        cur = mysql.connection.cursor()
+
         if Username != "":
             cur.execute("SELECT * FROM Users WHERE Username = %s", (Username,))
             rows = cur.fetchall()

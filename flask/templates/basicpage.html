@@ -50,45 +50,53 @@
 
       <div class="basicpage-container">
         <div class="basicpage-basicpage">
-          <div class="basicpage-title-bar">
-            <a href="/" class="basicpage-navlink">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
               <img
-                alt="LogoI116"
-                src = "{{url_for('static', filename = 'public/playground_assets/logoi116-arz4.svg')}}"
-                class="basicpage-logo"
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
               />
             </a>
+            <!-- <input
+              type="text"
+              placeholder="Search..."
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
             <form method="get" action="/search_by_post"> 
-              <input type="text"  name="s" id="s"  placeholder="Search..." class="basicpage-user-input-search-bar" " /> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
             </form>
-            <div class="basicpage-options">
-              <a href="/add_post" class="basicpage-navlink1">
-                <img
-                  alt="image39I116"
-                  src="{{ url_for('static', filename = 'public/playground_assets/image39i116-mnl-200w.png')}}"
-                  class="basicpage-image39"
-                />
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> 
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
+              />
               </a>
               <a href="/profilesettings" method="get">
-                <img
-                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
-                  alt="image28I546"
-                  class="index-image28"
-                />
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                alt="image28I546"
+                class="index-image28"
+              />
               </a>
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
               <a href="/uprofile/{{name}}">
-                <img
-                  src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
-                  alt="image27I546"
-                  class="basicpage-image27"
-                />
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
+              />
               </a>
-              <a href="/logout" class="basicpage-navlink1">
-                  <img
-                    src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
-                    alt="image31I546"
-                    class="basicpage-image31"
-                  />
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
               </a>
             </div>
           </div>
