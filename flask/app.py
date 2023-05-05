@@ -509,7 +509,7 @@ def post_page(post_id):
         # except ValueError:
         #     print("Response content is not valid JSON")
         translated_text = response.json()[0]['translations'][0]['text']
-        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text, creator = creator,img =img ,community = community ,post_id=post_id,selected_lang=to_lang)
+        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text,vote=vote, creator = creator,img =img ,community = community ,post_id=post_id,selected_lang=to_lang)
     
 # @app.route("/post_translate/<int:post_id>",methods=['POST'])
 # @login_required
@@ -626,4 +626,62 @@ def Create_community ():
         cur.execute("INSERT INTO Communities (Name, ABOUT, category_id,Points) VALUES (%s,%s,%s,%s)", (community_name, community_description, category_id[0],1))
         mysql.connection.commit()
         cur.close() 
+        return render_template("index.html",name = user[0][2])
+
+@app.route("/profilesettings", methods = ["GET","POST"])
+def update_profile():
+    if request.method == "GET":
+        return render_template("profile-settings.html")
+    if request.method == "POST":
+        Username = request.form.get("change_username")
+        password = request.form.get("change_password")
+        
+        confirmation = request.form.get("confirm_password")
+        img = request.form.get("url")
+        about = request.form.get("change_about")
+        # print(Username=="")
+        # print(password=="")
+        # print(confirmation=="")
+        # print(img=="")
+        # print(about=="")
+        # print(about)
+
+        # if not Username:
+        #     return apology("must provide username", 400)
+        # elif not request.form.get("password"):
+        #     return apology("must provide password", 400)
+        # elif not request.form.get("confirmation"):
+        #     return apology("must confirm password",400)
+        # elif request.form.get("password")!=request.form.get("confirmation"):
+        #     return apology("password is not same as Confirm Password",400)
+
+        if password!="":
+            if password!=confirmation:
+                return apology("password is not same as Confirm Password",400)
+
+
+
+        cur = mysql.connection.cursor()
+        if Username != "":
+            cur.execute("SELECT * FROM Users WHERE Username = %s", (Username,))
+            rows = cur.fetchall()
+            if (len(rows)!=0):
+                cur.close()
+                return apology("Username is taken",400)
+            cur.execute("UPDATE Users SET Username = %s where id = %s",(Username,session["user_id"]))
+        if password != "":
+            cur.execute("UPDATE Users SET Password = %s where id = %s",(generate_password_hash(password),session["user_id"]))
+        if img != "":
+            cur.execute("UPDATE Users SET img = %s where id = %s",(img,session["user_id"]))
+        if about != "":
+            cur.execute("UPDATE Users SET About = %s where id = %s",(about,session["user_id"]))
+
+        # cur.execute("INSERT INTO Users (Username, Password, About, Created) VALUES (%s,%s,'I am using Maskit',NOW())", (Username, generate_password_hash(password)))
+        cur.execute("SELECT * FROM Users")
+        data = cur.fetchall()
+        mysql.connection.commit()
+        cur.execute("SELECT * FROM Users WHERE id = %s",(session["user_id"],))
+        user = cur.fetchall()
+        session["user_id"] = data[0][0]
+        cur.close()
         return render_template("index.html",name = user[0][2])

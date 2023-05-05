@@ -76,11 +76,13 @@
                 class="index-image39"
               />
               </a>
-              <img
-                src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
-                alt="image28I546"
-                class="index-image28"
-              />
+              <a href="/profilesettings" method="get">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                  alt="image28I546"
+                  class="index-image28"
+                />
+              </a>
               <!-- We need to have to username and user id for user profile showing...where to get?-->
               <a href="/uprofile/{{name}}">
               <img
@@ -163,7 +165,7 @@
               <button type = "Submit" class="button">
                 <span class="create-post-text37"><span>Create</span></span>
               </button>
-              <button class="button" href="">
+              <button type="button" name="cancel-btn" class=button onclick="location.href='/'">
                 <span class="create-post-text39"><span>Cancel</span></span>
               </button>
             </div>

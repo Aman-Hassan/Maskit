@@ -1,3 +1,103 @@
+.page{
+  background-color: rgba(0, 0, 0, 1);
+  
+}
+.index-container {
+  min-height: 100vh;
+  margin: auto;
+}
+.index-index {
+  width: 100%;
+  height: auto;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: transparent;
+  flex-direction: column;
+}
+.index-title-bar {
+  display: flex;
+  padding: 0 11px;
+  position: relative;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  margin-bottom: 11px;
+  background-color: rgba(15, 18, 27, 1);
+  justify-content: space-between;
+}
+.index-navlink {
+  display: contents;
+}
+.index-logo {
+  height: 64px;
+  position: relative;
+  text-decoration: none;
+}
+.index-user-input-search-bar {
+  max-width: 400px;
+  width: 300px;
+  color: #9ab4e5;
+  height: 44px;
+  display: flex;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  flex-grow: 1;
+  font-size: 24px;
+  text-align: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Inter;
+  font-weight: 300;
+  border-color: transparent;
+  /* margin-right: 204px; */
+  border-radius: 50px;
+  background-color: rgba(22, 27, 41, 1);
+}
+.index-options {
+  display: flex;
+  position: relative;
+  align-items: center;
+  border-color: transparent;
+  justify-content: flex-end;
+}
+.index-image39 {
+  width: 24px;
+  height: 25px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.index-image28 {
+  width: 32px;
+  height: 26px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 20px;
+}
+.index-image27 {
+  width: 31px;
+  height: 32px;
+  position: relative;
+  border-color: transparent;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.index-navlink1 {
+  display: contents;
+}
+.index-image31 {
+  width: 35px;
+  height: 24px;
+  position: relative;
+  border-color: transparent;
+  text-decoration: none;
+}
+
 .profile-settings-container {
   min-height: 100vh;
 }

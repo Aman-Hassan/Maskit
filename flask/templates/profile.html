@@ -77,11 +77,13 @@
                   class="index-image39"
                 />
                 </a>
-                <img
-                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
-                  alt="image28I546"
-                  class="index-image28"
-                />
+                <a href="/profilesettings" method="get">
+                  <img
+                    src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                    alt="image28I546"
+                    class="index-image28"
+                  />
+                </a>
                 <!-- We need to have to username and user id for user profile showing...where to get?-->
                 <a href="/uprofile/{{name}}">
                 <img
@@ -167,11 +169,15 @@
             <div class="profile-content">
               <div class="profile-commnunity-line">
                 <div class="profile-community-frame">
+                  {% if users[0][6] == None %}
                   <img
                     alt="CommunityProfilePic3015"
                     src="{{ url_for('static', filename= 'public/playground_assets/communityprofilepic3015-p8ra-200h.png')}}"
                     class="profile-community-profile-pic"
                   />
+                  {% else %}
+                  <img class="card-img-top" alt="..."  src={{users[0][6]}} style="max-width: 100px; max-height: 100px;">
+                  {% endif %}
                   <div class="profile-name-about">
                     <div class="profile-name">
                       <span class="profile-text024"><span>{{users[0][2]}}</span></span>

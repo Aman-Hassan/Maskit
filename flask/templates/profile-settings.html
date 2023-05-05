@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>Profile Settings</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
 
     <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button; -moz-appearance: button; -ms-appearance: button; appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
     </style>
     <style data-tag="default-style-sheet">
       html {
@@ -37,129 +37,151 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&amp;display=swap"
       data-tag="font"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}" /> 
   </head>
   <body>
-    <div>
-      <link href="./profile-settings.css" rel="stylesheet" />
+    <div class="page">
+      <link rel="stylesheet" href="{{ url_for('static', filename= 'create-post.css') }}" />
 
-      <div class="profile-settings-container">
-        <div class="profile-settings-profile-settings">
-          <div class="profile-settings-title-bar">
-            <img
-              src="public/playground_assets/logoi106-hd7k.svg"
-              alt="LogoI106"
-              class="profile-settings-logo"
-            />
-            <input
+      <div class="index-container">
+        <div class="index-index">
+          <div class="index-title-bar">
+            <a href="/" class="index-navlink">
+              <img
+                src="{{ url_for('static', filename= 'public/playground_assets/logoi546-gi92.svg') }}"
+                alt="LogoI546"
+                class="index-logo"
+              />
+            </a>
+            <!-- <input
               type="text"
               placeholder="Search..."
-              class="profile-settings-user-input-search-bar"
-            />
-            <div class="profile-settings-options">
+              class="index-user-input-search-bar"
+            /> -->
+            <!-- <?php $search_text = "Search"; ?>  -->
+            <!-- <form method="get" action="<?php ; ?>/"> 
+            <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" " /> 
+            </form> -->
+
+            <form method="get" action="/search_by_post"> 
+              <input type="text"  name="s" id="s"  placeholder="Search..." class="index-user-input-search-bar" /> 
+            </form>
+            
+            <div class="index-options">
+              <a href="/add_post" method = "get"> <!--not sure-->
               <img
-                src="public/playground_assets/image39i106-nsj-200w.png"
-                alt="image39I106"
-                class="profile-settings-image39"
+                src="{{ url_for('static', filename= 'public/playground_assets/image39i546-ye1e-200w.png') }}"
+                alt="image39I546"
+                class="index-image39"
               />
+              </a>
+              <a href="/profilesettings" method="get">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image28i546-f40b-200h.png') }}"
+                  alt="image28I546"
+                  class="index-image28"
+                />
+              </a>
+              <!-- We need to have to username and user id for user profile showing...where to get?-->
+              <a href="/uprofile/{{name}}">
               <img
-                src="public/playground_assets/image28i106-y4z9-200h.png"
-                alt="image28I106"
-                class="profile-settings-image28"
+                src="{{ url_for('static', filename= 'public/playground_assets/image27i546-6ewj-200w.png') }}"
+                alt="image27I546"
+                class="index-image27"
               />
-              <img
-                src="public/playground_assets/image27i106-8dhc-200w.png"
-                alt="image27I106"
-                class="profile-settings-image27"
-              />
-              <img
-                src="public/playground_assets/image31i106-la6h-200h.png"
-                alt="image31I106"
-                class="profile-settings-image31"
-              />
+              </a>
+              <a href="/logout" class="index-navlink1">
+                <img
+                  src="{{ url_for('static', filename= 'public/playground_assets/image31i546-953f-200h.png') }}"
+                  alt="image31I546"
+                  class="index-image31"
+                />
+              </a>
             </div>
           </div>
-          <div class="profile-settings-frame27">
-            <div class="profile-settings-community-name">
-              <span class="profile-settings-text"><span>Name:</span></span>
-              <div class="profile-settings-namebox">
-                <span class="profile-settings-text02">
-                  <span>Enter Name</span>
+          <form action="/profilesettings" method="post"class="create-post-frame27">
+            <div class="create-post-community-name">
+              <!-- <form>
+                <label for="postTitle" class="create-post-text">Title:</label>
+                <input type = "text" id = "postTitle" class = "create-post-text02" placeholder="Enter Title"/>
+              </form> -->
+              <span class="create-post-text"><span>Username:</span></span>
+              <div class="create-post-namebox">
+                <input class = "textarea" placeholder="New Username"  role = "textbox" name="change_username" contenteditable>
+              </div>
+            </div>
+            <div class="create-post-community-description">
+              <span class="create-post-text04"><span>About:</span></span>
+              <div class="create-post-description-box">
+                <span class="create-post-text06">
+                  <!-- <span class="create-post-text07">
+                    <span>Enter Body</span>
+                    <br />
+                    <span></span>
+                  </span> -->
+                  <textarea name="change_about" placeholder="Enter About" class="textarea"  rows="7" style="overflow-x: hidden;overflow-wrap: break-word;/* height: 59.4815px; */"></textarea>
+                  
                 </span>
               </div>
             </div>
-            <div class="profile-settings-community-description">
-              <span class="profile-settings-text04"><span>About:</span></span>
-              <div class="profile-settings-description-box">
-                <span class="profile-settings-text06">
-                  <span class="profile-settings-text07">
-                    <span>Enter About</span>
-                    <br />
-                    <span></span>
-                  </span>
-                  <span>
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                    <br />
-                    <span></span>
-                  </span>
-                </span>
+            <div class="create-post-community-name">
+              <!-- <form>
+                <label for="postTitle" class="create-post-text">Title:</label>
+                <input type = "text" id = "postTitle" class = "create-post-text02" placeholder="Enter Title"/>
+              </form> -->
+              <span class="create-post-text"><span>Profile Picture:</span></span>
+              <div class="create-post-namebox">
+                <input class = "textarea" placeholder="Enter Url for profile picture ..."  role = "textbox" name="url" contenteditable >
               </div>
             </div>
-            <div class="profile-settings-category">
-              <span class="profile-settings-text21">
-                <span>New Password:</span>
-              </span>
-              <div class="profile-settings-category-name">
-                <span class="profile-settings-text23">
-                  <span>Enter Password</span>
-                </span>
+            <div class="create-post-category">
+              <span class="create-post-text21"><span>New Password:</span></span>
+              <div class="create-post-category-name">
+                <!-- <input class = "textarea" role = "textbox" name="Category" contenteditable required> -->
+                <!-- <span class="create-post-text23">
+                  <span>Enter Category</span>
+                </span> -->
+                <input class = "textarea" placeholder="New Password"  role = "textbox" name="change_password" contenteditable>
               </div>
             </div>
-            <div class="profile-settings-category1">
-              <span class="profile-settings-text25">
-                <span>Confirm Password:</span>
-              </span>
-              <div class="profile-settings-category-name1">
-                <span class="profile-settings-text27">
-                  <span>Re-enter Password</span>
-                </span>
+            <div class="create-post-category1">
+              <span class="create-post-text25"><span>Re-enter Password</span></span>
+              <div class="create-post-category-name1">
+                <!-- <span class="create-post-text27">
+                  <span>Enter Community</span>
+                </span> -->
+                <input class = "textarea" placeholder="Confirm Password"  role = "textbox" name="confirm_password" contenteditable>
               </div>
             </div>
-            <div class="profile-settings-profle-pic">
-              <span class="profile-settings-text29">
+            <!-- <div class="create-post-profle-pic">
+              <span class="create-post-text29">
                 <span>Profile Picture:</span>
               </span>
-              <div class="profile-settings-chooseafile">
-                <span class="profile-settings-text31">
+              <button type = Submit" class="button">
+                <span class="create-post-text31">
                   <span>Choose a file</span>
                 </span>
-              </div>
+              </button>
             </div>
-            <div class="profile-settings-cover-pic">
-              <span class="profile-settings-text33">
+            <div class="create-post-cover-pic">
+              <span class="create-post-text33">
                 <span>Cover Picture:</span>
               </span>
-              <div class="profile-settings-chooseafile1">
-                <span class="profile-settings-text35">
+              <button type = Submit" class="button">
+                <span class="create-post-text31">
                   <span>Choose a file</span>
                 </span>
-              </div>
-            </div>
-            <div class="profile-settings-frame26">
-              <button class="profile-settings-create-button">
-                <span class="profile-settings-text37"><span>Create</span></span>
               </button>
-              <button class="profile-settings-cancel-button">
-                <span class="profile-settings-text39"><span>Cancel</span></span>
+            </div> -->
+            <div class="create-post-frame26">
+              <button type = "Submit" class="button">
+                <span class="create-post-text37"><span>Update</span></span>
+              </button>
+              <button type="button" name="cancel-btn" class=button onclick="location.href='/'">
+                <span class="create-post-text39"><span>Cancel</span></span>
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
