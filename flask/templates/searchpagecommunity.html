@@ -194,18 +194,22 @@
                     />
                     <div class="searchpagecommunity-community-about">
                       <span class="searchpagecommunity-text26">
-                        <span>{{result[1]}}</span><a href="/community/{{result[1]}}"></a>
+                        <span>{{result[0][1]}}</span><a href="/community/{{result[1]}}"></a>
                       </span>
                       <span class="searchpagecommunity-text28">
-                        <span>{{result[2]}}</span>
+                        <span>{{result[0][2]}}</span>
                       </span>
                     </div>
                   </div>
-                  <button class="searchpagecommunity-follow-button"></button>
-                  <button class="searchpagecommunity-follow-button01">
-                    <span class="searchpagecommunity-text30">
+                  <button class="basicpage-follow-button01">
+                    <span class="basicpage-text49">
+                  <a href="/Follow/{{result[0][1]}}">
+                    {% if result[1] %}
+                      <span>Following</span>
+                    {% else %}
                       <span>Follow</span>
-                    </span>
+                    {% endif %}
+                    </a></span>
                   </button>
                 </div>
                 {% endfor %}

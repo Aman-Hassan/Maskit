@@ -268,13 +268,24 @@ def search_for_community(a):
     user = cur.fetchall()
     cur.execute("SELECT * FROM Communities WHERE Name LIKE %s LIMIT 50", ("%"+a+"%",))
     results = cur.fetchall()
-    # print()
-    # print()
-    # print(results)
-    # print()
-    # print()
+    cur.execute("SELECT community_id FROM Communities_Joined WHERE user_id = %s",(session["user_id"],))
+    joined_communities = cur.fetchall()
+    l = []
+    for i in range(len(results)):
+        flag = False
+        for x in joined_communities:
+            if (x == (results[i][0],)):
+                flag = True
+                break
+        if flag:
+            l.append((results[i],True))
+        else:
+            l.append((results[i],False))
     cur.close()
-    return render_template("searchpagecommunity.html",results = results,name = user[0][2],s=a)
+    print()
+    print()
+    print(l)
+    return render_template("searchpagecommunity.html",results = l,name = user[0][2],s=a)
 
 
 
@@ -405,9 +416,20 @@ def show_community(community_name):
         cur.close()
         return apology("No Such Community",404) 
     community_id = community[0][0]
+    cur.execute("SELECT USERNAME FROM Users WHERE id = %s",(community[0][6],))
+    creator=cur.fetchall()
+    cur.execute("SELECT COUNT(*) FROM Communities_Joined WHERE community_id = %s",(community_id,))
+    members=cur.fetchall()
     cur.execute("SELECT * FROM Posts WHERE community_id = %s", (community_id,))
     posts = cur.fetchall()
     post = []
+    cur.execute("SELECT community_id FROM Communities_Joined WHERE user_id = %s",(session["user_id"],))
+    joined_communities = cur.fetchall()
+    flag = False
+    for x in joined_communities:
+        if (x == (community_id,)):
+            flag = True
+            break
     for i in range(len(posts)):
         cur.execute("SELECT Username FROM Users WHERE id = %s", (posts[i][5],))
         name = cur.fetchall()
@@ -417,7 +439,7 @@ def show_community(community_name):
         categoryn = cur.fetchall()
         post.append([name[0][0],communityn[0][0],categoryn[0][0],posts[i]])
     cur.close() 
-    return render_template("community-page.html", name = user[0][2], posts= post, community = community[0])
+    return render_template("community-page.html", name = user[0][2],flag = flag, posts= post, community = community[0],date=community[0][5].date(), creator=creator[0][0], members=members[0][0])
 
 
 @app.route("/uprofile/<string:name>")

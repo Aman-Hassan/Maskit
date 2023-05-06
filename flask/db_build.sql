@@ -32,6 +32,8 @@ CREATE TABLE Communities (
     ABOUT TEXT NOT NULL,
     Points INTEGER NOT NULL,
     category_id INTEGER NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    creator_id INTEGER NOT NULL,
     FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 

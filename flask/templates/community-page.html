@@ -122,13 +122,13 @@
                   <span>About Community</span>
                 </span>
                 <span class="community-page-text008">
-                  <span>Members:</span>
+                  <span>Members: {{members}}</span>
                 </span>
                 <span class="community-page-text010">
-                  <span>Date Created:</span>
+                  <span>Created: {{date}}</span>
                 </span>
                 <span class="community-page-text012">
-                  <span>Created by:</span>
+                  <span>Creator: {{creator}}</span>
                 </span>
               </div>
             </div>
@@ -154,10 +154,15 @@
                   </div>
                 </div>
                 <button class="community-page-follow-button"></button>
-                <button class="community-page-follow-button1">
-                  <span class="community-page-text018">
+                <button class="basicpage-follow-button01">
+                  <span class="basicpage-text49">
+                <a href="/Follow/{{community[1]}}">
+                  {% if flag %}
+                    <span>Following</span>
+                  {% else %}
                     <span>Follow</span>
-                  </span>
+                  {% endif %}
+                  </a></span>
                 </button>
               </div>
               <div class="category-page-top-posts-postframe">

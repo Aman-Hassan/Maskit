@@ -546,6 +546,34 @@
   border-style: solid;
   border-width: 1px;
 }
+.basicpage-follow-button01 {
+  /* width: 97px; */
+  height: 29px;
+  display: flex;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: transparent;
+  border-radius: 30px;
+  justify-content: center;
+  background-color: rgba(71, 25, 110, 1);
+}
+.basicpage-text49 {
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  font-size: 20px;
+  align-self: auto;
+  font-style: Regular;
+  text-align: left;
+  font-family: Inter;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  margin-right: 0;
+  margin-bottom: 0;
+  text-decoration: none;
+}
 .searchpagecommunity-community-about1 {
   gap: 4px;
   width: 666px;
