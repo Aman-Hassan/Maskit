@@ -647,7 +647,7 @@ def Create_community ():
             cur.close()
             return apology("No Such Category",404) 
         cur.execute("SELECT Name FROM Communities WHERE category_id = %s", (category_id[0],))
-        cur.execute("INSERT INTO Communities (Name, ABOUT, category_id,Points) VALUES (%s,%s,%s,%s)", (community_name, community_description, category_id[0],1))
+        cur.execute("INSERT INTO Communities (Name, ABOUT, category_id,Points,creator_id) VALUES (%s,%s,%s,%s,%s)", (community_name, community_description, category_id[0],1,session["user_id"]))
         mysql.connection.commit()
         cur.close() 
         return render_template("index.html",name = user[0][2])
