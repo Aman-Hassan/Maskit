@@ -196,7 +196,7 @@
                     class="post-page-ellipse4"
                   />
                   <div class="post-page-name-community">
-                    <a href="profile.html" class="post-page-text38">
+                    <a href="/uprofile/{{name}}" class="post-page-text38">
                       <span>{{name}}</span>
                     </a>
                   </div>
@@ -212,7 +212,8 @@
                   <div class="post-page-frame28">
                     {% if img != None %}
                       <img class="card-img-top" alt="..." " 
-                        src={{img}}>
+                        src={{img}}
+                        style="max-width: 100%;">
                       {% else %}
                       <div class post-page-post-image ></div>
                       {% endif %}
