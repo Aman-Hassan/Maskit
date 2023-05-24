@@ -500,38 +500,38 @@ def post_page(post_id):
     cur.close()
     if request.method == 'GET':
         return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = content,vote=vote, creator = creator, community = community,post_id=post_id,img=img, selected_lang = 'en')
-    else:
-        text = content
-        to_lang = request.form.get("target_language")
-        subscription_key = '15304978c2ad4f57bfb6a6cacbea70c9'
-        endpoint = 'https://api.cognitive.microsofttranslator.com/translate'
-        location = 'southeastasia'
+    # else:                                                                              
+    #     text = content
+    #     to_lang = request.form.get("target_language")
+    #     subscription_key = ''                                                                                 This whole part of ML API will now not work beacuse I removed Subscription Key from here.
+    #     endpoint = 'https://api.cognitive.microsofttranslator.com/translate'
+    #     location = 'southeastasia'
 
-        headers = {
-            'Ocp-Apim-Subscription-Key': subscription_key,
-            'Ocp-Apim-Subscription-Region': location,
-            'Content-type': 'application/json',
-            'X-ClientTraceId': str(uuid.uuid4())
-        }
-        params = {
-            'api-version': '3.0',
-            'from': 'en',
-            'to': to_lang
-        }
-        body = [{
-            'text': text
-        }]
-        response = requests.post(endpoint, headers=headers, params=params, json=body)
-        # print(response)
-        response.raise_for_status()
-        content = response.content
-        # try:
-        #     json_content = json.loads(content)
-        #     print("Response content is valid JSON")
-        # except ValueError:
-        #     print("Response content is not valid JSON")
-        translated_text = response.json()[0]['translations'][0]['text']
-        return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text,vote=vote, creator = creator,img =img ,community = community ,post_id=post_id,selected_lang=to_lang)
+    #     headers = {
+    #         'Ocp-Apim-Subscription-Key': subscription_key,
+    #         'Ocp-Apim-Subscription-Region': location,
+    #         'Content-type': 'application/json',
+    #         'X-ClientTraceId': str(uuid.uuid4())
+    #     }
+    #     params = {
+    #         'api-version': '3.0',
+    #         'from': 'en',
+    #         'to': to_lang
+    #     }
+    #     body = [{
+    #         'text': text
+    #     }]
+    #     response = requests.post(endpoint, headers=headers, params=params, json=body)
+    #     # print(response)
+    #     response.raise_for_status()
+    #     content = response.content
+    #     # try:
+    #     #     json_content = json.loads(content)
+    #     #     print("Response content is valid JSON")
+    #     # except ValueError:
+    #     #     print("Response content is not valid JSON")
+    #     translated_text = response.json()[0]['translations'][0]['text']
+    #     return render_template("post-page.html" ,name = user[0][2],time = time.time(),date=time.date(), title = title, content = translated_text,vote=vote, creator = creator,img =img ,community = community ,post_id=post_id,selected_lang=to_lang)
     
 # @app.route("/post_translate/<int:post_id>",methods=['POST'])
 # @login_required
